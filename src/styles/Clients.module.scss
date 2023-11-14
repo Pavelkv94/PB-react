@@ -1,0 +1,70 @@
+.clientsWrapper {
+  width: 100%;
+  height: calc(100vh - 50px);
+  min-width: 1560px;
+
+  @media screen and (max-width: 1560px) {
+    min-width: 1280px;
+    min-height: 640px;
+    max-height: 657px;
+  }
+
+  ul {
+    margin-bottom: 100px;
+
+    @media screen and (max-width: 1560px) {
+      margin-bottom: 20px;
+    }
+  }
+  &.dark {
+    background-image: url("../pngs/clients-back-black.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #001137;
+  }
+
+  &.light {
+    background-color: white;
+  }
+
+  .clientsContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 90px;
+
+    // @media screen and (max-width: 1560px) {
+    //   margin-bottom: 80px;
+    // }
+
+    .title {
+      margin-top: 70px;
+      margin-bottom: 70px;
+
+      @media screen and (max-width: 1560px) {
+        margin-top: 40px;
+        margin-bottom: 00px;
+      }
+    }
+
+    .sliderWindow {
+      display: grid;
+      grid-template-columns: 230px 230px 230px 230px 230px;
+      row-gap: 10px;
+      margin: o auto;
+
+      @media screen and (max-width: 1560px) {
+        row-gap: 14px;
+      }
+    }
+
+    .carousel {
+      width: 1150px;
+
+      @media screen and (max-width: 1560px) {
+        width: 1150px;
+      }
+    }
+  }
+}

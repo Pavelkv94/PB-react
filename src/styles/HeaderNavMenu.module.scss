@@ -1,0 +1,211 @@
+.headerWrapper {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  z-index: 99;
+  font-family: "Montserrat", sans-serif;
+
+  a {
+    color: white;
+  }
+  
+  &.dark {
+    background: #26467d;
+  }
+
+  &.light {
+    background: #383838;
+  }
+
+  .content {
+    color: white;
+    width: 1330px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1560px) {
+      width: 1280px;
+    }
+
+    .logo {
+      margin-right: 60px;
+      width: 134px;
+
+      @media screen and (max-width: 1560px) {
+        margin-right: 20px;
+      }
+    }
+
+    .menuWrapper {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      .copy {
+        margin-left: 4px;
+        position: relative;
+        cursor: pointer;
+        align-self: flex-end;
+
+        &.dark {
+          color: white;
+        }
+
+        &.light {
+          color: #383838;
+        }
+
+        span {
+          position: absolute;
+          top: 30px;
+          left: -50px;
+          font-size: 14px;
+          transition: 1s;
+
+          @media screen and (max-width: 1560px) {
+            left: -60px;
+          }
+
+          &.hover {
+            width: 150px;
+          }
+        }
+      }
+
+      .menu {
+        height: 100%;
+        max-width: 650px;
+
+        nav {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          font-size: 12px;
+          display: flex;
+          height: 100%;
+          width: 100%;
+
+          a {
+            &:nth-child(1) {
+              width: 101px;
+              @media screen and (max-width: 1560px) {
+                width: 97px;
+              }
+            }
+            &:nth-child(2) {
+              width: 79px;
+              @media screen and (max-width: 1560px) {
+                width: 79px;
+              }
+            }
+            &:nth-child(3) {
+              width: 133px;
+              @media screen and (max-width: 1560px) {
+                width: 125px;
+              }
+            }
+            &:nth-child(4) {
+              width: 88px;
+              @media screen and (max-width: 1560px) {
+                width: 84px;
+              }
+            }
+            &:nth-child(5) {
+              width: 167px;
+              @media screen and (max-width: 1560px) {
+                width: 154px;
+              }
+            }
+            &:nth-child(6) {
+              width: 99px;
+              @media screen and (max-width: 1560px) {
+                width: 92px;
+              }
+            }
+          }
+          .active {
+            font-weight: 700;
+
+            &.dark {
+              color: #08fbf3;
+            }
+
+            &.light {
+              color: #ffffff;
+            }
+          }
+
+          div.li {
+            min-width: 55px;
+            margin: 0 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 0.07em;
+
+            @media screen and (max-width: 1560px) {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+
+      .contacts {
+        font-size: 13px;
+
+        a {
+          text-decoration: none;
+          color: white;
+          user-select: none;
+        }
+        p,
+        a {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 600;
+          margin: 0 0 0 20px;
+          letter-spacing: 0.05em;
+        }
+      }
+
+      .calculate {
+        width: 138px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+        cursor: pointer;
+        letter-spacing: 0.07em;
+
+        &.dark {
+          background-image: url("../pngs/calculate-dark.webp");
+        }
+
+        &.light {
+          background-image: url("../pngs/calculate-light.webp");
+          color: black;
+        }
+
+        p {
+          margin: 0;
+          font-weight: 700;
+          font-size: 12px;
+          cursor: pointer;
+        }
+      }
+    }
+    .messengers {
+      width: 55px;
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}

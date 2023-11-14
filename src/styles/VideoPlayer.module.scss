@@ -1,0 +1,582 @@
+.videoPlayer {
+  position: relative;
+
+  .videoWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.37);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    iframe {
+      // width: 80%;
+      // height: 80%;
+      opacity: 1;
+      border: none;
+    }
+  }
+
+  &.big {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .playBtn {
+      width: 100px;
+      height: 100px;
+      background: #00000040;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+
+      .triangle {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left: 24px solid rgba(0, 237, 255, 1);
+        top: 30px;
+        left: 44px;
+      }
+    }
+
+    &.dark {
+      background-image: url("../pngs/videoPlayer-big-black1.webp");
+
+      .screen {
+        position: absolute;
+        top: 90px;
+        left: 62px;
+        width: 628px;
+        height: 332px;
+        z-index: 2;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("../pngs/showreelImage.webp");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 1560px) {
+          width: 572px;
+          height: 301px;
+          top: 81px;
+          left: 41px;
+        }
+      }
+    }
+    &.light {
+      background-image: url("../pngs/videoPlayer-big-light.webp");
+      top: 18px;
+
+      .screen {
+        position: absolute;
+        top: 73px;
+        left: 62px;
+        width: 628px;
+        height: 332px;
+        z-index: 2;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("../pngs/showreelImage.webp");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 1560px) {
+          width: 572px;
+          height: 303px;
+          top: 66px;
+          left: 42px;
+        }
+      }
+    }
+
+    .pulse {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(137.83deg, rgba(0, 118, 228, 0.8) -38%, rgba(122, 191, 255, 0.8) 21.36%, rgba(193, 253, 254, 0.8) 80.72%, rgba(152, 252, 254, 0.8) 140.08%);
+        left: -20px;
+        opacity: 0;
+        right: -20px;
+        top: -20px;
+        bottom: -20px;
+        border-radius: 50%;
+        animation: pulse 2.5s linear infinite;
+      }
+
+      &::after {
+        animation-delay: 1.25s;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.1);
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &.little {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .playBtn {
+      width: 74px;
+      height: 74px;
+      background: #00000040;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+
+      .triangle {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 14px solid transparent;
+        border-left: 18px solid rgba(0, 237, 255, 1);
+        top: 24px;
+        left: 30px;
+      }
+    }
+
+    .screen {
+      // background-image: url("../pngs/videoBig-back.webp");
+
+      &.screenItem1 {
+        background-image: url("../pngs/portfolio_imgs/1.webp");
+      }
+      &.screenItem2 {
+        background-image: url("../pngs/portfolio_imgs/2.webp");
+      }
+      &.screenItem3 {
+        background-image: url("../pngs/portfolio_imgs/3.webp");
+      }
+      &.screenItem4 {
+        background-image: url("../pngs/portfolio_imgs/4.webp");
+      }
+      &.screenItem5 {
+        background-image: url("../pngs/portfolio_imgs/5.webp");
+      }
+      &.screenItem6 {
+        background-image: url("../pngs/portfolio_imgs/6.webp");
+      }
+      &.screenItem7 {
+        background-image: url("../pngs/portfolio_imgs/7.webp");
+      }
+      &.screenItem8 {
+        background-image: url("../pngs/portfolio_imgs/8.webp");
+      }
+      &.screenItem9 {
+        background-image: url("../pngs/portfolio_imgs/9.webp");
+      }
+      &.screenItem10 {
+        background-image: url("../pngs/portfolio_imgs/10.webp");
+      }
+      &.screenItem11 {
+        background-image: url("../pngs/portfolio_imgs/11.webp");
+      }
+      &.screenItem12 {
+        background-image: url("../pngs/portfolio_imgs/12.webp");
+      }
+      &.screenItem13 {
+        background-image: url("../pngs/portfolio_imgs/13.webp");
+      }
+      &.screenItem14 {
+        background-image: url("../pngs/portfolio_imgs/14.webp");
+      }
+      &.screenItem15 {
+        background-image: url("../pngs/portfolio_imgs/15.webp");
+      }
+      &.screenItem16 {
+        background-image: url("../pngs/portfolio_imgs/16.webp");
+      }
+      &.screenItem17 {
+        background-image: url("../pngs/portfolio_imgs/17.webp");
+      }
+      &.screenItem18 {
+        background-image: url("../pngs/portfolio_imgs/18.webp");
+      }
+      &.screenItem19 {
+        background-image: url("../pngs/portfolio_imgs/19.webp");
+      }
+      &.screenItem20 {
+        background-image: url("../pngs/portfolio_imgs/20.webp");
+      }
+      &.screenItem21 {
+        background-image: url("../pngs/portfolio_imgs/21.webp");
+      }
+      &.screenItem22 {
+        background-image: url("../pngs/portfolio_imgs/22.webp");
+      }
+      &.screenItem23 {
+        background-image: url("../pngs/portfolio_imgs/23.webp");
+      }
+      &.screenItem24 {
+        background-image: url("../pngs/portfolio_imgs/24.webp");
+      }
+      &.screenItem25 {
+        background-image: url("../pngs/portfolio_imgs/25.webp");
+      }
+      &.screenItem26 {
+        background-image: url("../pngs/portfolio_imgs/26.webp");
+      }
+      &.screenItem27 {
+        background-image: url("../pngs/portfolio_imgs/27.webp");
+      }
+      &.screenItem28 {
+        background-image: url("../pngs/portfolio_imgs/28.webp");
+      }
+      &.screenItem29 {
+        background-image: url("../pngs/portfolio_imgs/29.webp");
+      }
+      &.screenItem30 {
+        background-image: url("../pngs/portfolio_imgs/30.webp");
+      }
+      &.screenItem31 {
+        background-image: url("../pngs/portfolio_imgs/31.webp");
+      }
+      &.screenItem32 {
+        background-image: url("../pngs/portfolio_imgs/32.webp");
+      }
+      &.screenItem33 {
+        background-image: url("../pngs/portfolio_imgs/33.webp");
+      }
+      &.screenItem34 {
+        background-image: url("../pngs/portfolio_imgs/34.webp");
+      }
+      &.screenItem35 {
+        background-image: url("../pngs/portfolio_imgs/35.webp");
+      }
+      &.screenItem36 {
+        background-image: url("../pngs/portfolio_imgs/36.webp");
+      }
+      &.screenItem37 {
+        background-image: url("../pngs/portfolio_imgs/37.webp");
+      }
+      &.screenItem38 {
+        background-image: url("../pngs/portfolio_imgs/38.webp");
+      }
+      &.screenItem39 {
+        background-image: url("../pngs/portfolio_imgs/39.webp");
+      }
+      &.screenItem40 {
+        background-image: url("../pngs/portfolio_imgs/40.webp");
+      }
+      &.screenItem41 {
+        background-image: url("../pngs/portfolio_imgs/41.webp");
+      }
+      &.screenItem42 {
+        background-image: url("../pngs/portfolio_imgs/42.webp");
+      }
+      &.screenItem43 {
+        background-image: url("../pngs/portfolio_imgs/43.webp");
+      }
+      &.screenItem44 {
+        background-image: url("../pngs/portfolio_imgs/44.webp");
+      }
+      &.screenItem45 {
+        background-image: url("../pngs/portfolio_imgs/45.webp");
+      }
+      &.screenItem46 {
+        background-image: url("../pngs/portfolio_imgs/46.webp");
+      }
+      &.screenItem47 {
+        background-image: url("../pngs/portfolio_imgs/47.webp");
+      }
+      &.screenItem48 {
+        background-image: url("../pngs/portfolio_imgs/48.webp");
+      }
+      &.screenItem49 {
+        background-image: url("../pngs/portfolio_imgs/49.webp");
+      }
+      &.screenItem50 {
+        background-image: url("../pngs/portfolio_imgs/50.webp");
+      }
+      &.screenItem51 {
+        background-image: url("../pngs/portfolio_imgs/51.webp");
+      }
+      &.screenItem52 {
+        background-image: url("../pngs/portfolio_imgs/52.webp");
+      }
+      &.screenItem53 {
+        background-image: url("../pngs/portfolio_imgs/53.webp");
+      }
+      &.screenItem54 {
+        background-image: url("../pngs/portfolio_imgs/54.webp");
+      }
+      &.screenItem55 {
+        background-image: url("../pngs/portfolio_imgs/55.webp");
+      }
+      &.screenItem56 {
+        background-image: url("../pngs/portfolio_imgs/56.webp");
+      }
+      &.screenItem57 {
+        background-image: url("../pngs/portfolio_imgs/57.webp");
+      }
+      &.screenItem58 {
+        background-image: url("../pngs/portfolio_imgs/58.webp");
+      }
+      &.screenItem59 {
+        background-image: url("../pngs/portfolio_imgs/59.webp");
+      }
+      &.screenItem60 {
+        background-image: url("../pngs/portfolio_imgs/60.webp");
+      }
+      &.screenItem61 {
+        background-image: url("../pngs/portfolio_imgs/61.webp");
+      }
+      &.screenItem62 {
+        background-image: url("../pngs/portfolio_imgs/62.webp");
+      }
+      &.screenItem63 {
+        background-image: url("../pngs/portfolio_imgs/63.webp");
+      }
+      &.screenItem64 {
+        background-image: url("../pngs/portfolio_imgs/64.webp");
+      }
+      &.screenItem65 {
+        background-image: url("../pngs/portfolio_imgs/65.webp");
+      }
+      &.screenItem66 {
+        background-image: url("../pngs/portfolio_imgs/66.webp");
+      }
+      &.screenItem67 {
+        background-image: url("../pngs/portfolio_imgs/67.webp");
+      }
+      &.screenItem68 {
+        background-image: url("../pngs/portfolio_imgs/68.webp");
+      }
+      &.screenItem69 {
+        background-image: url("../pngs/portfolio_imgs/69.webp");
+      }
+      &.screenItem70 {
+        background-image: url("../pngs/portfolio_imgs/70.webp");
+      }
+      &.screenItem71 {
+        background-image: url("../pngs/portfolio_imgs/71.webp");
+      }
+      &.screenItem72 {
+        background-image: url("../pngs/portfolio_imgs/72.webp");
+      }
+      &.screenItem73 {
+        background-image: url("../pngs/portfolio_imgs/73.webp");
+      }
+      &.screenItem74 {
+        background-image: url("../pngs/portfolio_imgs/74.webp");
+      }
+      &.screenItem75 {
+        background-image: url("../pngs/portfolio_imgs/75.webp");
+      }
+      &.screenItem76 {
+        background-image: url("../pngs/portfolio_imgs/76.webp");
+      }
+      &.screenItem77 {
+        background-image: url("../pngs/portfolio_imgs/77.webp");
+      }
+      &.screenItem78 {
+        background-image: url("../pngs/portfolio_imgs/78.webp");
+      }
+      &.screenItem79 {
+        background-image: url("../pngs/portfolio_imgs/79.webp");
+      }
+      &.screenItem80 {
+        background-image: url("../pngs/portfolio_imgs/80.webp");
+      }
+      &.screenItem81 {
+        background-image: url("../pngs/portfolio_imgs/81.webp");
+      }
+      &.screenItem82 {
+        background-image: url("../pngs/portfolio_imgs/82.webp");
+      }
+      &.screenItem83 {
+        background-image: url("../pngs/portfolio_imgs/83.webp");
+      }
+      &.screenItem84 {
+        background-image: url("../pngs/portfolio_imgs/84.webp");
+      }
+      &.screenItem85 {
+        background-image: url("../pngs/portfolio_imgs/85.webp");
+      }
+      &.screenItem86 {
+        background-image: url("../pngs/portfolio_imgs/86.webp");
+      }
+      &.screenItem87 {
+        background-image: url("../pngs/portfolio_imgs/87.webp");
+      }
+      &.screenItem88 {
+        background-image: url("../pngs/portfolio_imgs/88.webp");
+      }
+      &.screenItem89 {
+        background-image: url("../pngs/portfolio_imgs/89.webp");
+      }
+      &.screenItem90 {
+        background-image: url("../pngs/portfolio_imgs/90.webp");
+      }
+      &.screenItem91 {
+        background-image: url("../pngs/portfolio_imgs/91.webp");
+      }
+      &.screenItem92 {
+        background-image: url("../pngs/portfolio_imgs/92.webp");
+      }
+      &.screenItem93 {
+        background-image: url("../pngs/portfolio_imgs/93.webp");
+      }
+      &.screenItem94 {
+        background-image: url("../pngs/portfolio_imgs/94.webp");
+      }
+      &.screenItem95 {
+        background-image: url("../pngs/portfolio_imgs/95.webp");
+      }
+      &.screenItem96 {
+        background-image: url("../pngs/portfolio_imgs/96.webp");
+      }
+      &.screenItem97 {
+        background-image: url("../pngs/portfolio_imgs/97.webp");
+      }
+      &.screenItem98 {
+        background-image: url("../pngs/portfolio_imgs/98.webp");
+      }
+      &.screenItem99 {
+        background-image: url("../pngs/portfolio_imgs/99.webp");
+      }
+      &.screenItem100 {
+        background-image: url("../pngs/portfolio_imgs/100.webp");
+      }
+      &.screenItem101 {
+        background-image: url("../pngs/portfolio_imgs/101.webp");
+      }
+      &.screenItem102 {
+        background-image: url("../pngs/portfolio_imgs/102.webp");
+      }
+      &.screenItem103 {
+        background-image: url("../pngs/portfolio_imgs/103.webp");
+      }
+      &.screenItem104 {
+        background-image: url("../pngs/portfolio_imgs/104.webp");
+      }
+      &.screenItem105 {
+        background-image: url("../pngs/portfolio_imgs/105.webp");
+      }
+      &.screenItem106 {
+        background-image: url("../pngs/portfolio_imgs/106.webp");
+      }
+      &.screenItem107 {
+        background-image: url("../pngs/portfolio_imgs/107.webp");
+      }
+      &.screenItem108 {
+        background-image: url("../pngs/portfolio_imgs/108.webp");
+      }
+      &.screenItem109 {
+        background-image: url("../pngs/portfolio_imgs/109.webp");
+      }
+      &.screenItem110 {
+        background-image: url("../pngs/portfolio_imgs/110.webp");
+      }
+      &.screenItem111 {
+        background-image: url("../pngs/portfolio_imgs/111.webp");
+      }
+      &.screenItem112 {
+        background-image: url("../pngs/portfolio_imgs/112.webp");
+      }
+      &.screenItem113 {
+        background-image: url("../pngs/portfolio_imgs/113.webp");
+      }
+      &.screenItem114 {
+        background-image: url("../pngs/portfolio_imgs/114.webp");
+      }
+      &.screenItem115 {
+        background-image: url("../pngs/portfolio_imgs/115.webp");
+      }
+      &.screenItem116 {
+        background-image: url("../pngs/portfolio_imgs/116.webp");
+      }
+      &.screenItem117 {
+        background-image: url("../pngs/portfolio_imgs/117.webp");
+      }
+      &.screenItem118 {
+        background-image: url("../pngs/portfolio_imgs/118.webp");
+      }
+      &.screenItem119 {
+        background-image: url("../pngs/portfolio_imgs/119.webp");
+      }
+      &.screenItem120 {
+        background-image: url("../pngs/portfolio_imgs/120.webp");
+      }
+    }
+
+    &.dark {
+      background-image: url("../pngs/videoPlayer-big-black.webp");
+
+      .screen {
+        position: absolute;
+        top: 50px;
+        left: 51px;
+        width: 401px;
+        height: 199px;
+        z-index: 2;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 1560px) {
+          top: 35px;
+          left: 34px;
+          width: 265px;
+          height: 131px;
+        }
+      }
+    }
+
+    &.light {
+      background-image: url("../pngs/videoPlayer-big-light.webp");
+      .screen {
+        position: absolute;
+        top: 40px;
+        left: 42px;
+        width: 420px;
+        height: 220px;
+        z-index: 2;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 1560px) {
+          top: 26px;
+          left: 28px;
+          width: 277px;
+          height: 146px;
+        }
+      }
+    }
+  }
+}

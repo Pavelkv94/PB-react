@@ -1,0 +1,209 @@
+.reasonsWrapper {
+  width: 100%;
+  height: calc(100vh - 50px);
+  min-width: 1560px;
+  min-height: 920px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media screen and (max-width: 1560px) {
+    min-width: 1280px;
+    min-height: 650px;
+    max-height: 657px;
+  }
+
+  &.dark {
+    background-image: url("../pngs/reasons-back-black.webp");
+  }
+
+  &.light {
+    background-image: url("../pngs/reasons-back-light.webp");
+  }
+
+  .reasonsContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+      margin-top: 60px;
+
+      @media screen and (max-width: 1560px) {
+        margin-top: 30px;
+      }
+    }
+
+    section.reasonsWrap {
+      width: 1533px;
+      min-height: 585px;
+      margin-top: 70px;
+      display: flex;
+      justify-content: space-between;
+
+      @media screen and (max-width: 1560px) {
+        width: 1200px;
+        min-height: 585px;
+        margin-top: 20px;
+      }
+
+      .leftContent {
+        width: 636px;
+        min-height: 585px;
+        position: relative;
+
+        @media screen and (max-width: 1560px) {
+          width: 600px;
+        }
+
+        section {
+          position: absolute;
+          &:first-child {
+            top: 0;
+            right: 0;
+          }
+          &:nth-child(2) {
+            top: 240px;
+            left: 0;
+            @media screen and (max-width: 1560px) {
+              top: 180px;
+            }
+          }
+
+          &:last-child {
+            top: 480px;
+            right: 0;
+
+            @media screen and (max-width: 1560px) {
+              top: 360px;
+            }
+          }
+        }
+      }
+      .playContentBlack {
+        width: 220px;
+        position: relative;
+
+        img {
+          position: absolute;
+          top: 140px;
+          @media screen and (max-width: 1560px) {
+            top: 115px;
+            left: 20px;
+            }
+        }
+      }
+      .playContentLight {
+        width: 220px;
+        position: relative;
+
+
+        img {
+          position: absolute;
+          top: 100px;
+          left: -40px;
+
+
+        @media screen and (max-width: 1560px) {
+          width: 300px;
+          height: 285px;
+          top: 120px;
+          left: -20px;
+          }
+        }
+      }
+
+      .playContent {
+        width: 220px;
+        position: relative;
+
+        svg {
+          position: absolute;
+          top: 140px;
+        }
+      }
+      .rightContent {
+        width: 636px;
+        min-height: 585px;
+        position: relative;
+
+        @media screen and (max-width: 1560px) {
+          width: 600px;
+        }
+
+        section {
+          position: absolute;
+          &:first-child {
+            top: 0;
+            left: 0;
+          }
+          &:nth-child(2) {
+            top: 240px;
+            right: 0;
+            @media screen and (max-width: 1560px) {
+              top: 180px;
+            }
+          }
+
+          &:last-child {
+            top: 480px;
+            left: 0;
+            @media screen and (max-width: 1560px) {
+              top: 360px;
+            }
+            h4 {
+              letter-spacing: -1.3px;
+            }
+
+            div {
+              @media screen and (max-width: 1560px) {
+                margin-right: 22px;
+              }
+            };
+
+
+          }
+        }
+      }
+    }
+  }
+
+  .arrow {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent; /* Adjust the size of the arrow */
+    border-right: 20px solid transparent; /* Adjust the size of the arrow */
+    border-bottom: 40px solid #007bff;
+  }
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  .container {
+    width: 30px;
+    height: 20px;
+    overflow: hidden;
+  }
+
+  .arrowContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .shimmeringArrow {
+    width: 100%;
+    height: 4px; /* Height of the arrow */
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background-size: 100% 200%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 0 -200%;
+    }
+    100% {
+      background-position: 0 200%;
+    }
+  }
+}

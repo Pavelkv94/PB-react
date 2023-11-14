@@ -1,0 +1,29 @@
+.customDot {
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+  margin: 0 5px;
+
+  @media screen and (max-width: 1560px) {
+    width: 11px;
+    height: 11px;
+  }
+
+  &.dark {
+    border: 1px solid #00edff;
+  }
+
+  &.light {
+    border: 1px solid #383838;
+  }
+
+  &.active {
+    &.dark {
+      background-color: #00edff;
+    }
+
+    &.light {
+      background: linear-gradient(180deg, #6997ff 0%, #62e4f7 100%);
+    }
+  }
+}

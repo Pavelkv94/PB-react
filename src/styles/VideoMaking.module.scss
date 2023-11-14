@@ -1,0 +1,565 @@
+.videoMakingWrapper {
+  width: 100%;
+  height: 940px;
+  min-width: 1560px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media screen and (max-width: 1560px) {
+    min-width: 1280px;
+    min-height: 650px;
+    max-height: 657px;
+  }
+
+  &.dark {
+    background-image: url("../pngs/videomaking-backg-dark2.webp");
+  }
+
+  .videoMakingContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (max-width: 1560px) {
+      height: 100%;
+    }
+
+    .videoEllipse {
+      // border: 1px solid red;
+      position: absolute;
+      top: 400px;
+
+      @media screen and (max-width: 1560px) {
+        top: 240px;
+      }
+
+      &.dark {
+        background-image: url("../pngs/videomaking-ellipse-dark.webp");
+        width: 1227px;
+        height: 190px;
+
+        @media screen and (max-width: 1560px) {
+          width: 1000px;
+          height: 150px;
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+      &.light {
+        background-image: url("../pngs/videomaking-ellipse-light.webp");
+        width: 892px;
+        height: 177px;
+        z-index: 1;
+
+        @media screen and (max-width: 1560px) {
+          top: 220px;
+          width: 700px;
+          height: 157px;
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    .videoMakingTitleBlockWrap {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+
+      .videoMakingTitleBlock {
+        margin-left: 50px;
+        width: 1460px;
+        height: 120px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 1560px) {
+          width: 980px;
+          height: 75px;
+          margin-left: 30px;
+        }
+
+        &.dark {
+          background-image: url("../pngs/video-title-dark.webp");
+        }
+        &.light {
+          background-image: url("../pngs/video-title-light.webp");
+        }
+        .divider {
+          margin: 0 75px 0 30px;
+
+          @media screen and (max-width: 1560px) {
+            margin: 0 45px 0 30px;
+          }
+
+          &.dark {
+            height: 37px;
+            width: 2.7px;
+            background-color: #00edff;
+            box-shadow: 0px 0px 8px #00edff;
+            @media screen and (max-width: 1560px) {
+              height: 27px;
+            }
+          }
+
+          &.light {
+            height: 34px;
+            width: 2.7px;
+            background-color: #383838;
+            @media screen and (max-width: 1560px) {
+              height: 27px;
+            }
+          }
+        }
+      }
+    }
+
+    .digits {
+      width: 100%;
+      display: flex;
+      width: 1040px;
+      margin: 0 auto;
+      justify-content: space-between;
+      margin-top: 10px;
+
+      @media screen and (max-width: 1560px) {
+        height: 250px;
+        width: 700px;
+      }
+
+      &.dark {
+        margin-bottom: 50px;
+        height: 354px;
+
+        @media screen and (max-width: 1560px) {
+          margin-bottom: 0px;
+          height: 240px;
+        }
+      }
+      &.light {
+        height: 364px;
+
+        @media screen and (max-width: 1560px) {
+          margin-bottom: 10px;
+          height: 240px;
+        }
+      }
+      .circle {
+        width: 270px;
+        height: 304px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+
+        @media screen and (max-width: 1560px) {
+          width: 190px;
+          height: 220px;
+        }
+
+        &.dark {
+          background-image: url("../pngs/video-making-circle.webp");
+          p {
+            &:first-child {
+              color: rgba(0, 237, 255, 1);
+            }
+            &:last-child {
+              color: white;
+              margin-right: 20px;
+            }
+          }
+
+          &:nth-child(1),
+          &:nth-child(3) {
+            .circleText {
+              width: 170px;
+              margin-bottom: 30px;
+              margin-left: 0px;
+              @media screen and (max-width: 1560px) {
+                width: 110px;
+                margin-left: 6px;
+              }
+              p {
+                margin: 0;
+                text-align: center;
+
+                &:first-child {
+                  font-size: 55px;
+                  font-weight: 600;
+                  line-height: 31.52px;
+                  @media screen and (max-width: 1560px) {
+                    font-size: 40px;
+                  }
+                }
+                &:last-child {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 15px;
+                  margin-top: 20px;
+
+                  @media screen and (max-width: 1560px) {
+                    font-size: 12px;
+                    margin-top: 10px;
+                  }
+                }
+              }
+            }
+          }
+          &:nth-child(2) {
+            .circleText {
+              width: 170px;
+              margin-bottom: 30px;
+              margin-left: 10px;
+              @media screen and (max-width: 1560px) {
+                width: 110px;
+              }
+              p {
+                margin: 0;
+                text-align: center;
+
+                &:first-child {
+                  font-size: 55px;
+                  font-weight: 600;
+                  line-height: 31.52px;
+                  @media screen and (max-width: 1560px) {
+                    font-size: 40px;
+                  }
+                }
+                &:last-child {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 15px;
+                  margin-top: 20px;
+                  @media screen and (max-width: 1560px) {
+                    font-size: 12px;
+                    margin-top: 10px;
+                    margin-right: 14px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.light {
+          background-image: url("../pngs/video-making-circle-light.webp");
+          .circleText p {
+            color: #383838;
+
+            &:last-child {
+              margin-right: 20px;
+            }
+          }
+
+          &:nth-child(1),
+          &:nth-child(3) {
+            .circleText {
+              width: 170px;
+              margin-bottom: 10px;
+              margin-left: 14px;
+
+              @media screen and (max-width: 1560px) {
+                width: 110px;
+                margin-bottom: 20px;
+                margin-left: 14px;
+              }
+
+              p {
+                margin: 0;
+                text-align: center;
+
+                &:first-child {
+                  font-size: 55px;
+                  font-weight: 600;
+                  line-height: 31.52px;
+                  @media screen and (max-width: 1560px) {
+                    font-size: 40px;
+                  }
+                }
+                &:last-child {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 15px;
+                  margin-top: 20px;
+                  margin-right: 10px;
+                  @media screen and (max-width: 1560px) {
+                    font-size: 12px;
+                    margin-top: 10px;
+                  }
+                }
+              }
+            }
+          }
+          &:nth-child(2) {
+            .circleText {
+              width: 170px;
+              margin-bottom: 10px;
+              margin-left: 10px;
+
+              @media screen and (max-width: 1560px) {
+                width: 110px;
+                margin-bottom: 20px;
+                margin-left: 14px;
+              }
+
+              p {
+                margin: 0;
+                text-align: center;
+
+                &:first-child {
+                  font-size: 55px;
+                  font-weight: 600;
+                  line-height: 31.52px;
+                  @media screen and (max-width: 1560px) {
+                    font-size: 40px;
+                  }
+                }
+                &:last-child {
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 15px;
+                  margin-top: 20px;
+                  margin-right: 20px;
+                  @media screen and (max-width: 1560px) {
+                    font-size: 12px;
+                    margin-top: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &:last-child,
+        &:first-child {
+          align-self: flex-end;
+          width: 270px;
+          height: 280px;
+
+          @media screen and (max-width: 1560px) {
+            width: 190px;
+            height: 210px;
+          }
+        }
+      }
+    }
+
+    .playBlock {
+      position: relative;
+      width: 1460px;
+      height: 376px;
+      margin: 0 auto;
+
+      @media screen and (max-width: 1560px) {
+        width: 1200px;
+        height: 200px;
+        margin-top: auto;
+      }
+
+      .centerElem {
+        width: 605px;
+        height: 435px;
+        position: absolute;
+        bottom: 0;
+        left: 430px;
+
+        @media screen and (max-width: 1560px) {
+          width: 385px;
+          height: 277px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          left: 400px;
+
+        }
+
+        &.dark {
+          background-image: url("../pngs/videomaking-center-black.webp");
+        }
+        &.light {
+          background-image: url("../pngs/videomaking-center-light.webp");
+        }
+      }
+
+      .partEl {
+        width: 254px;
+        height: 180px;
+        position: absolute;
+        bottom: 0;
+
+        @media screen and (max-width: 1560px) {
+          width: 160px;
+          height: 113px;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+
+        &.dark {
+          background-image: url("../pngs/videomaking-part-part-black.webp");
+        }
+        &.light {
+          background-image: url("../pngs/videomaking-part-part-light.webp");
+        }
+
+        &.first {
+          left: 100px;
+          @media screen and (max-width: 1560px) {
+            left: 150px;
+          }
+        }
+        &.second {
+          left: 1100px;
+          @media screen and (max-width: 1560px) {
+            left: 900px;
+          }
+        }
+      }
+      .partFullEl {
+        width: 254px;
+        height: 228px;
+        position: absolute;
+
+        @media screen and (max-width: 1560px) {
+          width: 160px;
+          height: 144px;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+
+        &.dark {
+          background-image: url("../pngs/videomaking-part-full-black.webp");
+        }
+        &.light {
+          background-image: url("../pngs/videomaking-part-full-light.webp");
+        }
+
+        &.first {
+          left: 350px;
+          @media screen and (max-width: 1560px) {
+            left: 330px;
+          }
+        }
+        &.second {
+          left: 880px;
+          @media screen and (max-width: 1560px) {
+            left: 700px;
+          }
+        }
+      }
+
+      .playButton {
+        position: absolute;
+        top: -90px;
+        z-index: 2;
+        transform: translate3d(0, -10%, 0);
+        animation: spin 1.4s infinite ease-in-out;
+
+        &.dark {
+          left: 660px;
+          @media screen and (max-width: 1560px) {
+            left: 550px;
+            top: -50px;
+          }
+        }
+
+        &.light {
+          left: 570px;
+
+          @media screen and (max-width: 1560px) {
+            left: 510px;
+          }
+        }
+      }
+
+      p.playDescript {
+        margin: 0;
+        text-shadow: 0px 0px 5px #00edff;
+        font-size: 24px;
+        width: 280px;
+        text-align: center;
+        font-weight: 600;
+        position: absolute;
+        transition: 0.5s;
+        z-index: 3;
+        @media screen and (max-width: 1560px) {
+          font-size: 16px;
+          width: 200px;
+        }
+
+        &:hover {
+          font-size: 28px;
+          @media screen and (max-width: 1560px) {
+            font-size: 18px;
+          }
+        }
+        &.one {
+          bottom: 120px;
+          left: 90px;
+          @media screen and (max-width: 1560px) {
+            bottom: 90px;
+            left: 130px;
+          }
+        }
+        &.two {
+          top: 0px;
+          left: 340px;
+          @media screen and (max-width: 1560px) {
+            top: -20px;
+            left: 310px;
+          }
+        }
+        &.three {
+          top: 0px;
+          left: 865px;
+          @media screen and (max-width: 1560px) {
+            top: -20px;
+            left: 680px;
+          }
+        }
+        &.four {
+          bottom: 120px;
+          left: 1090px;
+          @media screen and (max-width: 1560px) {
+            bottom: 90px;
+            left: 880px;
+          }
+        }
+        &.dark {
+          color: rgba(0, 237, 255, 1);
+        }
+
+        &.light {
+          color: #383838;
+          text-shadow: none;
+
+          &:hover {
+            color: #49a7ff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate3d(0, -10%, 0);
+  }
+  50% {
+    transform: translate3d(0, 10%, 0);
+  }
+  100% {
+    transform: translate3d(0, -10%, 0);
+  }
+}

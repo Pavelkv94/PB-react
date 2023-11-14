@@ -1,0 +1,151 @@
+.titleWrapper {
+  height: 80px;
+  min-width: 400px;
+  position: relative;
+
+  @media screen and (max-width: 1560px) {
+    min-width: 300px;
+    height: 70px;
+
+  }
+  .titleMain {
+    position: absolute;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+
+  &.dark {
+    .titleDublicate {
+      position: absolute;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      font-size: 55px;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(0, 255, 255, 0.123);
+
+      @media screen and (max-width: 1560px) {
+        font-size: 32px;
+      }
+      &.right {
+        left: 10px;
+
+        @media screen and (max-width: 1560px) {
+          top: 6px;
+
+        }
+      }
+
+      &.left {
+        top: 0px;
+        left: 36px;
+
+        @media screen and (max-width: 1560px) {
+          top: 6px;
+          left: 36px;
+        }
+      }
+    }
+
+    .titleMain {
+      color: rgba(0, 237, 255, 1);
+      text-shadow: 0px 0px 5px #00edff;
+
+      &.right {
+        top: 14px;
+      }
+
+      &.left {
+        top: 14px;
+        left: 50px;
+      }
+    }
+  }
+  &.light {
+    .titleDublicate {
+      display: none;
+    }
+
+    .titleMain {
+      color: #383838;
+
+      &.right {
+        top: 14px;
+      }
+
+      &.left {
+        top: 14px;
+        left: 50px;
+      }
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.mainTitleWrapper {
+  height: 80px;
+  min-width: 320px;
+  position: relative;
+
+  @media screen and (max-width: 1560px) {
+    height: 48px;
+    min-width: 210px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .mainTitleMain {
+    font-size: 48px;
+    font-weight: 600;
+    position: absolute;
+    color: #383838;
+    letter-spacing: 0.05em;
+
+    @media screen and (max-width: 1560px) {
+      font-size: 28px;
+    }
+  }
+
+  &.dark {
+
+    .mainTitleMain {
+      color: rgba(0, 237, 255, 1);
+      text-shadow: 0px 0px 5px #00edff;
+      bottom: 0;
+      left: 20px;
+
+      @media screen and (max-width: 1560px) {
+        left: 14px;
+      }
+
+    }
+
+    .mainTitleDublicate {
+      position: absolute;
+      font-size: 55px;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(0, 255, 255, 0.123);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+
+      @media screen and (max-width: 1560px) {
+        font-size: 32px;
+      }
+
+    }
+  }
+
+  &.light {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .mainTitleDublicate {
+      display: none;
+    }
+  }
+}

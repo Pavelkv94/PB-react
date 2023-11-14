@@ -1,0 +1,69 @@
+.workStagesWrapper {
+  width: 100%;
+  height: 100vh;
+  min-width: 1560px;
+  min-height: 980px;
+
+  @media screen and (max-width: 1560px) {
+    min-width: 1280px;
+    min-height: 700px;
+    max-height: 657px;
+  }
+  
+
+  &.dark {
+    background-color: #001137;
+  }
+
+  &.light {
+    background-color: white;
+  }
+
+  .workStagesContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+      margin-top: 70px;
+      margin-bottom: 20px;
+
+      @media screen and (max-width: 1560px) {
+        margin-top: 30px;
+        margin-bottom: 0px;
+
+      }
+    }
+
+    .stages {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+
+      &.dark {
+        width: 1320px;
+        height: 737px;
+        background-image: url("../pngs/workStages-black.webp");
+
+        @media screen and (max-width: 1560px) {
+          width: 960px;
+          height: 536px;
+        }
+
+      }
+    
+      &.light {
+        width: 1350px;
+        height: 740px;
+        background-image: url("../pngs/workStages-light.webp");
+
+        @media screen and (max-width: 1560px) {
+          width: 960px;
+          height: 526px;
+        }
+
+      }
+    }
+  }
+}
