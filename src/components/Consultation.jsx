@@ -94,7 +94,7 @@ const Consultation = ({ isDarkTheme }) => {
               <input placeholder="+7 (999) 999-99-99" type="tel" value={phoneNumber} onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone} />
             </div>
             <div className={styles.sendMailItem}>
-              <a href={isDarkTheme ? "tnx" : "wtnx"}>
+              <a href="thx">
                 <button className={`${isDarkTheme ? styles.dark : styles.light}`}>ОСТАВИТЬ ЗАЯВКУ</button>
               </a>
             </div>
