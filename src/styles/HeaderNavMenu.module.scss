@@ -8,7 +8,7 @@
   a {
     color: white;
   }
-  
+
   &.dark {
     background: #26467d;
   }
@@ -158,6 +158,9 @@
 
       .contacts {
         font-size: 13px;
+        width: 252px;
+        height: 50px;
+        position: relative;
 
         a {
           text-decoration: none;
@@ -169,7 +172,18 @@
           font-family: "Montserrat", sans-serif;
           font-weight: 600;
           margin: 0 0 0 20px;
-          letter-spacing: 0.05em;
+          letter-spacing: 0.01em;
+        }
+
+        p:first-child {
+          position: absolute;
+          top: 10px;
+        }
+        .mailWrapper {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          bottom: 4px;
         }
       }
 

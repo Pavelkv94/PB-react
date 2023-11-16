@@ -12,7 +12,8 @@ const HeaderNavMenu = ({ isDarkTheme, setOpenModal }) => {
   const [isPopoverHover, setIsPopoverHover] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
-  const email = isDarkTheme ? "Welcome@plan-big.space" : "Info@plan-big.space";
+  const email = isDarkTheme ? "WELCOME@PLAN-BIG.SPACE" : "INFO@PLAN-BIG.SPACE";
+  const phone = isDarkTheme ? "+7 (495) 128-60-30" : "+7 (495) 240-92-55";
 
   useEffect(() => {
     let timer = setTimeout(() => setIsPopoverOpen(false), 300);
@@ -42,7 +43,7 @@ const HeaderNavMenu = ({ isDarkTheme, setOpenModal }) => {
                 <div className={styles.li}>УСЛУГИ</div>
               </Link>
 
-              <Link activeClass={`${styles.active} ${isDarkTheme ? styles.dark : styles.light}`} to="adv" spy={true} smooth={true} offset={-50} duration={500}>
+              <Link activeClass={`${styles.active} ${isDarkTheme ? styles.dark : styles.light}`} to="reasons" spy={true} smooth={true} offset={-50} duration={500}>
                 <div className={styles.li}>ПРЕИМУЩЕСТВА</div>
               </Link>
 
@@ -55,14 +56,14 @@ const HeaderNavMenu = ({ isDarkTheme, setOpenModal }) => {
             <p>РАССЧИТАТЬ КП</p>
           </div>
           <div className={styles.contacts}>
-            <p>+7 (495) 128-60-30</p>
+            <p>{phone}</p>
+            <div className={styles.mailWrapper}>
             <a href={`mailto:${email}`}>{email}</a>
-          </div>
-          <div
+            <div
             className={`${styles.copy} ${isDarkTheme ? styles.dark : styles.light}`}
             onClick={() => {
               if (!isCopied) {
-                navigator.clipboard.writeText(email);
+                navigator.clipboard?.writeText(email);
                 setIsPopoverOpen(true);
                 setIsPopoverHover(false);
                 setIsCopied(true);
@@ -76,6 +77,9 @@ const HeaderNavMenu = ({ isDarkTheme, setOpenModal }) => {
             {isPopoverHover && !isCopied && <span className={styles.hover}>Скопировать E-mail</span>}
             <img src={CopyIcon} />
           </div>
+            </div>
+          </div>
+         
         </div>
         <div className={styles.messengers}>
           <a

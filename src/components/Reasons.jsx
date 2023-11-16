@@ -9,7 +9,7 @@ import Reason from "./Reason";
 
 const Reasons = ({ isDarkTheme, screenSize }) => {
   return (
-    <div className={`${styles.reasonsWrapper} ${isDarkTheme ? styles.dark : styles.light}`} id="adv">
+    <div className={`${styles.reasonsWrapper} ${isDarkTheme ? styles.dark : styles.light}`} id="reasons">
       <div className={styles.reasonsContent}>
         <div className={styles.title}>
           <Title isDarkTheme={isDarkTheme} text="ПОЧЕМУ ВЫБИРАЮТ НАС?" mainTitle width={screenSize > 1560 ? "746px" : "434px"} left={"36px"}/>

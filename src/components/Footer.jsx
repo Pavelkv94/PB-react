@@ -14,7 +14,8 @@ const Footer = ({ isDarkTheme, setTab }) => {
   const [isPopoverHover, setIsPopoverHover] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   
-  const email = isDarkTheme ? "Welcome@plan-big.space" : "Info@plan-big.space";
+  const email = isDarkTheme ? "WELCOME@PLAN-BIG.SPACE" : "INFO@PLAN-BIG.SPACE";
+  const phone = isDarkTheme ? "+7 (495) 128-60-30" : "+7 (495) 240-92-55";
 
   useEffect(() => {
     let timer = setTimeout(() => setIsPopoverOpen(false), 300);
@@ -42,7 +43,7 @@ const Footer = ({ isDarkTheme, setTab }) => {
             Портфолио
           </Link>
 
-          <Link to="adv" spy={true} smooth={true} offset={-50} duration={500}>
+          <Link to="reasons" spy={true} smooth={true} offset={-50} duration={500}>
             Преимущества
           </Link>
 
@@ -71,7 +72,7 @@ const Footer = ({ isDarkTheme, setTab }) => {
         <div className={styles.contacts}>
           <h4>Контакты</h4>
           <div className={styles.phone}>
-            <span>+7 (495) 128-60-30</span>
+            <span>{phone}</span>
             <div className={styles.whats}>
               <a
                 href="https://api.whatsapp.com/send?phone=79660132196&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D1%81%D0%B5%D1%82%D0%B8%D0%BB(%D0%B0)%20%D0%92%D0%B0%D1%88%20%D1%81%D0%B0%D0%B9%D1%82%20plan-big.space%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BF%D0%BE%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE"
@@ -93,7 +94,7 @@ const Footer = ({ isDarkTheme, setTab }) => {
               className={styles.copy}
               onClick={() => {
                 if(!isCopied) {
-                navigator.clipboard.writeText(email);
+                navigator.clipboard?.writeText(email);
                 setIsPopoverOpen(true);
                 setIsPopoverHover(false);
                 setIsCopied(true);
