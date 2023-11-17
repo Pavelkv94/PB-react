@@ -3,30 +3,29 @@ import styles from "../styles/Consultation.module.scss";
 import ConsultItem from "./ConsultItem";
 import compliance from "../docs/compliance plan-big.space.pdf";
 
-const Consultation = ({ isDarkTheme }) => {
+const Consultation = ({ isDarkTheme, setOpenCaptcha }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleInputChange = (e) => {
     let input = e.target.value;
-  
+
     // Allow backspace
-    if ((e.nativeEvent.inputType === 'deleteContentBackward' && phoneNumber !== "+7")  || (e.nativeEvent.inputType === 'deleteContentForward' && phoneNumber !== "+7")) {
+    if ((e.nativeEvent.inputType === "deleteContentBackward" && phoneNumber !== "+7") || (e.nativeEvent.inputType === "deleteContentForward" && phoneNumber !== "+7")) {
       setPhoneNumber(input);
       return;
     }
-  
-    input = input.replace(/\D/g, '').substring(0, 11);
-   
-    
+
+    input = input.replace(/\D/g, "").substring(0, 11);
+
     const formattedNumber = formatPhoneNumber(input);
     setPhoneNumber(formattedNumber);
   };
 
   const formatPhoneNumber = (input) => {
-    let formattedNumber = '+7';
+    let formattedNumber = "+7";
     if (input.length >= 1) {
       formattedNumber += `(${input.substring(0, 4)})`;
-      formattedNumber
+      formattedNumber;
     }
 
     if (input.length >= 4) {
@@ -40,8 +39,8 @@ const Consultation = ({ isDarkTheme }) => {
     if (input.length >= 9) {
       formattedNumber += `-${input.substring(9)}`;
     }
-    
-    return formattedNumber.slice(0,3) + formattedNumber.slice(4);
+
+    return formattedNumber.slice(0, 3) + formattedNumber.slice(4);
   };
 
   const onFocusPhone = () => {
@@ -62,6 +61,8 @@ const Consultation = ({ isDarkTheme }) => {
   ];
 
   const [items, setItems] = useState(consultItems);
+
+
 
   return (
     <div className={`${styles.consultationWrapper} ${isDarkTheme ? styles.dark : styles.light}`} id="order">
@@ -84,7 +85,7 @@ const Consultation = ({ isDarkTheme }) => {
               />
             ))}
           </div>
-          <div className={styles.sendMail}>
+          <div className={styles.sendMail} >
             <div className={styles.sendMailItem}>
               <label>Имя</label>
               <input placeholder="Ваше имя" />
@@ -94,14 +95,17 @@ const Consultation = ({ isDarkTheme }) => {
               <input placeholder="+7 (999) 999-99-99" type="tel" value={phoneNumber} onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone} />
             </div>
             <div className={styles.sendMailItem}>
-              <a href="thx">
-                <button className={`${isDarkTheme ? styles.dark : styles.light}`}>ОСТАВИТЬ ЗАЯВКУ</button>
-              </a>
+              {/* <a href="thx"> */}
+              <button className={`${isDarkTheme ? styles.dark : styles.light}`} onClick={() => setOpenCaptcha(true)}>
+                ОСТАВИТЬ ЗАЯВКУ
+              </button>
+              {/* </a> */}
             </div>
+            {/* <ReCAPTCHA sitekey="6LeNwBEpAAAAAOlZ1yufi3m3Tzf80tZUsjprcO6r" onChange={handleCaptchaChange}/> */}
           </div>
           <div className={styles.policy}>
             <p>
-               Нажимая кнопку «Оставить заявку», вы подтверждаете свое согласие на{" "}
+              Нажимая кнопку «Оставить заявку», вы подтверждаете свое согласие на{" "}
               <a href={compliance} target="_blank" rel="noopener noreferrer">
                 обработку пользовательских данных
               </a>
