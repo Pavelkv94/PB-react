@@ -162,14 +162,14 @@
 
       &.dark {
         .preTitle,
-        h1 {
+        h2 {
           color: white;
         }
       }
 
       &.light {
         .preTitle,
-        h1 {
+        h2 {
           color: #383838;
         }
       }
@@ -184,7 +184,7 @@
         }
       }
 
-      h1 {
+      h2 {
         font-size: 48px;
         line-height: 54px;
         width: 600px;

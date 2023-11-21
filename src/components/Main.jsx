@@ -27,11 +27,11 @@ const Main = ({ isDarkTheme, screenSize }) => {
             </div>
           </div></a>
         </div>
-
+        <h1 style={{display:"none"}}>Видеоагентство Plan Big: Профессиональное Видео для Вашего Бизнеса. Решение Ваших Бизнес-Задач.</h1>
         <div className={styles.mainInfo}>
           <div className={`${styles.textInfo} ${isDarkTheme ? styles.dark : styles.light}`}>
             <p className={styles.preTitle}>VIDEO AGENCY</p>
-            <h1>ПРОИЗВОДСТВО КОРПОРАТИВНЫХ ВИДЕО </h1>
+            <h2>ПРОИЗВОДСТВО КОРПОРАТИВНЫХ ВИДЕО </h2>
             <section>
               <div className={`${styles.textItem}  ${isDarkTheme ? styles.dark : styles.light}`}>
                 <p>ПРЕЗЕНТАЦИОННЫЕ</p>

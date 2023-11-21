@@ -17,9 +17,11 @@ const Recaptcha = ({ setOpenCaptcha, handleCaptchaChange }) => {
   };
   return (
     <div style={styles} onClick={handleClose}>
-      <ReCAPTCHA sitekey="6Le-uhEpAAAAAD5lmy8AHUi9oE25O1quBTKJV01d" onChange={handleCaptchaChange} />
+      <ReCAPTCHA sitekey="6LdNQBMpAAAAALE7mjnQV21b3xXBXaOQXper9ob3" onChange={handleCaptchaChange} />
     </div>
   );
 };
 
 export default Recaptcha;
+//6LdNQBMpAAAAALE7mjnQV21b3xXBXaOQXper9ob3
+//todo dev - 6LeNwBEpAAAAAOlZ1yufi3m3Tzf80tZUsjprcO6r

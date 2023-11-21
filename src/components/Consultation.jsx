@@ -62,8 +62,6 @@ const Consultation = ({ isDarkTheme, setOpenCaptcha }) => {
 
   const [items, setItems] = useState(consultItems);
 
-
-
   return (
     <div className={`${styles.consultationWrapper} ${isDarkTheme ? styles.dark : styles.light}`} id="order">
       <div className={styles.consultationContent}>
@@ -95,13 +93,10 @@ const Consultation = ({ isDarkTheme, setOpenCaptcha }) => {
               <input placeholder="+7 (999) 999-99-99" type="tel" value={phoneNumber} onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone} />
             </div>
             <div className={styles.sendMailItem}>
-              {/* <a href="thx"> */}
               <button className={`${isDarkTheme ? styles.dark : styles.light}`} onClick={() => setOpenCaptcha(true)}>
                 ОСТАВИТЬ ЗАЯВКУ
               </button>
-              {/* </a> */}
             </div>
-            {/* <ReCAPTCHA sitekey="6LeNwBEpAAAAAOlZ1yufi3m3Tzf80tZUsjprcO6r" onChange={handleCaptchaChange}/> */}
           </div>
           <div className={styles.policy}>
             <p>

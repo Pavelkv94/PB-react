@@ -12,14 +12,12 @@ import WithUs from "./WithUs";
 import WorkStages from "./WorkStages";
 import Modal from "./Modal";
 import Recaptcha from "./recaptcha";
-import { useNavigate } from 'react-router-dom';
 
 const AppContainer = ({ isDarkTheme }) => {
-  const navigateTo = useNavigate();
-
 
   const [openModal, setOpenModal] = useState(false);
-  const [tab, setTab] = useState(6);
+  const [tab, setTab] =  useState(6)
+  // Do whatever you want with the tokenuseState(6);
   const [screenSize, setScreenSize] = useState(null);
   const [openCaptcha, setOpenCaptcha] = useState(false);
 
@@ -28,7 +26,7 @@ const AppContainer = ({ isDarkTheme }) => {
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
     window.addEventListener("resize", handleResize);
-
+    
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
@@ -37,13 +35,10 @@ const AppContainer = ({ isDarkTheme }) => {
   const handleCaptchaChange = (value) => {
     try {
       setOpenCaptcha(false);
-      // console.log("reCAPTCHA value:", value);
-      navigateTo('/thx')
-
+      location.href = 'thx/';
       
     } catch (error) {
       console.log("Error handling reCAPTCHA:", error);
-      // Handle the error as needed
     }
   };
 
