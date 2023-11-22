@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/HeaderNavMenu.module.scss";
-import LogoBlack from "../svgs/logo-black.svg";
-import LogoLight from "../svgs/logo-light.svg";
+import LogoBlack from "../svgs/logo-black-head.svg";
+import LogoLight from "../svgs/logo-light-head.svg";
 import Whatsapp from "../pngs/whatsapp.webp";
 import Telegram from "../svgs/telegram.svg";
 import { Link, animateScroll as scroll } from "react-scroll";

@@ -23,6 +23,7 @@ const Modal = ({ onCloseModal }) => {
     onCloseModal();
     setState(0);
     setAnswers(initAnswers);
+    location.href = 'thx/';
   };
   const modalContentData = [
     {
@@ -56,6 +57,52 @@ const Modal = ({ onCloseModal }) => {
     },
   ];
 
+  const handleInputChange = (e) => {
+    let input = e.target.value;
+
+    // Allow backspace
+    if ((e.nativeEvent.inputType === "deleteContentBackward" && answers.contacts.phone !== "+7") || (e.nativeEvent.inputType === "deleteContentForward" && answers.contacts.phone !== "+7")) {
+      setAnswers({...answers, contacts: {...answers.contacts,phone: input }});
+      return;
+    }
+
+    input = input.replace(/\D/g, "").substring(0, 11);
+
+    const formattedNumber = formatPhoneNumber(input);
+    setAnswers({...answers, contacts: {...answers.contacts,phone: formattedNumber }});
+
+  };
+
+  const formatPhoneNumber = (input) => {
+    let formattedNumber = "+7";
+    if (input.length >= 1) {
+      formattedNumber += `(${input.substring(0, 4)})`;
+      formattedNumber;
+    }
+
+    if (input.length >= 4) {
+      formattedNumber += `-${input.substring(4, 7)}`;
+    }
+
+    if (input.length >= 7) {
+      formattedNumber += `-${input.substring(7, 9)}`;
+    }
+
+    if (input.length >= 9) {
+      formattedNumber += `-${input.substring(9)}`;
+    }
+
+    return formattedNumber.slice(0, 3) + formattedNumber.slice(4);
+  };
+
+  const onFocusPhone = () => {
+    answers.contacts.phone === "" && setAnswers({...answers, contacts: {...answers.contacts,phone: "+7" }});
+  };
+
+  const onBlurPhone = () => {
+    answers.contacts.phone === "+7" && setAnswers({...answers, contacts: {...answers.contacts,phone: "" }});
+  };
+
   const modalContent = (data) => (
     <div className={styles.modalContent}>
       <p>{data.question}</p>
@@ -70,7 +117,7 @@ const Modal = ({ onCloseModal }) => {
         ))}
       </div> : <div className={styles.form}>
         <input placeholder="Ваше имя" value={answers.contacts.name} onChange={e => setAnswers({...answers, contacts: {...answers.contacts, name: e.target.value}})}/>
-        <input placeholder="Ваш телефон" value={answers.contacts.phone} onChange={e => setAnswers({...answers, contacts: {...answers.contacts, phone: e.target.value}})}/>
+        <input placeholder="Ваш телефон" value={answers.contacts.phone} onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone}/>
         <input placeholder="Адрес сайта вашей компании" value={answers.contacts.site} onChange={e => setAnswers({...answers, contacts: {...answers.contacts, site: e.target.value}})}/>
         <input placeholder="Ссылка на пример видео" value={answers.contacts.url} onChange={e => setAnswers({...answers, contacts: {...answers.contacts, url: e.target.value}})}/>
 
