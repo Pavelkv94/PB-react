@@ -12,21 +12,40 @@ import WithUs from "./WithUs";
 import WorkStages from "./WorkStages";
 import Modal from "./Modal";
 import Recaptcha from "./recaptcha";
+import { sendMail } from "./sendMail";
 
 const AppContainer = ({ isDarkTheme }) => {
-
   const [openModal, setOpenModal] = useState(false);
-  const [tab, setTab] =  useState(6)
+  const [tab, setTab] = useState(6);
   // Do whatever you want with the tokenuseState(6);
   const [screenSize, setScreenSize] = useState(null);
   const [openCaptcha, setOpenCaptcha] = useState(false);
 
-  const onCloseModal = () => setOpenModal(false);
+  const initConsultationItems = {
+    "ЗАЯВКА/КОНСУЛЬТАЦИЯ": "",
+    "Имя": "",
+    "Номер телефона": "",
+    "Задачи которые нужно решить":"",
+    "Имидж и PR": "Нет",
+    "Повышение продаж": "Нет",
+    "Обучение": "Нет",
+    "Рекламная кампания": "Нет",
+    "Переговоры": "Нет",
+    "Презентация товаров и услуг": "Нет"
+  };
+
+  const [consultationData, setConsultationData] = useState(initConsultationItems);
+
+  const mailToken = isDarkTheme ? "mwkddele" : "mwkddele";
+
+  const onCloseModal = () => {
+    setOpenModal(false);
+    };
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
     window.addEventListener("resize", handleResize);
-    
+
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
@@ -35,8 +54,8 @@ const AppContainer = ({ isDarkTheme }) => {
   const handleCaptchaChange = (value) => {
     try {
       setOpenCaptcha(false);
-      location.href = 'thx/';
-      
+      // location.href = 'thx/';
+      sendMail(consultationData, mailToken);
     } catch (error) {
       console.log("Error handling reCAPTCHA:", error);
     }
@@ -44,23 +63,22 @@ const AppContainer = ({ isDarkTheme }) => {
 
   return (
     <>
-        <HeaderNavMenu isDarkTheme={isDarkTheme} setOpenModal={setOpenModal} />
-        <Main isDarkTheme={isDarkTheme} screenSize={screenSize} />
-        <VideoMaking isDarkTheme={isDarkTheme} screenSize={screenSize} />
-        <Portfolio isDarkTheme={isDarkTheme} tab={tab} setTab={setTab} screenSize={screenSize} />
-        {!isDarkTheme && <div className="light-underline"></div>}
-        <Services isDarkTheme={isDarkTheme} screenSize={screenSize} />
-        <Consultation isDarkTheme={isDarkTheme} setOpenCaptcha={setOpenCaptcha}/>
-        <Reasons isDarkTheme={isDarkTheme} screenSize={screenSize}/>
-        <WithUs isDarkTheme={isDarkTheme} screenSize={screenSize}/>
-        {!isDarkTheme && <div className="light-underline"></div>}
-        <Clients isDarkTheme={isDarkTheme} screenSize={screenSize}/>
-        {!isDarkTheme && <div className="light-underline"></div>}
-        <WorkStages isDarkTheme={isDarkTheme} screenSize={screenSize} />
-        <Footer isDarkTheme={isDarkTheme} setTab={setTab}/>
-        {openModal && <Modal onCloseModal={onCloseModal} />}
-        {openCaptcha && <Recaptcha handleCaptchaChange={handleCaptchaChange} setOpenCaptcha={setOpenCaptcha}/>}
-
+      <HeaderNavMenu isDarkTheme={isDarkTheme} setOpenModal={setOpenModal} />
+      <Main isDarkTheme={isDarkTheme} screenSize={screenSize} />
+      <VideoMaking isDarkTheme={isDarkTheme} screenSize={screenSize} />
+      <Portfolio isDarkTheme={isDarkTheme} tab={tab} setTab={setTab} screenSize={screenSize} />
+      {!isDarkTheme && <div className="light-underline"></div>}
+      <Services isDarkTheme={isDarkTheme} screenSize={screenSize} />
+      <Consultation isDarkTheme={isDarkTheme} setOpenCaptcha={setOpenCaptcha} consultationData={consultationData} setConsultationData={setConsultationData} />
+      <Reasons isDarkTheme={isDarkTheme} screenSize={screenSize} />
+      <WithUs isDarkTheme={isDarkTheme} screenSize={screenSize} />
+      {!isDarkTheme && <div className="light-underline"></div>}
+      <Clients isDarkTheme={isDarkTheme} screenSize={screenSize} />
+      {!isDarkTheme && <div className="light-underline"></div>}
+      <WorkStages isDarkTheme={isDarkTheme} screenSize={screenSize} />
+      <Footer isDarkTheme={isDarkTheme} setTab={setTab} />
+      {openModal && <Modal onCloseModal={onCloseModal} mailToken={mailToken}/>}
+      {openCaptcha && <Recaptcha handleCaptchaChange={handleCaptchaChange} setOpenCaptcha={setOpenCaptcha} />}
     </>
   );
 };

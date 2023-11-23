@@ -17,7 +17,7 @@ const Recaptcha = ({ setOpenCaptcha, handleCaptchaChange }) => {
   };
   return (
     <div style={styles} onClick={handleClose}>
-      <ReCAPTCHA sitekey="6LdNQBMpAAAAALE7mjnQV21b3xXBXaOQXper9ob3" onChange={handleCaptchaChange} />
+      <ReCAPTCHA sitekey="6LeNwBEpAAAAAOlZ1yufi3m3Tzf80tZUsjprcO6r" onChange={handleCaptchaChange} />
     </div>
   );
 };

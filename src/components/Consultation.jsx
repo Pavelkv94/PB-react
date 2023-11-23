@@ -1,10 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Consultation.module.scss";
 import ConsultItem from "./ConsultItem";
 import compliance from "../docs/compliance plan-big.space.pdf";
 
-const Consultation = ({ isDarkTheme, setOpenCaptcha }) => {
+const Consultation = ({ isDarkTheme, setOpenCaptcha, consultationData, setConsultationData }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
+
+  const consultItems = [
+    { text: "Имидж и PR", key: 1, checked: false },
+    { text: "Повышение продаж", key: 2, checked: false },
+    { text: "Обучение", key: 3, checked: false },
+    { text: "Рекламная кампания", key: 4, checked: false },
+    { text: "Переговоры", key: 5, checked: false },
+    { text: "Презентация товаров и услуг", key: 6, checked: false },
+  ];
+
+  const [items, setItems] = useState(consultItems);
+
+  useEffect(() => {
+    setConsultationData({
+      ...consultationData,
+      "Имидж и PR": items[0].checked ? "Да" : "Нет",
+      "Повышение продаж": items[1].checked ? "Да" : "Нет",
+      "Обучение": items[2].checked ? "Да" : "Нет",
+      "Рекламная кампания": items[3].checked ? "Да" : "Нет",
+      "Переговоры": items[4].checked ? "Да" : "Нет",
+      "Презентация товаров и услуг": items[5].checked ? "Да" : "Нет",
+    });
+  }, [items]);
+
+  useEffect(() => {
+    setConsultationData({ ...consultationData, ["Номер телефона"]: phoneNumber });
+  }, [phoneNumber]);
 
   const handleInputChange = (e) => {
     let input = e.target.value;
@@ -51,17 +78,6 @@ const Consultation = ({ isDarkTheme, setOpenCaptcha }) => {
     phoneNumber === "+7" && setPhoneNumber("");
   };
 
-  const consultItems = [
-    { text: "Имидж и PR", key: 1, checked: false },
-    { text: "Повышение продаж", key: 2, checked: false },
-    { text: "Обучение", key: 3, checked: false },
-    { text: "Рекламная кампания", key: 4, checked: false },
-    { text: "Переговоры", key: 5, checked: false },
-    { text: "Презентация товаров и услуг", key: 6, checked: false },
-  ];
-
-  const [items, setItems] = useState(consultItems);
-
   return (
     <div className={`${styles.consultationWrapper} ${isDarkTheme ? styles.dark : styles.light}`} id="order">
       <div className={styles.consultationContent}>
@@ -83,14 +99,14 @@ const Consultation = ({ isDarkTheme, setOpenCaptcha }) => {
               />
             ))}
           </div>
-          <div className={styles.sendMail} >
+          <div className={styles.sendMail}>
             <div className={styles.sendMailItem}>
               <label>Имя</label>
-              <input placeholder="Ваше имя" />
+              <input placeholder="Ваше имя" name="name" value={consultationData["Имя"]} onChange={(e) => setConsultationData({ ...consultationData, ["Имя"]: e.target.value })} />
             </div>
             <div className={styles.sendMailItem}>
               <label>Номер телефона</label>
-              <input placeholder="+7 (999) 999-99-99" type="tel" value={phoneNumber} onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone} />
+              <input placeholder="+7 (999) 999-99-99" type="tel" value={phoneNumber} onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone} name="tel" />
             </div>
             <div className={styles.sendMailItem}>
               <button className={`${isDarkTheme ? styles.dark : styles.light}`} onClick={() => setOpenCaptcha(true)}>

@@ -1,29 +1,60 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/Modal.module.scss";
 import Checked from "../svgs/checked.svg";
 import UnChecked from "../svgs/checked-no.svg";
+import { sendMail } from "./sendMail";
 
-const Modal = ({ onCloseModal }) => {
+const Modal = ({ onCloseModal, mailToken }) => {
   const initAnswers = {
     q1: "",
     q2: "",
     q3: "",
     q4: "",
     contacts: {
-        name: "",
-        phone: "",
-        site: "",
-        url: ""
-    }
+      name: "",
+      phone: "",
+      site: "",
+      url: "",
+    },
   };
   const [state, setState] = useState(0);
   const [answers, setAnswers] = useState(initAnswers);
 
-  const closeModal = () => {
-    onCloseModal();
+  const initQuizData = {
+    "ЗАЯВКА/РАССЧИТАТЬ КП": "",
+    "1. О чём вы хотите рассказать при помощи видео?": "",
+    "2. Какая продолжительность длительности ролика?": "",
+    "3. Какой тип ролика Вам больше всего подходит?": "",
+    "4. Когда нужен готовый ролик?": "",
+    "5. Контактная информация": "",
+    "Имя": "",
+    "Номер телефона": "",
+    "Адрес сайта компании": "",
+    "Ссылка на пример видео": "",
+  };
+
+  const [quizData, setQuizData] = useState(initQuizData);
+
+  useEffect(() => {
+    setQuizData({
+      ...quizData,
+      "Имя": answers.contacts.name,
+      "Номер телефона": answers.contacts.phone,
+      "Адрес сайта компании": answers.contacts.site,
+      "Ссылка на пример видео": answers.contacts.url,
+      "1. О чём вы хотите рассказать при помощи видео?": answers.q1,
+      "2. Какая продолжительность длительности ролика?": answers.q2,
+      "3. Какой тип ролика Вам больше всего подходит?": answers.q3,
+      "4. Когда нужен готовый ролик?": answers.q4,
+    });
+  }, [answers]);
+
+  const closeModal = async () => {
     setState(0);
     setAnswers(initAnswers);
-    location.href = 'thx/';
+    await sendMail(quizData, mailToken)
+    onCloseModal();
+    location.href = "thx/";
   };
   const modalContentData = [
     {
@@ -61,16 +92,18 @@ const Modal = ({ onCloseModal }) => {
     let input = e.target.value;
 
     // Allow backspace
-    if ((e.nativeEvent.inputType === "deleteContentBackward" && answers.contacts.phone !== "+7") || (e.nativeEvent.inputType === "deleteContentForward" && answers.contacts.phone !== "+7")) {
-      setAnswers({...answers, contacts: {...answers.contacts,phone: input }});
+    if (
+      (e.nativeEvent.inputType === "deleteContentBackward" && answers.contacts.phone !== "+7") ||
+      (e.nativeEvent.inputType === "deleteContentForward" && answers.contacts.phone !== "+7")
+    ) {
+      setAnswers({ ...answers, contacts: { ...answers.contacts, phone: input } });
       return;
     }
 
     input = input.replace(/\D/g, "").substring(0, 11);
 
     const formattedNumber = formatPhoneNumber(input);
-    setAnswers({...answers, contacts: {...answers.contacts,phone: formattedNumber }});
-
+    setAnswers({ ...answers, contacts: { ...answers.contacts, phone: formattedNumber } });
   };
 
   const formatPhoneNumber = (input) => {
@@ -96,33 +129,47 @@ const Modal = ({ onCloseModal }) => {
   };
 
   const onFocusPhone = () => {
-    answers.contacts.phone === "" && setAnswers({...answers, contacts: {...answers.contacts,phone: "+7" }});
+    answers.contacts.phone === "" && setAnswers({ ...answers, contacts: { ...answers.contacts, phone: "+7" } });
   };
 
   const onBlurPhone = () => {
-    answers.contacts.phone === "+7" && setAnswers({...answers, contacts: {...answers.contacts,phone: "" }});
+    answers.contacts.phone === "+7" && setAnswers({ ...answers, contacts: { ...answers.contacts, phone: "" } });
   };
 
   const modalContent = (data) => (
     <div className={styles.modalContent}>
       <p>{data.question}</p>
-      {data.type === "question" ? <div className={styles.varsWrapper}>
-        {data.variants.map((el, index) => (
-          <div key={index} className={styles.varWrap}>
-            <div className={styles.check} onClick={() => setAnswers({ ...answers, [data.id]: el })}>
-              {el === answers[data.id] ? <img src={Checked} /> : <img src={UnChecked} />}
+      {data.type === "question" ? (
+        <div className={styles.varsWrapper}>
+          {data.variants.map((el, index) => (
+            <div key={index} className={styles.varWrap}>
+              <div className={styles.check} onClick={() => setAnswers({ ...answers, [data.id]: el })}>
+                {el === answers[data.id] ? <img src={Checked} /> : <img src={UnChecked} />}
+              </div>
+              <label>{el}</label>
             </div>
-            <label>{el}</label>
-          </div>
-        ))}
-      </div> : <div className={styles.form}>
-        <input placeholder="Ваше имя" value={answers.contacts.name} onChange={e => setAnswers({...answers, contacts: {...answers.contacts, name: e.target.value}})}/>
-        <input placeholder="Ваш телефон" value={answers.contacts.phone} onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone}/>
-        <input placeholder="Адрес сайта вашей компании" value={answers.contacts.site} onChange={e => setAnswers({...answers, contacts: {...answers.contacts, site: e.target.value}})}/>
-        <input placeholder="Ссылка на пример видео" value={answers.contacts.url} onChange={e => setAnswers({...answers, contacts: {...answers.contacts, url: e.target.value}})}/>
-
-        </div>}
-      <div className={`${styles.btn} ${answers[data.id] === "" ? styles.disabled : styles.active}`} onClick={() => state === 4 ? closeModal() : answers[data.id] === "" ? {} : setState((prev) => prev + 1)}>
+          ))}
+        </div>
+      ) : (
+        <div className={styles.form}>
+          <input placeholder="Ваше имя" value={answers.contacts.name} onChange={(e) => setAnswers({ ...answers, contacts: { ...answers.contacts, name: e.target.value } })} />
+          <input placeholder="Ваш телефон" value={answers.contacts.phone} onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone} />
+          <input
+            placeholder="Адрес сайта вашей компании"
+            value={answers.contacts.site}
+            onChange={(e) => setAnswers({ ...answers, contacts: { ...answers.contacts, site: e.target.value } })}
+          />
+          <input
+            placeholder="Ссылка на пример видео"
+            value={answers.contacts.url}
+            onChange={(e) => setAnswers({ ...answers, contacts: { ...answers.contacts, url: e.target.value } })}
+          />
+        </div>
+      )}
+      <div
+        className={`${styles.btn} ${answers[data.id] === "" ? styles.disabled : styles.active}`}
+        onClick={() => (state === 4 ? closeModal() : answers[data.id] === "" ? {} : setState((prev) => prev + 1))}
+      >
         <span>{state === 4 ? "ОТПРАВИТЬ" : "СЛЕДУЮЩИЙ ШАГ"}</span>
       </div>
     </div>
