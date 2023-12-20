@@ -8,5 +8,6 @@ export const sendMail = async (data, key) => {
     headers: {
       Accept: "application/json",
     },
-  });
+  }).then(() => location.href = 'thx/'
+  );
 };

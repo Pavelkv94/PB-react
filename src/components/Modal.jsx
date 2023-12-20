@@ -49,13 +49,23 @@ const Modal = ({ onCloseModal, mailToken }) => {
     });
   }, [answers]);
 
-  const closeModal = async () => {
+  const closeModal =  () => {
     setState(0);
     setAnswers(initAnswers);
-    await sendMail(quizData, mailToken)
     onCloseModal();
-    location.href = "thx/";
   };
+
+  const [validName, setValidName] = useState(true);
+  const [validTel, setValidTel] = useState(true);
+
+  const handleSend = async () => {
+    if(quizData["Номер телефона"] === "") {setValidTel(false)}
+    if(quizData["Имя"].trim() === "") {setValidName(false)}
+    if(quizData["Имя"].trim() !== "" && quizData["Номер телефона"] !== "") {   
+    await sendMail(quizData, mailToken)
+    closeModal()}
+  }
+
   const modalContentData = [
     {
       question: "1. О чём вы хотите рассказать при помощи видео?",
@@ -152,8 +162,16 @@ const Modal = ({ onCloseModal, mailToken }) => {
         </div>
       ) : (
         <div className={styles.form}>
-          <input placeholder="Ваше имя" value={answers.contacts.name} onChange={(e) => setAnswers({ ...answers, contacts: { ...answers.contacts, name: e.target.value } })} />
-          <input placeholder="Ваш телефон" value={answers.contacts.phone} onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone} />
+          <input 
+            placeholder="Ваше имя"                 
+            className={validName ? "" : "notValid"}
+            value={answers.contacts.name} 
+            onChange={(e) => setAnswers({ ...answers, contacts: { ...answers.contacts, name: e.target.value } })} />
+          <input 
+            placeholder="Ваш телефон"                 
+            className={validTel ? "" : "notValid"}
+            value={answers.contacts.phone} 
+            onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone} />
           <input
             placeholder="Адрес сайта вашей компании"
             value={answers.contacts.site}
@@ -168,7 +186,7 @@ const Modal = ({ onCloseModal, mailToken }) => {
       )}
       <div
         className={`${styles.btn} ${answers[data.id] === "" ? styles.disabled : styles.active}`}
-        onClick={() => (state === 4 ? closeModal() : answers[data.id] === "" ? {} : setState((prev) => prev + 1))}
+        onClick={() => (state === 4 ? handleSend() : answers[data.id] === "" ? {} : setState((prev) => prev + 1))}
       >
         <span>{state === 4 ? "ОТПРАВИТЬ" : "СЛЕДУЮЩИЙ ШАГ"}</span>
       </div>

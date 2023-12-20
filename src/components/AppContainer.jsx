@@ -36,8 +36,8 @@ const AppContainer = ({ isDarkTheme }) => {
 
   const [consultationData, setConsultationData] = useState(initConsultationItems);
 
-  const mailToken = isDarkTheme ? "mwkddele" : "mwkddele";
-
+  const mailToken = isDarkTheme ? "xrgwwzlg" : "mbjvvrkl";
+  // const mailToken = "mwkddele";
   const onCloseModal = () => {
     setOpenModal(false);
     };
@@ -54,7 +54,6 @@ const AppContainer = ({ isDarkTheme }) => {
   const handleCaptchaChange = (value) => {
     try {
       setOpenCaptcha(false);
-      // location.href = 'thx/';
       sendMail(consultationData, mailToken);
     } catch (error) {
       console.log("Error handling reCAPTCHA:", error);

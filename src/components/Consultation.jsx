@@ -78,6 +78,15 @@ const Consultation = ({ isDarkTheme, setOpenCaptcha, consultationData, setConsul
     phoneNumber === "+7" && setPhoneNumber("");
   };
 
+  const [validName, setValidName] = useState(true);
+  const [validTel, setValidTel] = useState(true);
+
+  const handleSubmit = () => {
+    if(consultationData["Номер телефона"] === "") {setValidTel(false)}
+    if(consultationData["Имя"].trim() === "") {setValidName(false)}
+    if(consultationData["Имя"].trim() !== "" && consultationData["Номер телефона"] !== "") {setOpenCaptcha(true)}
+  };
+
   return (
     <div className={`${styles.consultationWrapper} ${isDarkTheme ? styles.dark : styles.light}`} id="order">
       <div className={styles.consultationContent}>
@@ -102,14 +111,29 @@ const Consultation = ({ isDarkTheme, setOpenCaptcha, consultationData, setConsul
           <div className={styles.sendMail}>
             <div className={styles.sendMailItem}>
               <label>Имя</label>
-              <input placeholder="Ваше имя" name="name" value={consultationData["Имя"]} onChange={(e) => setConsultationData({ ...consultationData, ["Имя"]: e.target.value })} />
+              <input
+                className={validName ? "" : "notValid"}
+                placeholder="Ваше имя"
+                name="name"
+                value={consultationData["Имя"]}
+                onChange={(e) => setConsultationData({ ...consultationData, ["Имя"]: e.target.value })}
+              />
             </div>
             <div className={styles.sendMailItem}>
               <label>Номер телефона</label>
-              <input placeholder="+7 (999) 999-99-99" type="tel" value={phoneNumber} onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone} name="tel" />
+              <input
+                className={validTel ? "" : "notValid"}
+                placeholder="+7 (999) 999-99-99"
+                type="tel"
+                value={phoneNumber}
+                onChange={handleInputChange}
+                onFocus={onFocusPhone}
+                onBlur={onBlurPhone}
+                name="tel"
+              />
             </div>
             <div className={styles.sendMailItem}>
-              <button className={`${isDarkTheme ? styles.dark : styles.light}`} onClick={() => setOpenCaptcha(true)}>
+              <button className={`${isDarkTheme ? styles.dark : styles.light}`} onClick={handleSubmit}>
                 ОСТАВИТЬ ЗАЯВКУ
               </button>
             </div>
