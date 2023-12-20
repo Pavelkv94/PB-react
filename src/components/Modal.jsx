@@ -3,6 +3,7 @@ import styles from "../styles/Modal.module.scss";
 import Checked from "../svgs/checked.svg";
 import UnChecked from "../svgs/checked-no.svg";
 import { sendMail } from "./sendMail";
+import compliance from "../docs/compliance plan-big.space.pdf";
 
 const Modal = ({ onCloseModal, mailToken }) => {
   const initAnswers = {
@@ -27,7 +28,7 @@ const Modal = ({ onCloseModal, mailToken }) => {
     "3. Какой тип ролика Вам больше всего подходит?": "",
     "4. Когда нужен готовый ролик?": "",
     "5. Контактная информация": "",
-    "Имя": "",
+    Имя: "",
     "Номер телефона": "",
     "Адрес сайта компании": "",
     "Ссылка на пример видео": "",
@@ -38,7 +39,7 @@ const Modal = ({ onCloseModal, mailToken }) => {
   useEffect(() => {
     setQuizData({
       ...quizData,
-      "Имя": answers.contacts.name,
+      Имя: answers.contacts.name,
       "Номер телефона": answers.contacts.phone,
       "Адрес сайта компании": answers.contacts.site,
       "Ссылка на пример видео": answers.contacts.url,
@@ -49,7 +50,7 @@ const Modal = ({ onCloseModal, mailToken }) => {
     });
   }, [answers]);
 
-  const closeModal =  () => {
+  const closeModal = () => {
     setState(0);
     setAnswers(initAnswers);
     onCloseModal();
@@ -59,12 +60,17 @@ const Modal = ({ onCloseModal, mailToken }) => {
   const [validTel, setValidTel] = useState(true);
 
   const handleSend = async () => {
-    if(quizData["Номер телефона"] === "") {setValidTel(false)}
-    if(quizData["Имя"].trim() === "") {setValidName(false)}
-    if(quizData["Имя"].trim() !== "" && quizData["Номер телефона"] !== "") {   
-    await sendMail(quizData, mailToken)
-    closeModal()}
-  }
+    if (quizData["Номер телефона"] === "") {
+      setValidTel(false);
+    }
+    if (quizData["Имя"].trim() === "") {
+      setValidName(false);
+    }
+    if (quizData["Имя"].trim() !== "" && quizData["Номер телефона"] !== "") {
+      await sendMail(quizData, mailToken);
+      closeModal();
+    }
+  };
 
   const modalContentData = [
     {
@@ -162,16 +168,20 @@ const Modal = ({ onCloseModal, mailToken }) => {
         </div>
       ) : (
         <div className={styles.form}>
-          <input 
-            placeholder="Ваше имя"                 
+          <input
+            placeholder="Ваше имя"
             className={validName ? "" : "notValid"}
-            value={answers.contacts.name} 
-            onChange={(e) => setAnswers({ ...answers, contacts: { ...answers.contacts, name: e.target.value } })} />
-          <input 
-            placeholder="Ваш телефон"                 
+            value={answers.contacts.name}
+            onChange={(e) => setAnswers({ ...answers, contacts: { ...answers.contacts, name: e.target.value } })}
+          />
+          <input
+            placeholder="Ваш телефон"
             className={validTel ? "" : "notValid"}
-            value={answers.contacts.phone} 
-            onChange={handleInputChange} onFocus={onFocusPhone} onBlur={onBlurPhone} />
+            value={answers.contacts.phone}
+            onChange={handleInputChange}
+            onFocus={onFocusPhone}
+            onBlur={onBlurPhone}
+          />
           <input
             placeholder="Адрес сайта вашей компании"
             value={answers.contacts.site}
@@ -190,6 +200,13 @@ const Modal = ({ onCloseModal, mailToken }) => {
       >
         <span>{state === 4 ? "ОТПРАВИТЬ" : "СЛЕДУЮЩИЙ ШАГ"}</span>
       </div>
+      {state === 4 ? (
+        <div className={styles.agreement}>
+          <p> Нажимая на кнопку «Отправить» вы подтверждаете своё согласие на <a href={compliance} target="_blank" rel="noopener noreferrer">обработку пользовательских данных</a></p>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 

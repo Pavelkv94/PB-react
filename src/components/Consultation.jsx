@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/Consultation.module.scss";
 import ConsultItem from "./ConsultItem";
 import compliance from "../docs/compliance plan-big.space.pdf";

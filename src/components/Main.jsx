@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/Main.module.scss";
 import VideoPlayer from "./VideoPlayer";
+// eslint-disable-next-line no-unused-vars
 import { Link, animateScroll as scroll } from "react-scroll";
 // import NextLink from "next/link";
 
@@ -14,20 +15,24 @@ const Main = ({ isDarkTheme, screenSize }) => {
 
   useEffect(() => {
     setPosition(isDarkTheme ? 0 : 180);
-  }, [isDarkTheme])
+  }, [isDarkTheme]);
 
-  return (
+  const isMobileSize = screenSize < 721;
+
+  return !isMobileSize ? (
     <div className={`${styles.mainWrapper} ${isDarkTheme ? styles.dark : styles.light}`} id="main">
       <div className={styles.mainContent}>
         <div className={styles.themeSwitcherWrapper}>
-        <a href={isDarkTheme ? "/white" : "/"}><div className={`${styles.themeSwitcher} ${isDarkTheme ? styles.dark : styles.light}`}>
-            <div className={styles.pulse}></div>
-            <div  className={styles.toggler} style={{ transform: `translateX(${position}%)`, transition: "transform 0.3s ease" }}>
-              <div className={styles.togglerBox}></div>
+          <a href={isDarkTheme ? "/white" : "/"}>
+            <div className={`${styles.themeSwitcher} ${isDarkTheme ? styles.dark : styles.light}`}>
+              <div className={styles.pulse}></div>
+              <div className={styles.toggler} style={{ transform: `translateX(${position}%)`, transition: "transform 0.3s ease" }}>
+                <div className={styles.togglerBox}></div>
+              </div>
             </div>
-          </div></a>
+          </a>
         </div>
-        <h1 style={{display:"none"}}>Видеоагентство Plan Big: Профессиональное Видео для Вашего Бизнеса. Решение Ваших Бизнес-Задач.</h1>
+        <h1 style={{ display: "none" }}>Видеоагентство Plan Big: Профессиональное Видео для Вашего Бизнеса. Решение Ваших Бизнес-Задач.</h1>
         <div className={styles.mainInfo}>
           <div className={`${styles.textInfo} ${isDarkTheme ? styles.dark : styles.light}`}>
             <p className={styles.preTitle}>VIDEO AGENCY</p>
@@ -75,6 +80,69 @@ const Main = ({ isDarkTheme, screenSize }) => {
             />
           </div>
         </div>
+      </div>
+    </div>
+  ) : (
+    <div className={`${styles.mainWrapperMobile} ${isDarkTheme ? styles.dark : styles.light}`} id="main">
+      <div className={styles.mainContentMobile}>
+        <div className={styles.themeSwitcherWrapper}>
+          <a href={isDarkTheme ? "/white" : "/"}>
+            <div className={`${styles.themeSwitcher} ${isDarkTheme ? styles.dark : styles.light}`}>
+              <div className={styles.pulse}></div>
+              <div className={styles.toggler} style={{ transform: `translateX(${position}%)`, transition: "transform 0.3s ease" }}>
+                <div className={styles.togglerBox}></div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <h1 style={{ display: "none" }}>Видеоагентство Plan Big: Профессиональное Видео для Вашего Бизнеса. Решение Ваших Бизнес-Задач.</h1>
+
+        <p className={styles.preTitleMobile}>VIDEO AGENCY</p>
+        <h2>ПРОИЗВОДСТВО КОРПОРАТИВНЫХ ВИДЕО </h2>
+
+        <section>
+          <div className={`${styles.textItem}  ${isDarkTheme ? styles.dark : styles.light}`}>
+            <p>ПРЕЗЕНТАЦИОННЫЕ</p>
+          </div>
+          <div className={`${styles.textItem}  ${isDarkTheme ? styles.dark : styles.light}`}>
+            <p>РЕКЛАМНЫЕ</p>
+          </div>
+          <div className={`${styles.textItem}  ${isDarkTheme ? styles.dark : styles.light}`}>
+            <p>ОБРАЗОВАТЕЛЬНЫЕ</p>
+          </div>
+          <div className={`${styles.textItem}  ${isDarkTheme ? styles.dark : styles.light}`}>
+            <p>ИМИДЖЕВЫЕ</p>
+          </div>
+        </section>
+
+        <div className={`${styles.showInfoMobile} ${isDarkTheme ? styles.dark : styles.light}`}>
+          {isDarkTheme && <p className={styles.showreelPMobile}>SHOWREEL</p>}
+          <VideoPlayer
+            width={screenSize < 721 ? "380px" : screenSize < 1560 ? "650px" : "745px"}
+            height={screenSize < 721 ? "253px" : screenSize < 1560 ? "433px" : "475px"}
+            style={{ position: "absolute", right: 0, bottom: 0 }}
+            isDarkTheme={isDarkTheme}
+            big
+            src={"https://www.youtube.com/embed/2ZQtDSz6j8Y?si=n_6gajAlx3KyVIHo&modestbranding=1&autoplay=1&showinfo=0"}
+            screenSize={screenSize}
+          />
+        </div>
+
+        <div className={`${styles.actions} ${isDarkTheme ? styles.dark : styles.light}`}>
+              <div>
+                <Link to="order" spy={true} smooth={true} offset={-100} duration={500}>
+                  <button style={isDarkTheme ? {} : { background: "linear-gradient(137.83deg, #0076e4 -38%, #7abfff 21.36%, #c1fdfe 80.72%, #98fcfe 140.08%)" }}>
+                    ОСТАВИТЬ ЗАЯВКУ
+                  </button>
+                </Link>
+              </div>
+              <div>
+                <Link to="portfolio" spy={true} smooth={true} offset={-50} duration={500}>
+                  <button>СМОТРЕТЬ ПОРТФОЛИО</button>
+                </Link>
+              </div>
+            </div>
+            
       </div>
     </div>
   );

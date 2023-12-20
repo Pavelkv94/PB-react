@@ -62,9 +62,9 @@ const AppContainer = ({ isDarkTheme }) => {
 
   return (
     <>
-      <HeaderNavMenu isDarkTheme={isDarkTheme} setOpenModal={setOpenModal} />
+      <HeaderNavMenu isDarkTheme={isDarkTheme} setOpenModal={setOpenModal} screenSize={screenSize}/>
       <Main isDarkTheme={isDarkTheme} screenSize={screenSize} />
-      <VideoMaking isDarkTheme={isDarkTheme} screenSize={screenSize} />
+      {/* <VideoMaking isDarkTheme={isDarkTheme} screenSize={screenSize} />
       <Portfolio isDarkTheme={isDarkTheme} tab={tab} setTab={setTab} screenSize={screenSize} />
       {!isDarkTheme && <div className="light-underline"></div>}
       <Services isDarkTheme={isDarkTheme} screenSize={screenSize} />
@@ -75,7 +75,7 @@ const AppContainer = ({ isDarkTheme }) => {
       <Clients isDarkTheme={isDarkTheme} screenSize={screenSize} />
       {!isDarkTheme && <div className="light-underline"></div>}
       <WorkStages isDarkTheme={isDarkTheme} screenSize={screenSize} />
-      <Footer isDarkTheme={isDarkTheme} setTab={setTab} />
+      <Footer isDarkTheme={isDarkTheme} setTab={setTab} /> */}
       {openModal && <Modal onCloseModal={onCloseModal} mailToken={mailToken}/>}
       {openCaptcha && <Recaptcha handleCaptchaChange={handleCaptchaChange} setOpenCaptcha={setOpenCaptcha} />}
     </>

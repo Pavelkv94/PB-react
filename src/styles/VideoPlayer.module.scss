@@ -69,6 +69,13 @@
           top: 81px;
           left: 41px;
         }
+
+        @media screen and (max-width: 720px) {
+          width: 335px;
+          height: 176px;
+          top: 48px;
+          left: 24px;
+        }
       }
     }
     &.light {
@@ -95,6 +102,13 @@
           height: 303px;
           top: 66px;
           left: 42px;
+        }
+
+        @media screen and (max-width: 720px) {
+          width: 335px;
+          height: 176px;
+          top: 39px;
+          left: 24px;
         }
       }
     }
