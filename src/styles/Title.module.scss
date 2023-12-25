@@ -117,6 +117,10 @@
     min-width: 210px;
   }
 
+  @media screen and (max-width: 720px) {
+    height: 35px;
+  }
+
   p {
     margin: 0;
   }
@@ -131,6 +135,9 @@
     @media screen and (max-width: 1560px) {
       font-size: 28px;
     }
+    @media screen and (max-width: 720px) {
+      font-size: 20px;
+    }
   }
 
   &.dark {
@@ -142,6 +149,9 @@
 
       @media screen and (max-width: 1560px) {
         left: 14px;
+      }
+      @media screen and (max-width: 720px) {
+        left: 0px !important;
       }
     }
 
@@ -156,6 +166,9 @@
       @media screen and (max-width: 1560px) {
         font-size: 32px;
       }
+      @media screen and (max-width: 720px) {
+        font-size: 20px;
+      }
     }
   }
 
@@ -165,6 +178,12 @@
     justify-content: center;
     .mainTitleDublicate {
       display: none;
+    }
+    .mainTitleMain {
+
+      @media screen and (max-width: 720px) {
+        left: 0px !important;
+      }
     }
   }
 }

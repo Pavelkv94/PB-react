@@ -13,6 +13,13 @@
     max-height: 657px;
   }
 
+  @media screen and (max-width: 720px) {
+    min-width: 375px;
+    min-height: 624px;
+    max-height: 1000px;
+    height: auto;
+  }
+
   &.dark {
     background-image: url("../pngs/reasons-back-black.webp");
   }
@@ -90,25 +97,23 @@
           @media screen and (max-width: 1560px) {
             top: 115px;
             left: 20px;
-            }
+          }
         }
       }
       .playContentLight {
         width: 220px;
         position: relative;
 
-
         img {
           position: absolute;
           top: 100px;
           left: -40px;
 
-
-        @media screen and (max-width: 1560px) {
-          width: 300px;
-          height: 285px;
-          top: 120px;
-          left: -20px;
+          @media screen and (max-width: 1560px) {
+            width: 300px;
+            height: 285px;
+            top: 120px;
+            left: -20px;
           }
         }
       }
@@ -159,12 +164,15 @@
               @media screen and (max-width: 1560px) {
                 margin-right: 22px;
               }
-            };
-
-
+            }
           }
         }
       }
+    }
+
+    .reasonsContentMobile {
+      width: 280px;
+      margin-top: 20px;
     }
   }
 

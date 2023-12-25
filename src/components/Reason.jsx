@@ -4,7 +4,7 @@ import styles from "../styles/Reason.module.scss";
 const Reason = ({ isDarkTheme, title, text, screenSize }) => {
   const largeScreen = screenSize > 1560;
 
-  const dynamicHeight = largeScreen ? "210px" : "162px";
+  const dynamicHeight = largeScreen ? "210px" : screenSize < 721 ? "130px" :  "162px";
   const initHeight = largeScreen ? "94px" : "75px";
 
   const [height, setHeight] = useState(initHeight);

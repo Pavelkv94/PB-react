@@ -3,7 +3,7 @@ import styles from "../styles/Consultation.module.scss";
 import ConsultItem from "./ConsultItem";
 import compliance from "../docs/compliance plan-big.space.pdf";
 
-const Consultation = ({ isDarkTheme, setOpenCaptcha, consultationData, setConsultationData }) => {
+const Consultation = ({ isDarkTheme, setOpenCaptcha, consultationData, setConsultationData, screenSize }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const consultItems = [
@@ -22,9 +22,9 @@ const Consultation = ({ isDarkTheme, setOpenCaptcha, consultationData, setConsul
       ...consultationData,
       "Имидж и PR": items[0].checked ? "Да" : "Нет",
       "Повышение продаж": items[1].checked ? "Да" : "Нет",
-      "Обучение": items[2].checked ? "Да" : "Нет",
+      Обучение: items[2].checked ? "Да" : "Нет",
       "Рекламная кампания": items[3].checked ? "Да" : "Нет",
-      "Переговоры": items[4].checked ? "Да" : "Нет",
+      Переговоры: items[4].checked ? "Да" : "Нет",
       "Презентация товаров и услуг": items[5].checked ? "Да" : "Нет",
     });
   }, [items]);
@@ -82,9 +82,15 @@ const Consultation = ({ isDarkTheme, setOpenCaptcha, consultationData, setConsul
   const [validTel, setValidTel] = useState(true);
 
   const handleSubmit = () => {
-    if(consultationData["Номер телефона"] === "") {setValidTel(false)}
-    if(consultationData["Имя"].trim() === "") {setValidName(false)}
-    if(consultationData["Имя"].trim() !== "" && consultationData["Номер телефона"] !== "") {setOpenCaptcha(true)}
+    if (consultationData["Номер телефона"] === "") {
+      setValidTel(false);
+    }
+    if (consultationData["Имя"].trim() === "") {
+      setValidName(false);
+    }
+    if (consultationData["Имя"].trim() !== "" && consultationData["Номер телефона"] !== "") {
+      setOpenCaptcha(true);
+    }
   };
 
   return (
@@ -93,60 +99,117 @@ const Consultation = ({ isDarkTheme, setOpenCaptcha, consultationData, setConsul
         <h2>ПОЛУЧИТЕ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</h2>
         <h3>ЗАПОЛНИТЕ КОРОТКУЮ ФОРМУ НИЖЕ И МЫ ВАМ ПЕРЕЗВОНИМ</h3>
 
-        <section>
-          <div className={styles.subtitle}>
-            <h4>Какую задачу вы решаете?</h4>
-            <p>Выберите одну или более задачу</p>
-          </div>
-          <div className={styles.tasks}>
-            {items.map((el) => (
-              <ConsultItem
-                text={el.text}
-                key={el.key}
-                onClick={() => setItems(items.map((item) => (item.key === el.key ? { ...item, checked: !item.checked } : item)))}
-                checked={el.checked}
-              />
-            ))}
-          </div>
-          <div className={styles.sendMail}>
-            <div className={styles.sendMailItem}>
-              <label>Имя</label>
-              <input
-                className={validName ? "" : "notValid"}
-                placeholder="Ваше имя"
-                name="name"
-                value={consultationData["Имя"]}
-                onChange={(e) => setConsultationData({ ...consultationData, ["Имя"]: e.target.value })}
-              />
+        {screenSize > 720 ? (
+          <section>
+            <div className={styles.subtitle}>
+              <h4>Какую задачу вы решаете?</h4>
+              <p>Выберите одну или более задачу</p>
             </div>
-            <div className={styles.sendMailItem}>
-              <label>Номер телефона</label>
-              <input
-                className={validTel ? "" : "notValid"}
-                placeholder="+7 (999) 999-99-99"
-                type="tel"
-                value={phoneNumber}
-                onChange={handleInputChange}
-                onFocus={onFocusPhone}
-                onBlur={onBlurPhone}
-                name="tel"
-              />
+            <div className={styles.tasks}>
+              {items.map((el) => (
+                <ConsultItem
+                  text={el.text}
+                  key={el.key}
+                  onClick={() => setItems(items.map((item) => (item.key === el.key ? { ...item, checked: !item.checked } : item)))}
+                  checked={el.checked}
+                />
+              ))}
             </div>
-            <div className={styles.sendMailItem}>
-              <button className={`${isDarkTheme ? styles.dark : styles.light}`} onClick={handleSubmit}>
-                ОСТАВИТЬ ЗАЯВКУ
-              </button>
+            <div className={styles.sendMail}>
+              <div className={styles.sendMailItem}>
+                <label>Имя</label>
+                <input
+                  className={validName ? "" : "notValid"}
+                  placeholder="Ваше имя"
+                  name="name"
+                  value={consultationData["Имя"]}
+                  onChange={(e) => setConsultationData({ ...consultationData, ["Имя"]: e.target.value })}
+                />
+              </div>
+              <div className={styles.sendMailItem}>
+                <label>Номер телефона</label>
+                <input
+                  className={validTel ? "" : "notValid"}
+                  placeholder="+7 (999) 999-99-99"
+                  type="tel"
+                  value={phoneNumber}
+                  onChange={handleInputChange}
+                  onFocus={onFocusPhone}
+                  onBlur={onBlurPhone}
+                  name="tel"
+                />
+              </div>
+              <div className={styles.sendMailItem}>
+                <button className={`${isDarkTheme ? styles.dark : styles.light}`} onClick={handleSubmit}>
+                  ОСТАВИТЬ ЗАЯВКУ
+                </button>
+              </div>
             </div>
-          </div>
-          <div className={styles.policy}>
-            <p>
-              Нажимая кнопку «Оставить заявку», вы подтверждаете свое согласие на{" "}
-              <a href={compliance} target="_blank" rel="noopener noreferrer">
-                обработку пользовательских данных
-              </a>
-            </p>
-          </div>
-        </section>
+            <div className={styles.policy}>
+              <p>
+                Нажимая кнопку «Оставить заявку», вы подтверждаете свое согласие на{" "}
+                <a href={compliance} target="_blank" rel="noopener noreferrer">
+                  обработку пользовательских данных
+                </a>
+              </p>
+            </div>
+          </section>
+        ) : (
+          <section className={styles.consultationContentMobile}>
+            <div className={styles.consultationFormMobile}>
+              <div className={styles.sendMailItem}>
+                <label>Имя</label>
+                <input
+                  className={validName ? "" : "notValid"}
+                  placeholder="Ваше имя"
+                  name="name"
+                  value={consultationData["Имя"]}
+                  onChange={(e) => setConsultationData({ ...consultationData, ["Имя"]: e.target.value })}
+                />
+              </div>
+              <div className={styles.sendMailItem}>
+                <label>Номер телефона</label>
+                <input
+                  className={validTel ? "" : "notValid"}
+                  placeholder="+7 (999) 999-99-99"
+                  type="tel"
+                  value={phoneNumber}
+                  onChange={handleInputChange}
+                  onFocus={onFocusPhone}
+                  onBlur={onBlurPhone}
+                  name="tel"
+                />
+              </div>
+              <div className={styles.subtitle}>
+                <h4>Какую задачу вы решаете?</h4>
+                <p>Выберите одну или более задачу</p>
+              </div>
+              {items.map((el) => (
+                <ConsultItem
+                  text={el.text}
+                  key={el.key}
+                  onClick={() => setItems(items.map((item) => (item.key === el.key ? { ...item, checked: !item.checked } : item)))}
+                  checked={el.checked}
+                />
+              ))}
+            </div>
+            <div className={styles.consultationFototerMobile}>
+              <div className={styles.sendMailItem}>
+                <button className={`${isDarkTheme ? styles.dark : styles.light}`} onClick={handleSubmit}>
+                  ОСТАВИТЬ ЗАЯВКУ
+                </button>
+              </div>
+              <div className={styles.policy}>
+                <p>
+                  Нажимая кнопку «Оставить заявку», вы подтверждаете свое согласие на{" "}
+                  <a href={compliance} target="_blank" rel="noopener noreferrer">
+                    обработку пользовательских данных
+                  </a>
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

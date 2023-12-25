@@ -12,13 +12,74 @@ const Reasons = ({ isDarkTheme, screenSize }) => {
     <div className={`${styles.reasonsWrapper} ${isDarkTheme ? styles.dark : styles.light}`} id="reasons">
       <div className={styles.reasonsContent}>
         <div className={styles.title}>
-          <Title isDarkTheme={isDarkTheme} text="ПОЧЕМУ ВЫБИРАЮТ НАС?" mainTitle width={screenSize > 1560 ? "746px" : "434px"} left={"36px"}/>
-          {!isDarkTheme && <div className="white-title-underline"></div>}
+          <Title isDarkTheme={isDarkTheme} text="ПОЧЕМУ ВЫБИРАЮТ НАС?" mainTitle width={screenSize > 1560 ? "746px" : screenSize < 721 ? "280px" : "434px"} left={"36px"} />
+          {!isDarkTheme && screenSize > 720 && <div className="white-title-underline"></div>}
         </div>
-        <section className={styles.reasonsWrap}>
-          <div className={styles.leftContent}>
+        {screenSize > 720 ? (
+          <section className={styles.reasonsWrap}>
+            <div className={styles.leftContent}>
+              <Reason
+                screenSize={screenSize}
+                isDarkTheme={isDarkTheme}
+                title={"Практический опыт"}
+                text={
+                  "За 10 лет работы мы реализовали более 560 проектов для 180 корпоративных клиентов. Наш опыт помогает построить эффективный производственный процесс под задачу клиента."
+                }
+              />
+              <Reason
+                screenSize={screenSize}
+                isDarkTheme={isDarkTheme}
+                title={"Работа в рамках бюджета"}
+                text={
+                  "Согласовывая бюджет создания видео, мы берем обязательства, которые соблюдаем до завершения работ. И наши клиенты застрахованы от внезапных дополнительных расходов."
+                }
+              />
+              <Reason
+                screenSize={screenSize}
+                isDarkTheme={isDarkTheme}
+                title={"Решение бизнес задач"}
+                text={
+                  "Наша работа начинается  с анализа бизнеса клиента, его потребностей при создании видео, целей, которые нужно достичь. И данная информация лежит в основе при реализации ролика."
+                }
+              />
+            </div>
+            {isDarkTheme ? (
+              <div className={styles.playContentBlack}>{screenSize > 1560 ? <img src={LogoBlack} /> : <img src={LogoBlackMedium} />}</div>
+            ) : (
+              <div className={styles.playContentLight}>
+                <img src={PlayLight} width={390} height={371} />
+              </div>
+            )}
+
+            <div className={styles.rightContent}>
+              <Reason
+                screenSize={screenSize}
+                isDarkTheme={isDarkTheme}
+                title={"Комплексное решение"}
+                text={
+                  "Наша студия обеспечивает полный цикл видеопроизводства – от постановки задачи, создания креативов и сценария до саунд-дизайна и цвеоткоррекции финальной версии видео. "
+                }
+              />
+              <Reason
+                screenSize={screenSize}
+                isDarkTheme={isDarkTheme}
+                title={"Доверие крупных брендов"}
+                text={"Успешный опыт работы с крупными компаниями и корпорациями: Согаз, Сбербанк, X5 Group, структуры РЖД, Omron, Правительство Москвы, ООН, и многими другими."}
+              />
+              <Reason
+                screenSize={screenSize}
+                isDarkTheme={isDarkTheme}
+                title={"Современные тенденции видео"}
+                text={
+                  "Мы применяем лучшие современные решения визуальной подачи, используем мировой опыт и тенденции в нашей отрасли. И создаем эксклюзивное видео для каждого нашего проекта."
+                }
+              />
+            </div>
+          </section>
+        ) : (
+          <section className={styles.reasonsContentMobile}>
             <Reason
-            screenSize={screenSize}
+              screenSize={screenSize}
               isDarkTheme={isDarkTheme}
               title={"Практический опыт"}
               text={
@@ -26,7 +87,7 @@ const Reasons = ({ isDarkTheme, screenSize }) => {
               }
             />
             <Reason
-            screenSize={screenSize}
+              screenSize={screenSize}
               isDarkTheme={isDarkTheme}
               title={"Работа в рамках бюджета"}
               text={
@@ -34,27 +95,15 @@ const Reasons = ({ isDarkTheme, screenSize }) => {
               }
             />
             <Reason
-            screenSize={screenSize}
+              screenSize={screenSize}
               isDarkTheme={isDarkTheme}
               title={"Решение бизнес задач"}
               text={
                 "Наша работа начинается  с анализа бизнеса клиента, его потребностей при создании видео, целей, которые нужно достичь. И данная информация лежит в основе при реализации ролика."
               }
             />
-          </div>
-          {isDarkTheme ? (
-            <div className={styles.playContentBlack}>
-              {screenSize > 1560 ? <img src={LogoBlack} /> : <img src={LogoBlackMedium} />}
-            </div>
-          ) : (
-            <div className={styles.playContentLight}>
-              <img src={PlayLight} width={390} height={371}/>
-            </div>
-          )}
-
-          <div className={styles.rightContent}>
             <Reason
-            screenSize={screenSize}
+              screenSize={screenSize}
               isDarkTheme={isDarkTheme}
               title={"Комплексное решение"}
               text={
@@ -62,25 +111,21 @@ const Reasons = ({ isDarkTheme, screenSize }) => {
               }
             />
             <Reason
-            screenSize={screenSize}
+              screenSize={screenSize}
               isDarkTheme={isDarkTheme}
               title={"Доверие крупных брендов"}
-              text={
-                "Успешный опыт работы с крупными компаниями и корпорациями: Согаз, Сбербанк, X5 Group, структуры РЖД, Omron, Правительство Москвы, ООН, и многими другими."
-              }
+              text={"Успешный опыт работы с крупными компаниями и корпорациями: Согаз, Сбербанк, X5 Group, структуры РЖД, Omron, Правительство Москвы, ООН, и многими другими."}
             />
             <Reason
-            screenSize={screenSize}
+              screenSize={screenSize}
               isDarkTheme={isDarkTheme}
               title={"Современные тенденции видео"}
               text={
                 "Мы применяем лучшие современные решения визуальной подачи, используем мировой опыт и тенденции в нашей отрасли. И создаем эксклюзивное видео для каждого нашего проекта."
               }
             />
-          </div>
-        </section>
-
-       
+          </section>
+        )}
       </div>
     </div>
   );
