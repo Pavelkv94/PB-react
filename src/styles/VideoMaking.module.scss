@@ -12,6 +12,12 @@
     max-height: 657px;
   }
 
+  @media screen and (max-width: 720px) {
+    min-width: 375px;
+    min-height: 675px;
+    max-height: 675px;
+  }
+
   &.dark {
     background-image: url("../pngs/videomaking-backg-dark2.webp");
   }
@@ -24,6 +30,12 @@
 
     @media screen and (max-width: 1560px) {
       height: 100%;
+    }
+
+    @media screen and (max-width: 720px) {
+      width: 98%;
+      margin: 0 auto;
+      height: 675px;
     }
 
     .videoEllipse {
@@ -47,6 +59,12 @@
           background-size: contain;
           background-repeat: no-repeat;
         }
+
+        @media screen and (max-width: 720px) {
+          width: 330px;
+          height: 51px;
+          top: 200px;
+        }
       }
       &.light {
         background-image: url("../pngs/videomaking-ellipse-light.webp");
@@ -61,6 +79,12 @@
           background-position: center;
           background-size: contain;
           background-repeat: no-repeat;
+        }
+
+        @media screen and (max-width: 720px) {
+          width: 330px;
+          height: 51px;
+          top: 200px;
         }
       }
     }
@@ -88,15 +112,26 @@
           height: 75px;
           margin-left: 30px;
         }
+        @media screen and (max-width: 720px) {
+          width: 370px;
+          height: 28px;
+          margin-left: 0px;
+        }
 
         &.dark {
           background-image: url("../pngs/video-title-dark.webp");
+          @media screen and (max-width: 720px) {
+            background-image: url("../pngs/video-title-dark-mobile.png");
+          }
         }
         &.light {
           background-image: url("../pngs/video-title-light.webp");
+          @media screen and (max-width: 720px) {
+            background-image: url("../pngs/video-title-light-mobile.png");
+          }
         }
         .divider {
-          margin: 0 75px 0 30px;
+          margin: 0 25px 0 20px;
 
           @media screen and (max-width: 1560px) {
             margin: 0 45px 0 30px;
@@ -110,6 +145,11 @@
             @media screen and (max-width: 1560px) {
               height: 27px;
             }
+            @media screen and (max-width: 720px) {
+              height: 10px;
+              width: 1px;
+              margin: 0 30px 0 30px;
+            }
           }
 
           &.light {
@@ -118,6 +158,11 @@
             background-color: #383838;
             @media screen and (max-width: 1560px) {
               height: 27px;
+            }
+            @media screen and (max-width: 720px) {
+              height: 10px;
+              width: 1px;
+              margin: 0 30px 0 30px;
             }
           }
         }
@@ -135,6 +180,12 @@
       @media screen and (max-width: 1560px) {
         height: 250px;
         width: 700px;
+      }
+
+      @media screen and (max-width: 720px) {
+        width: 330px !important;
+        height: 140px !important;
+        margin-top: 50px;
       }
 
       &.dark {
@@ -169,6 +220,11 @@
           height: 220px;
         }
 
+        @media screen and (max-width: 720px) {
+          width: 90px;
+          height: 110px;
+        }
+
         &.dark {
           background-image: url("../pngs/video-making-circle.webp");
           p {
@@ -191,6 +247,12 @@
                 width: 110px;
                 margin-left: 6px;
               }
+
+              @media screen and (max-width: 720px) {
+                width: 70px;
+                margin-bottom: 20px;
+              }
+
               p {
                 margin: 0;
                 text-align: center;
@@ -202,6 +264,10 @@
                   @media screen and (max-width: 1560px) {
                     font-size: 40px;
                   }
+                  @media screen and (max-width: 720px) {
+                    font-size: 21px;
+                    line-height: 22px;
+                  }
                 }
                 &:last-child {
                   font-size: 16px;
@@ -212,6 +278,11 @@
                   @media screen and (max-width: 1560px) {
                     font-size: 12px;
                     margin-top: 10px;
+                  }
+                  @media screen and (max-width: 720px) {
+                    font-size: 6px;
+                    margin-top: 0px;
+                    margin-right: 4px;
                   }
                 }
               }
@@ -225,6 +296,11 @@
               @media screen and (max-width: 1560px) {
                 width: 110px;
               }
+              @media screen and (max-width: 720px) {
+                width: 60px;
+                margin-bottom: 16px;
+                margin-left: 4px;
+              }
               p {
                 margin: 0;
                 text-align: center;
@@ -236,6 +312,10 @@
                   @media screen and (max-width: 1560px) {
                     font-size: 40px;
                   }
+                  @media screen and (max-width: 720px) {
+                    font-size: 21px;
+                    line-height: 22px;
+                  }
                 }
                 &:last-child {
                   font-size: 16px;
@@ -246,6 +326,11 @@
                     font-size: 12px;
                     margin-top: 10px;
                     margin-right: 14px;
+                  }
+                  @media screen and (max-width: 720px) {
+                    font-size: 6px;
+                    margin-top: 0px;
+                    margin-right: 6px;
                   }
                 }
               }
@@ -275,6 +360,11 @@
                 margin-bottom: 20px;
                 margin-left: 14px;
               }
+              @media screen and (max-width: 720px) {
+                width: 70px;
+                margin-bottom: 20px;
+                margin-left: 6px;
+              }
 
               p {
                 margin: 0;
@@ -287,6 +377,10 @@
                   @media screen and (max-width: 1560px) {
                     font-size: 40px;
                   }
+                  @media screen and (max-width: 720px) {
+                    font-size: 21px;
+                    line-height: 22px;
+                  }
                 }
                 &:last-child {
                   font-size: 16px;
@@ -297,6 +391,11 @@
                   @media screen and (max-width: 1560px) {
                     font-size: 12px;
                     margin-top: 10px;
+                  }
+                  @media screen and (max-width: 720px) {
+                    font-size: 6px;
+                    margin-top: 0px;
+                    margin-right: 4px;
                   }
                 }
               }
@@ -313,6 +412,11 @@
                 margin-bottom: 20px;
                 margin-left: 14px;
               }
+              @media screen and (max-width: 720px) {
+                width: 60px;
+                margin-bottom: 16px;
+                margin-left: 4px;
+              }
 
               p {
                 margin: 0;
@@ -325,6 +429,10 @@
                   @media screen and (max-width: 1560px) {
                     font-size: 40px;
                   }
+                  @media screen and (max-width: 720px) {
+                    font-size: 21px;
+                    line-height: 22px;
+                  }
                 }
                 &:last-child {
                   font-size: 16px;
@@ -335,6 +443,11 @@
                   @media screen and (max-width: 1560px) {
                     font-size: 12px;
                     margin-top: 10px;
+                  }
+                  @media screen and (max-width: 720px) {
+                    font-size: 6px;
+                    margin-top: 0px;
+                    margin-right: 6px;
                   }
                 }
               }
@@ -352,6 +465,10 @@
             width: 190px;
             height: 210px;
           }
+          @media screen and (max-width: 720px) {
+            width: 90px;
+            height: 110px;
+          }
         }
       }
     }
@@ -368,6 +485,12 @@
         margin-top: auto;
       }
 
+      @media screen and (max-width: 720px) {
+        width: 380px;
+        height: 100%;
+        margin-top: 40px;
+      }
+
       .centerElem {
         width: 605px;
         height: 435px;
@@ -381,7 +504,13 @@
           background-size: contain;
           background-repeat: no-repeat;
           left: 400px;
+        }
 
+        @media screen and (max-width: 720px) {
+          width: 370px;
+          height: 267px;
+          left: 0;
+          bottom: 0;
         }
 
         &.dark {
@@ -405,11 +534,24 @@
           background-repeat: no-repeat;
         }
 
+        @media screen and (max-width: 720px) {
+          width: 100px;
+          height: 80px;
+        }
+
         &.dark {
           background-image: url("../pngs/videomaking-part-part-black.webp");
+
+          @media screen and (max-width: 720px) {
+            background-image: url("../pngs/videomaking-part-full-black.webp");
+          }
         }
         &.light {
           background-image: url("../pngs/videomaking-part-part-light.webp");
+
+          @media screen and (max-width: 720px) {
+            background-image: url("../pngs/videomaking-part-full-light.webp");
+          }
         }
 
         &.first {
@@ -417,11 +559,21 @@
           @media screen and (max-width: 1560px) {
             left: 150px;
           }
+          @media screen and (max-width: 720px) {
+            left: 10px;
+            bottom: 100px
+
+          }
         }
         &.second {
           left: 1100px;
           @media screen and (max-width: 1560px) {
             left: 900px;
+          }
+          @media screen and (max-width: 720px) {
+            left: 280px;
+            bottom: 90px
+
           }
         }
       }
@@ -437,6 +589,10 @@
           background-repeat: no-repeat;
         }
 
+        @media screen and (max-width: 720px) {
+          width: 100px;
+          height: 80px;
+        }
         &.dark {
           background-image: url("../pngs/videomaking-part-full-black.webp");
         }
@@ -449,11 +605,21 @@
           @media screen and (max-width: 1560px) {
             left: 330px;
           }
+          @media screen and (max-width: 720px) {
+            top: 40px;
+            left: 60px;
+          }
         }
         &.second {
           left: 880px;
           @media screen and (max-width: 1560px) {
             left: 700px;
+
+          }
+          @media screen and (max-width: 720px) {
+
+            top: 40px;
+            left: 220px;
           }
         }
       }
@@ -471,6 +637,10 @@
             left: 550px;
             top: -50px;
           }
+          @media screen and (max-width: 720px) {
+            left: 140px;
+            top: 130px;
+          }
         }
 
         &.light {
@@ -478,6 +648,10 @@
 
           @media screen and (max-width: 1560px) {
             left: 510px;
+          }
+          @media screen and (max-width: 720px) {
+            left: 104px;
+            top: 100px;
           }
         }
       }
@@ -497,10 +671,18 @@
           width: 200px;
         }
 
+        @media screen and (max-width: 720px) {
+          font-size: 12px;
+          width: 110px;
+        }
+
         &:hover {
           font-size: 28px;
           @media screen and (max-width: 1560px) {
             font-size: 18px;
+          }
+          @media screen and (max-width: 720px) {
+            font-size: 14px;
           }
         }
         &.one {
@@ -510,6 +692,10 @@
             bottom: 90px;
             left: 130px;
           }
+          @media screen and (max-width: 720px) {
+            bottom: 170px;
+            left: 0px;
+          }
         }
         &.two {
           top: 0px;
@@ -517,6 +703,10 @@
           @media screen and (max-width: 1560px) {
             top: -20px;
             left: 310px;
+          }
+          @media screen and (max-width: 720px) {
+            top: 10px;
+            left: 50px;
           }
         }
         &.three {
@@ -526,6 +716,11 @@
             top: -20px;
             left: 680px;
           }
+          @media screen and (max-width: 720px) {
+            top: 220px;
+            left: 270px;
+
+          }
         }
         &.four {
           bottom: 120px;
@@ -533,6 +728,10 @@
           @media screen and (max-width: 1560px) {
             bottom: 90px;
             left: 880px;
+          }
+          @media screen and (max-width: 720px) {
+            top: 10px;
+            left: 210px;
           }
         }
         &.dark {

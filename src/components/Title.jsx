@@ -9,8 +9,8 @@ const Title = ({ isDarkTheme, text, right = false, mainTitle, width, left, onCli
     </div>
   ) : (
     <div className={`${styles.titleWrapper} ${isDarkTheme ? styles.dark : styles.light}`} >
-      <p className={`${styles.titleMain} ${right ? styles.right : styles.left}`} style={text === "ВИДЕОСЪЁМКА" || text === "АНИМАЦИЯ" ? {fontSize: screenSize < 1560 ? "30px" : "40px"} : {}}>{text}</p>
-      <p className={`${styles.titleDublicate} ${right ? styles.right : styles.left}`} style={text === "ВИДЕОСЪЁМКА" || text === "АНИМАЦИЯ" ? {fontSize: screenSize < 1560 ? "30px" : "40px"} : {}}>{text}</p>
+      <p className={`${styles.titleMain} ${right ? styles.right : styles.left}`} style={text === "ВИДЕОСЪЁМКА" || text === "АНИМАЦИЯ" ? {fontSize: screenSize < 720 ? "16px" : screenSize < 1560 && screenSize > 720 ? "30px" : "40px"} : {}}>{text}</p>
+      <p className={`${styles.titleDublicate} ${right ? styles.right : styles.left}`} style={text === "ВИДЕОСЪЁМКА" || text === "АНИМАЦИЯ" ? {fontSize: screenSize < 720 ? "16px" : screenSize < 1560 && screenSize > 720 ? "30px" : "40px"} : {}}>{text}</p>
     </div>
   );
 };

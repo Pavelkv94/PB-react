@@ -6,15 +6,19 @@
   @media screen and (max-width: 1560px) {
     min-width: 300px;
     height: 70px;
-
   }
+
+  @media screen and (max-width: 720px) {
+    min-width: 120px;
+    height: 27px;
+  }
+
   .titleMain {
     position: absolute;
     font-size: 48px;
     font-weight: 700;
     letter-spacing: 0.05em;
   }
-
 
   &.dark {
     .titleDublicate {
@@ -28,12 +32,12 @@
       @media screen and (max-width: 1560px) {
         font-size: 32px;
       }
+
       &.right {
         left: 10px;
 
         @media screen and (max-width: 1560px) {
-          top: 6px;
-
+          top: 0px;
         }
       }
 
@@ -45,6 +49,10 @@
           top: 6px;
           left: 36px;
         }
+        @media screen and (max-width: 720px) {
+          top: 0px;
+          left: -10px;
+        }
       }
     }
 
@@ -54,11 +62,18 @@
 
       &.right {
         top: 14px;
+        @media screen and (max-width: 720px) {
+          top: 4px;
+        }
       }
 
       &.left {
         top: 14px;
         left: 50px;
+        @media screen and (max-width: 720px) {
+          top: 4px;
+          left: 0px;
+        }
       }
     }
   }
@@ -72,11 +87,18 @@
 
       &.right {
         top: 14px;
+        @media screen and (max-width: 720px) {
+          top: 4px;
+        }
       }
 
       &.left {
         top: 14px;
         left: 50px;
+        @media screen and (max-width: 720px) {
+          top: 4px;
+          left: 10px;
+        }
       }
     }
   }
@@ -112,7 +134,6 @@
   }
 
   &.dark {
-
     .mainTitleMain {
       color: rgba(0, 237, 255, 1);
       text-shadow: 0px 0px 5px #00edff;
@@ -122,7 +143,6 @@
       @media screen and (max-width: 1560px) {
         left: 14px;
       }
-
     }
 
     .mainTitleDublicate {
@@ -136,7 +156,6 @@
       @media screen and (max-width: 1560px) {
         font-size: 32px;
       }
-
     }
   }
 
