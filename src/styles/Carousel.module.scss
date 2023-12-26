@@ -13,6 +13,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 720px) {
+      width: 280px;
+    }
   }
 }
 
@@ -34,6 +38,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("../pngs/Ellipse 169.webp");
+    @media screen and (max-width: 720px) {
+      width: 100px;
+      height: 100px;
+      top: -40px;
+      left: 0px;
+    }
   }
   .test2 {
     width: 177px;
@@ -46,6 +56,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("../pngs/Ellipse 169.webp");
+    @media screen and (max-width: 720px) {
+      width: 100px;
+      height: 100px;
+      top: -40px;
+      left: 180px;
+    }
   }
 
   .dots {
@@ -60,7 +76,6 @@
     z-index: 3;
     transition: 0.5s;
 
-
     &.left:hover {
       transform: scale(1.2) translate(-6px, 0);
       transition: 0.5s;
@@ -70,6 +85,5 @@
       transform: scale(1.2) translate(6px, 0);
       transition: 0.5s;
     }
-
   }
 }

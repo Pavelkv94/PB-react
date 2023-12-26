@@ -13,6 +13,12 @@
     height: 140px;
   }
 
+  @media screen and (max-width: 720px) {
+    min-width: 82px;
+    height: 55px;
+    width: 82px;
+  }
+
   &.dark {
     background-image: url("../pngs/client-black.webp");
   }
@@ -25,5 +31,10 @@
     max-height: 100px;
     max-width: 170px;
     width: max-content !important;
+
+    @media screen and (max-width: 720px) {
+      max-height: 37px;
+      max-width: 60px;
+    }
   }
 }

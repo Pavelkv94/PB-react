@@ -9,6 +9,13 @@
     max-height: 657px;
   }
 
+  @media screen and (max-width: 720px) {
+    min-width: 380px;
+    min-height: 500px;
+    height: 550px;
+    max-height: 600px;
+  }
+
   ul {
     margin-bottom: 100px;
 
@@ -37,6 +44,9 @@
     // @media screen and (max-width: 1560px) {
     //   margin-bottom: 80px;
     // }
+    @media screen and (max-width: 720px) {
+      margin-bottom: 30px;
+    }
 
     .title {
       margin-top: 70px;
@@ -45,6 +55,12 @@
       @media screen and (max-width: 1560px) {
         margin-top: 40px;
         margin-bottom: 00px;
+      }
+
+      @media screen and (max-width: 720px) {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        width: 190px;
       }
     }
 
@@ -57,6 +73,10 @@
       @media screen and (max-width: 1560px) {
         row-gap: 14px;
       }
+
+      @media screen and (max-width: 720px) {
+        grid-template-columns: 82px 82px 82px;
+      }
     }
 
     .carousel {
@@ -64,6 +84,9 @@
 
       @media screen and (max-width: 1560px) {
         width: 1150px;
+      }
+      @media screen and (max-width: 720px) {
+        width: 280px;
       }
     }
   }
