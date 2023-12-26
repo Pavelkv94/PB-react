@@ -71,11 +71,11 @@ const AppContainer = ({ isDarkTheme }) => {
       <Consultation isDarkTheme={isDarkTheme} setOpenCaptcha={setOpenCaptcha} consultationData={consultationData} setConsultationData={setConsultationData} screenSize={screenSize}/>
       <Reasons isDarkTheme={isDarkTheme} screenSize={screenSize} />
       {/* <WithUs isDarkTheme={isDarkTheme} screenSize={screenSize} /> */}
-      {!isDarkTheme && <div className="light-underline"></div>}
+      {!isDarkTheme && screenSize > 720 && <div className="light-underline"></div>}
       <Clients isDarkTheme={isDarkTheme} screenSize={screenSize} />
       {!isDarkTheme && <div className="light-underline"></div>}
-      {/* <WorkStages isDarkTheme={isDarkTheme} screenSize={screenSize} /> */}
-      {/* <Footer isDarkTheme={isDarkTheme} setTab={setTab} /> */}
+      <WorkStages isDarkTheme={isDarkTheme} screenSize={screenSize} />
+      <Footer isDarkTheme={isDarkTheme} setTab={setTab} screenSize={screenSize}/>
       {openModal && <Modal onCloseModal={onCloseModal} mailToken={mailToken}/>}
       {openCaptcha && <Recaptcha handleCaptchaChange={handleCaptchaChange} setOpenCaptcha={setOpenCaptcha} />}
     </>
