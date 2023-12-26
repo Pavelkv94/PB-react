@@ -4,7 +4,6 @@ import LogoBlack from "../svgs/logo-black-head.svg";
 import LogoLight from "../svgs/logo-light-head.svg";
 import Whatsapp from "../pngs/whatsapp.webp";
 import Telegram from "../svgs/telegram.svg";
-// eslint-disable-next-line no-unused-vars
 import { Link, animateScroll as scroll } from "react-scroll";
 import CopyIcon from "../svgs/copy.svg";
 

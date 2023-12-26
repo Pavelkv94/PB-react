@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "../styles/VideoPlayerSmall.module.scss";
 
 const VideoPlayerSmall = ({ service, withPlay }) => {

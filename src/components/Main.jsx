@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/Main.module.scss";
 import VideoPlayer from "./VideoPlayer";
-// eslint-disable-next-line no-unused-vars
 import { Link, animateScroll as scroll } from "react-scroll";
 // import NextLink from "next/link";
 

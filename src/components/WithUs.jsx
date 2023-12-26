@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "../styles/WithUs.module.scss";
 import Title from "./Title";
 import WithUsItem from "./WithUsItem";
