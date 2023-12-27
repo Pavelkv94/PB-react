@@ -8,6 +8,11 @@
     max-height: 768px;
   }
 
+  @media screen and (max-width: 720px) {
+    width: 100%;
+    height: 896px;
+  }
+
   &.dark {
     background-image: url("../pngs/main-back-black2.webp");
     background-size: cover;
@@ -380,7 +385,7 @@
 
 .mainWrapperMobile {
   width: 100%;
-  height: 100vh;
+  height: 896px;
   min-width: 375px;
 
   &.dark {
@@ -551,15 +556,18 @@
       max-width: 375px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 0px;
+      column-gap: auto;
       row-gap: 10px;
       margin: 20px 0 30px 0;
 
       .textItem {
-        width: 175px;
-        height: 32px;
+        width: 170px;
+        height: 30px;
         position: relative;
         border-radius: 5px;
+        @media screen and (max-width: 400px) {
+          width: 165px;
+        }
 
 
         &.dark {
@@ -596,7 +604,7 @@
     }
 
     .showInfoMobile {
-      width: 380px;
+      width: 370px;
       height: 225px;
       position: relative;
 
@@ -609,7 +617,7 @@
         line-height: 10px;
         letter-spacing: 0em;
         text-align: left;
-        top: 32px;
+        top: -12px;
         left: 170px;
         z-index: 2;
       
@@ -618,17 +626,12 @@
 
     .actions {
       display: flex;
-      width: 414px;
+      width: 340px;
       align-items: center;
       justify-content: space-between;
-      position: absolute;
-      bottom: 70px;
-      margin-top: 104px;
+      margin-top: 204px;
 
-      @media screen and (max-width: 1560px) {
-        margin-top: 50px;
-        width: 370px;
-      }
+
 
       &.dark {
         div {
@@ -642,17 +645,12 @@
           background: rgba(1, 44, 113, 1);
           color: white;
           box-shadow: 0px 1.0979276895523071px 8.783421516418457px 0px rgba(255, 255, 255, 1) inset;
-
-          @media screen and (max-width: 1560px) {
-            font-size: 11px;
-          }
+          font-size: 10px;
 
           &:hover {
             font-weight: 600;
             color: #00edff;
-            @media screen and (max-width: 1560px) {
-              font-size: 12px;
-            }
+            font-size: 11px;
           }
         }
       }
@@ -665,46 +663,31 @@
           background: #efefef;
           font-weight: 500;
           color: #383838;
-          @media screen and (max-width: 1560px) {
-            font-size: 11px;
-          }
+          font-size: 10px;
+
 
           &:hover {
             background: linear-gradient(137.83deg, #0076e4 -38%, #7abfff 21.36%, #c1fdfe 80.72%, #98fcfe 140.08%);
             font-size: 14px;
             letter-spacing: -0.5px;
-
-            @media screen and (max-width: 1560px) {
-              font-size: 12px;
-            }
+            font-size: 11px;
           }
         }
       }
 
       div {
-        margin: 0 5px;
-        width: 192px;
-        height: 50px;
-
-        @media screen and (max-width: 1560px) {
-          margin: 0px;
-          width: 175px;
-          height: 41px;
-        }
+        margin: 0px;
+        width: 158px;
+        height: 37px;
 
         button {
           font-family: "Tektur", cursive;
-          width: 192px;
-          height: 50px;
+          width: 158px;
+          height: 37px;
           border-radius: 5px;
           font-size: 14px;
           font-weight: 400;
           cursor: pointer;
-
-          @media screen and (max-width: 1560px) {
-            width: 175px;
-            height: 41px;
-          }
         }
       }
     }

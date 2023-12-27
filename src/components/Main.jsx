@@ -117,9 +117,9 @@ const Main = ({ isDarkTheme, screenSize }) => {
         <div className={`${styles.showInfoMobile} ${isDarkTheme ? styles.dark : styles.light}`}>
           {isDarkTheme && <p className={styles.showreelPMobile}>SHOWREEL</p>}
           <VideoPlayer
-            width={screenSize < 721 ? "380px" : screenSize < 1560 ? "650px" : "745px"}
-            height={screenSize < 721 ? "253px" : screenSize < 1560 ? "433px" : "475px"}
-            style={{ position: "absolute", right: 0, bottom: 0 }}
+            width={screenSize < 721 ? "370px" : screenSize < 1560 ? "650px" : "745px"}
+            height={screenSize < 721 ? "246px" : screenSize < 1560 ? "433px" : "475px"}
+            style={{ position: "absolute", right: 6, bottom: 0 }}
             isDarkTheme={isDarkTheme}
             big
             src={"https://www.youtube.com/embed/2ZQtDSz6j8Y?si=n_6gajAlx3KyVIHo&modestbranding=1&autoplay=1&showinfo=0"}
