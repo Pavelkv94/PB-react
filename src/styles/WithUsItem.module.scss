@@ -31,14 +31,23 @@
     @media screen and (max-width: 1560px) {
       line-height: 19px;
       width: 470px;
-
     }
 
+    @media screen and (max-width: 720px) {
+      line-height: 7px;
+      font-size: 7px;
+      width: 200px;
+    }
   }
   .job {
     min-width: 100px;
     min-height: 42px;
     position: absolute;
+
+    @media screen and (max-width: 720px) {
+      min-width: 60px;
+      min-height: 32px;
+    }
 
     p {
       margin: 8px 0;
@@ -152,6 +161,11 @@
       height: 140px;
     }
 
+    @media screen and (max-width: 720px) {
+      width: 30px;
+      height: 42px;
+    }
+
     .shadow {
       position: absolute;
       background-color: rgba(0, 0, 0, 0.3);
@@ -164,6 +178,14 @@
       border-radius: 2px;
       &:hover {
         background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      @media screen and (max-width: 720px) {
+        width: 30px;
+        height: 42px;
+        img {
+          width: 100%;
+        }
       }
     }
 
@@ -239,6 +261,12 @@
       height: 500px;
     }
 
+    @media screen and (max-width: 720px) {
+      width: 335px;
+      height: 300px;
+      background-image: url("../pngs/WIthUsItemMobile.png");
+    }
+
     .photo {
       top: 98px;
       left: 238px;
@@ -253,16 +281,27 @@
         width: 180px;
         height: 180px;
       }
+
+      @media screen and (max-width: 720px) {
+        top: 45px;
+        left: 146px;
+        width: 70px;
+        height: 70px;
+      }
     }
 
     .approv {
       top: 350px;
       left: 1140px;
 
-
       @media screen and (max-width: 1560px) {
         top: 290px;
         left: 870px;
+      }
+
+      @media screen and (max-width: 720px) {
+        top: 200px;
+        left: 250px;
       }
     }
 
@@ -276,6 +315,11 @@
         left: 386px;
         top: 100px;
       }
+      @media screen and (max-width: 720px) {
+        left: 56px;
+        top: 120px;
+        font-size: 10px !important;
+      }
     }
 
     .description {
@@ -287,6 +331,11 @@
         left: 386px;
         top: 180px;
       }
+
+      @media screen and (max-width: 720px) {
+        left: 46px;
+        top: 145px;
+      }
     }
     .job {
       left: 280px;
@@ -297,15 +346,29 @@
         top: 330px;
       }
 
+      @media screen and (max-width: 720px) {
+        left: 240px;
+        top: 130px;
+      }
+
       p {
         margin: 8px 0;
       }
       p:first-child {
         color: white;
+        @media screen and (max-width: 720px) {
+          font-size: 7px;
+          margin: 0;
+          line-height: 8px;
+        }
       }
 
       p:last-child {
         color: rgba(141, 247, 255, 1);
+        @media screen and (max-width: 720px) {
+          font-size: 6px;
+          margin: 0;
+        }
       }
     }
   }
@@ -318,6 +381,12 @@
     @media screen and (max-width: 1560px) {
       width: 1000px;
       height: 500px;
+    }
+
+    @media screen and (max-width: 720px) {
+      width: 335px;
+      height: 300px;
+      background-image: url("../pngs/WIthUsItemMobile-light.png");
     }
 
     .photo {
@@ -334,6 +403,13 @@
         width: 180px;
         height: 180px;
       }
+
+      @media screen and (max-width: 720px) {
+        top: 29px;
+        left: 129px;
+        width: 75px;
+        height: 75px;
+      }
     }
 
     .approv {
@@ -343,6 +419,10 @@
       @media screen and (max-width: 1560px) {
         top: 260px;
         left: 860px;
+      }
+      @media screen and (max-width: 720px) {
+        top: 200px;
+        left: 250px;
       }
     }
 
@@ -356,6 +436,12 @@
         left: 386px;
         top: 100px;
       }
+
+      @media screen and (max-width: 720px) {
+        left: 40px;
+        top: 120px;
+        font-size: 10px !important;
+      }
     }
 
     .description {
@@ -367,23 +453,46 @@
         left: 386px;
         top: 164px;
       }
+
+      @media screen and (max-width: 720px) {
+        left: 40px;
+        top: 145px;
+      }
     }
     .job {
       left: 280px;
       top: 380px;
+      
       @media screen and (max-width: 1560px) {
         left: 150px;
         top: 314px;
+      }
+
+      @media screen and (max-width: 720px) {
+        left: 220px;
+        top: 130px;
       }
       p {
         margin: 8px 0;
       }
       p:first-child {
         color: rgba(56, 56, 56, 1);
+
+        @media screen and (max-width: 720px) {
+          font-size: 7px;
+          margin: 0;
+          line-height: 8px;
+        }
       }
 
       p:last-child {
         color: rgba(95, 95, 95, 1);
+        @media screen and (max-width: 720px) {
+          font-size: 6px;
+          margin: 0;
+          line-height: 7px;
+          margin-left: 3px;
+        }
       }
     }
   }
@@ -398,6 +507,11 @@
       height: 64px;
     }
 
+    @media screen and (max-width: 720px) {
+      width: 120px;
+      height: 64px;
+    }
+
     &.dark {
       top: 400px;
       left: 570px;
@@ -405,6 +519,11 @@
       @media screen and (max-width: 1560px) {
         top: 350px;
         left: 386px;
+      }
+
+      @media screen and (max-width: 720px) {
+        top: 200px;
+        left: 56px;
       }
 
       .percents {
@@ -433,6 +552,10 @@
         left: 386px;
       }
 
+      @media screen and (max-width: 720px) {
+        top: 200px;
+        left: 40px;
+      }
       .percents {
         color: rgba(56, 56, 56, 1);
       }
@@ -465,7 +588,11 @@
         font-size: 12px;
         width: 205px;
       }
-
+      @media screen and (max-width: 720px) {
+        font-size: 4px;
+        width: 84px;
+        margin-bottom: 0px;
+      }
     }
 
     section {
@@ -478,8 +605,11 @@
       @media screen and (max-width: 1560px) {
         grid-template-columns: 200px 70px;
         row-gap: 8px;
+      }
 
-
+      @media screen and (max-width: 720px) {
+        grid-template-columns: 76px 20px;
+        row-gap: 4px;
       }
 
       p {
@@ -490,6 +620,10 @@
         @media screen and (max-width: 1560px) {
           font-size: 12px;
         }
+
+        @media screen and (max-width: 720px) {
+          font-size: 4px;
+        }
       }
 
       .indicator {
@@ -499,6 +633,11 @@
         @media screen and (max-width: 1560px) {
           width: 200px;
           height: 6px;
+        }
+
+        @media screen and (max-width: 720px) {
+          width: 80px;
+          height: 3px;
         }
 
         div {

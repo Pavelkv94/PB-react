@@ -12,6 +12,12 @@
     max-height: 657px;
   }
 
+  @media screen and (max-width: 720px) {
+    min-width: 375px;
+    min-height: 380px;
+    max-height: 385px;
+  }
+
   &.dark {
     background-image: url("../pngs/withUs-back-black.webp");
   }
@@ -27,7 +33,6 @@
     margin-bottom: 100px;
     @media screen and (max-width: 1560px) {
       margin-bottom: 0px;
-
     }
     .title {
       margin-top: 70px;
@@ -37,6 +42,9 @@
         margin-top: 30px;
         margin-bottom: 10px;
       }
+      @media screen and (max-width: 720px) {
+        width: 290px;
+      }
     }
 
     .slider {
@@ -45,6 +53,10 @@
 
       @media screen and (max-width: 1560px) {
         width: 1000px;
+      }
+
+      @media screen and (max-width: 720px) {
+        width: 335px;
       }
     }
 
@@ -67,6 +79,9 @@
         @media screen and (max-width: 1560px) {
           width: 1000px;
         }
+        @media screen and (max-width: 720px) {
+          width: 335px;
+        }
       }
     }
 
@@ -83,11 +98,10 @@
       background-image: url("../pngs/Ellipse 169.webp");
 
       @media screen and (max-width: 1560px) {
-      width: 150px;
-      height: 150px;
-      left: -124px;
-      top: -60px;
-
+        width: 150px;
+        height: 150px;
+        left: -124px;
+        top: -60px;
       }
     }
 
@@ -122,6 +136,10 @@
         margin-top: -260px;
       }
 
+      @media screen and (max-width: 721px) {
+        margin-top: -160px;
+      }
+
       .arrow {
         cursor: pointer;
         position: relative;
@@ -133,9 +151,19 @@
             left: 80px;
           }
         }
+        @media screen and (max-width: 721px) {
+          &.right {
+            left: 20px;
+          }
+        }
         @media screen and (max-width: 1560px) {
           &.left {
             left: -80px;
+          }
+        }
+        @media screen and (max-width: 721px) {
+          &.left {
+            left: -20px;
           }
         }
 
