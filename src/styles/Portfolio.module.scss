@@ -14,6 +14,15 @@
     min-height: 600px;
   }
 
+  @media screen and (max-width: 720px) {
+    min-width: 375px;
+    max-height: 852px;
+    min-height: 852px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &.dark {
     background-color: #001137;
   }
@@ -174,4 +183,221 @@
       }
     }
   }
+
+  .portfolioContentMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 375px;
+
+    .title {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 130px;
+      align-items: center;
+      text-align: center;
+      position: relative;
+
+      .underline {
+        width: 130px;
+        height: 2px;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        &.dark {
+          background-color: rgb(0, 237, 255);
+          box-shadow: 0px 0px 5px #00edff;
+        }
+
+        &.light {
+          background-color: #383838;
+        }
+      }
+    }
+
+
+      &.dark {
+        .gamepadMobileMenu .gamepadMobileMenuBlock {
+          border-bottom: 0.6px solid white;
+          color: white;
+
+          .gamepadMobileMenuItem {
+            &:nth-child(2) {
+              border-left: 1px solid white;
+              border-right: 1px solid white;
+              border-bottom: 1px solid #001137;
+              border-top: 1px solid #001137;
+            }
+            &.activeMenuMobileItem {
+              border: 1px solid #00edff;
+              color: #00edff;
+              background-color: #00eeff3d;
+            }
+          }
+        }
+      }
+
+      &.light {
+        .gamepadMobileMenu .gamepadMobileMenuBlock {
+          border-bottom: 0.6px solid #383838;
+          color: #383838;
+
+          .gamepadMobileMenuItem {
+            &:nth-child(2) {
+              border-left: 1px solid #383838;
+              border-right: 1px solid #383838;
+              border-bottom: 1px solid white;
+              border-top: 1px solid white;
+            }
+            &.activeMenuMobileItem {
+              border: 1px solid #383838;
+              color: #00edff;
+              background-color: #00eeff25;
+            }
+          }
+        }
+      }
+
+      .gamepadMobileMenu {
+        width: 336px;
+        height: 70px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 6px;
+        margin-bottom: 30px;
+
+        .gamepadMobileMenuBlock {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+
+          .gamepadMobileMenuItem {
+            font-family: "Montserrat", sans-serif;
+            font-size: 8px;
+            font-weight: 400;
+            line-height: 10px;
+            letter-spacing: 0em;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+              width: min-content;
+            }
+          }
+        }
+      }
+  }
+
+
+
+.slider {
+  width: 1400px;
+  height: 574px;
+
+  @media screen and (max-width: 1560px) {
+    width: 1000px;
+  }
+
+  @media screen and (max-width: 720px) {
+    width: 335px;
+  }
+
+  .sliderLoader {
+    width: 80px;
+    height: 10px;
+    margin-bottom: 6px;
+    position: absolute;
+    left: 130px;
+    
+
+    &.dark {
+    border: 1px solid #00EDFF;
+      .filler {
+        background-color: #00EDFF;
+      }
+    }
+    &.light {
+    border: 1px solid #383838;
+      .filler {
+        background-color: #00EDFF;
+      }
+    }
+    .filler {
+      height: 100%;
+
+    }
+  }
+  &.dark {
+    .controlls {
+      margin-top: 0px;
+
+      .arrow {
+        &.right {
+          left: -70px;
+        }
+        &.left {
+          left: 70px;
+        }
+      }
+    }
+  }
+  &.light {
+    .controlls {
+      margin-top: 0px;
+
+      .arrow {
+        &.right {
+          left: -80px;
+        }
+        &.left {
+          left: 80px;
+        }
+      }
+    }
+  }
+}
+
+.carousel {
+  display: flex;
+  overflow-x: hidden;
+  padding: 0;
+  scroll-snap-type: mandatory;
+
+  .carouselItem {
+    font-size: 50px;
+    width: 335px;
+    height: max-content;
+    flex-shrink: 0;
+    color: "#fff";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.controlls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 340px;
+
+  .arrow {
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    transition: 0.5s;
+
+    &.left:hover {
+      transform: scale(1.2) translate(-6px, 0);
+      transition: 0.5s;
+    }
+
+    &.right:hover {
+      transform: scale(1.2) translate(6px, 0);
+      transition: 0.5s;
+    }
+  }
+}
+
 }

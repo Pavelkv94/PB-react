@@ -582,6 +582,11 @@
           width: 265px;
           height: 131px;
         }
+
+        @media screen and (max-width: 720px) {
+          top: 38px;
+
+        }
       }
     }
 

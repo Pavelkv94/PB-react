@@ -101,16 +101,20 @@ const HeaderNavMenu = ({ isDarkTheme, setOpenModal, screenSize }) => {
         <div className={styles.mobileContent}>
           <div className={styles.mobileLogoWrapper}>
             <div className={styles.logo}>{isDarkTheme ? <img src={LogoBlack} /> : <img src={LogoLight} />}</div>
-            <a
-              href="https://api.whatsapp.com/send?phone=79660132196&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D1%81%D0%B5%D1%82%D0%B8%D0%BB(%D0%B0)%20%D0%92%D0%B0%D1%88%20%D1%81%D0%B0%D0%B9%D1%82%20plan-big.space%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BF%D0%BE%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={Whatsapp} width={28} height={28} />
-            </a>
-            <a href="https://t.me/Agency_Video" target="_blank" style={{ marginLeft: "9px" }} rel="noreferrer">
-              <img src={Telegram} />
-            </a>
+            {!openMobileMenu && (
+              <a
+                href="https://api.whatsapp.com/send?phone=79660132196&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D1%81%D0%B5%D1%82%D0%B8%D0%BB(%D0%B0)%20%D0%92%D0%B0%D1%88%20%D1%81%D0%B0%D0%B9%D1%82%20plan-big.space%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BF%D0%BE%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={Whatsapp} width={28} height={28} />
+              </a>
+            )}
+            {!openMobileMenu && (
+              <a href="https://t.me/Agency_Video" target="_blank" style={{ marginLeft: "9px" }} rel="noreferrer">
+                <img src={Telegram} />
+              </a>
+            )}
           </div>
 
           <div className={styles.rightContentMobile}>
@@ -124,6 +128,82 @@ const HeaderNavMenu = ({ isDarkTheme, setOpenModal, screenSize }) => {
                 <span></span>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+      {openMobileMenu && (
+        <div className={`${styles.mobileMenuWrapper} ${isDarkTheme ? styles.dark : styles.light}`}>
+          <div className={styles.mobileMenu}>
+            <nav>
+              <Link activeClass={styles.active} to="main" spy={true} smooth={true} offset={-50} duration={500}>
+                <div className={`${isDarkTheme ? styles.dark : styles.light} ${styles.li}`} onClick={() => setOpenMobileMenu(false)}>
+                  ГЛАВНАЯ
+                </div>
+              </Link>
+
+              <Link activeClass={styles.active} to="onas" spy={true} smooth={true} offset={-50} duration={500}>
+                <div className={styles.li} onClick={() => setOpenMobileMenu(false)}>
+                  О НАС
+                </div>
+              </Link>
+
+              <Link activeClass={styles.active} to="portfolio" spy={true} smooth={true} offset={-50} duration={500}>
+                <div className={styles.li} onClick={() => setOpenMobileMenu(false)}>
+                  ПОРТФОЛИО{" "}
+                </div>
+              </Link>
+
+              <Link activeClass={styles.active} to="services" spy={true} smooth={true} offset={-50} duration={500}>
+                <div className={styles.li} onClick={() => setOpenMobileMenu(false)}>
+                  УСЛУГИ
+                </div>
+              </Link>
+
+              <Link activeClass={styles.active} to="reasons" spy={true} smooth={true} offset={-50} duration={500}>
+                <div className={styles.li} onClick={() => setOpenMobileMenu(false)}>
+                  ПРЕИМУЩЕСТВА
+                </div>
+              </Link>
+
+              <Link activeClass={styles.active} to="feedback" spy={true} smooth={true} offset={-50} duration={500}>
+                <div className={styles.li} onClick={() => setOpenMobileMenu(false)}>
+                  ОТЗЫВЫ
+                </div>
+              </Link>
+            </nav>
+            <section>
+              <p>{phone}</p>
+              <div className={styles.mobileMenuEmail}>
+                <p>{email}</p>
+                <div
+                  className={`${styles.copy} ${isDarkTheme ? styles.dark : styles.light}`}
+                  onClick={() => {
+                    if (!isCopied) {
+                      navigator.clipboard?.writeText(email);
+                      setIsPopoverOpen(true);
+                      setIsPopoverHover(false);
+                      setIsCopied(true);
+                    }
+                  }}
+                  onMouseEnter={() => setIsPopoverHover(true)}
+                  onMouseLeave={() => setIsPopoverHover(false)}
+                >
+                  <img src={CopyIcon} />
+                </div>
+              </div>
+              <div className={styles.messengers}>
+                <a
+                  href="https://api.whatsapp.com/send?phone=79660132196&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D1%81%D0%B5%D1%82%D0%B8%D0%BB(%D0%B0)%20%D0%92%D0%B0%D1%88%20%D1%81%D0%B0%D0%B9%D1%82%20plan-big.space%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BF%D0%BE%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={Whatsapp} width={28} height={28} />
+                </a>
+                <a href="https://t.me/Agency_Video" target="_blank" style={{ marginLeft: "9px" }} rel="noreferrer">
+                  <img src={Telegram} />
+                </a>
+              </div>
+            </section>
           </div>
         </div>
       )}
