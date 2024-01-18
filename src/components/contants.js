@@ -1,4 +1,3 @@
-
 import feed1 from "../jpgs/jpgs/1.jpg";
 import feed2 from "../jpgs/jpgs/2.webp";
 import feed3 from "../jpgs/jpgs/3.jpg";
@@ -19,7 +18,6 @@ import feed17 from "../jpgs/jpgs/17.webp";
 import feed18 from "../jpgs/jpgs/18.webp";
 import feed19 from "../jpgs/jpgs/19.jpg";
 import feed20 from "../jpgs/jpgs/20.jpg";
-
 
 export const feedbacks = [
   {
@@ -227,23 +225,29 @@ export const gameButtons = [
 
 export const gameContents = [
   {
+    title: "ПРЕЗЕНТАЦИОННЫЕ / ИМИДЖЕВЫЕ РОЛИКИ",
+
     id: 0,
-    "0": 0,
+    0: 0,
     videoUrl: "https://www.youtube.com/embed/BIiffcdLp7Y?si=w1DtQXWpUGceuQ-b&modestbranding=1&autoplay=1&showinfo=0",
     descr: ["Рассказать и показать компанию", "Сформировать имидж в глазах ЦА", "Донести ключевые сообщения и преимущества", "Представить компанию на мероприятиях"],
     price: ["Оптимальная подача – от 200 000 до 1 000 000 рублей", "Эффектная/премиум подача – от 1 000 000 до 5 000 000 рублей"],
     screenUrl: "../pngs/gameFirst.webp",
   },
   {
+    title: "РЕКЛАМНЫЕ РОЛИКИ",
+
     id: 1,
-    "1": 1,
+    1: 1,
     videoUrl: "https://www.youtube.com/embed/8PbRLS0rRtI?si=FafGI4sVXi-fO4v6&modestbranding=1&autoplay=1&showinfo=0",
     descr: ["Провести Digital- или ТВ-рекламную кампанию", "Увеличить продажи", "Составить впечатление", "Донести ключевую информацию", "Вызвать доверие у покупателя"],
     price: ["Упрощённая подача и реализация – от 200 000 до 900 000рублей", "Рекламная постановочная съемка - от 1 500 000 до 10 000 000 рублей"],
   },
   {
+    title: "СТОРИТЕЛЛИНГ ВИДЕО",
+
     id: 2,
-    "2": 2,
+    2: 2,
     videoUrl: "https://www.youtube.com/embed/KsWESMsdecI?si=y2G6ChtXOLlN8A7V&modestbranding=1&autoplay=1&showinfo=0",
     descr: [
       "Рассказать эмоционально о компании, продукте или услуге",
@@ -254,15 +258,19 @@ export const gameContents = [
     price: ["Упрощённая подача – от 200 000 рублей", "Сложная подача со множеством спикеров и локаций: от 500 000 рублей"],
   },
   {
+    title: "ВИДЕООБЗОРЫ ПРОДУКЦИИ",
+
     id: 3,
-    "3": 3,
+    3: 3,
     videoUrl: "https://www.youtube.com/embed/j-3GIuCHf6I?si=u9lYxKRVufyeuyR7&modestbranding=1&autoplay=1&showinfo=0",
     descr: ["Рассказать доходчиво о товаре/услуге", "Показать товар информативно, понятно и красиво", "Донести ключевые преимущества", "Раскрыть потенциал продукта"],
     price: ["От 150 000 до 600 000 рублей", "от 50 000 рублей (за одно видео при производстве серии видео)"],
   },
   {
+    title: "3D АНИМАЦИЯ",
+
     id: 4,
-    "4": 4,
+    4: 4,
     videoUrl: "https://www.youtube.com/embed/ZUxSfgqQVF8?si=87LYbTnFWHgHN9Ri&modestbranding=1&autoplay=1&showinfo=0",
     descr: [
       "Рассказать эффектно о компании, продукте или услуге",
@@ -274,8 +282,10 @@ export const gameContents = [
     price: ["Упрощённая подача – от 200 000 рублей", "Оптимальная и премиум подача – от 300 000 до 2 000 000 рублей"],
   },
   {
+    title: "2D АНИМАЦИЯ",
+
     id: 5,
-    "5": 5,
+    5: 5,
     videoUrl: "https://www.youtube.com/embed/sECp7CTmT-4?si=hMUzJHm0gRPSF0Qv&modestbranding=1&autoplay=1&showinfo=0",
     descr: [
       "Рассказать о бренде, услуге или продукте",
@@ -287,7 +297,6 @@ export const gameContents = [
     price: ["Упрощённая подача – от 100 000 рублей", "Оптимальная и премиум подача – от 200 000 до 800 000 рублей"],
   },
 ];
-
 
 export const videosPortfolio = [
   {
@@ -337,7 +346,7 @@ export const videosPresent = [
   {
     elements: [
       { id: 25, src: "https://www.youtube.com/embed/3B2A-2gvAgI?si=dAmT55mNp8tus1Ww&modestbranding=1&autoplay=1&showinfo=0" },
-      { id: 26, src: "https://www.youtube.com/embed/zfP9GNLPqJo?si=zjVRhRmsN4l9BfPg&modestbranding=1&autoplay=1&showinfo=0" }, 
+      { id: 26, src: "https://www.youtube.com/embed/zfP9GNLPqJo?si=zjVRhRmsN4l9BfPg&modestbranding=1&autoplay=1&showinfo=0" },
       { id: 27, src: "https://www.youtube.com/embed/z1Xq6gsfqQY?si=SRJdzLXfJ8Ol50wp&modestbranding=1&autoplay=1&showinfo=0" },
       { id: 28, src: "https://www.youtube.com/embed/lnyCYmj0JxQ?si=tGW-lit6AKdvhr7L&modestbranding=1&autoplay=1&showinfo=0" },
       { id: 29, src: "https://www.youtube.com/embed/11KuLgAiOv0?si=6LFNQez0V2yQzpET&modestbranding=1&autoplay=1&showinfo=0" },
@@ -413,7 +422,7 @@ export const videos3d = [
 
   {
     elements: [
-      { id: 67, src: "https://www.youtube.com/embed/z1Xq6gsfqQY?si=YzoSJ16WSDMM8R6b&modestbranding=1&autoplay=1&showinfo=0" }, 
+      { id: 67, src: "https://www.youtube.com/embed/z1Xq6gsfqQY?si=YzoSJ16WSDMM8R6b&modestbranding=1&autoplay=1&showinfo=0" },
       { id: 68, src: "https://www.youtube.com/embed/xoRutZdgSL4?si=j7u14Khnc0ER-WQ0&modestbranding=1&autoplay=1&showinfo=0" },
       { id: 69, src: "https://www.youtube.com/embed/7AAmObPfeuA?si=5XV24GXVsFSwW3IK&modestbranding=1&autoplay=1&showinfo=0" },
       { id: 70, src: "https://www.youtube.com/embed/iuNUW6zjezs?si=TyPXI3uAZEXD7xsJ&modestbranding=1&autoplay=1&showinfo=0" },
@@ -508,5 +517,5 @@ export const videosStory = [
       { id: 119, src: "https://www.youtube.com/embed/aFlYFBL7rwg?si=pTT9FJMfVHMwp8q6&modestbranding=1&autoplay=1&showinfo=0" },
       { id: 120, src: "https://www.youtube.com/embed/BPXUIaKSd-c?si=ZuU2IzCJMtRpI9cm&modestbranding=1&autoplay=1&showinfo=0" },
     ],
-  }
+  },
 ];

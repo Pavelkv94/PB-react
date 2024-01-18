@@ -13,6 +13,12 @@
     max-height: 657px;
   }
 
+  @media screen and (max-width: 720px) {
+    min-width: 375px;
+    min-height: 500px;
+    max-height: 500px;
+  }
+
   &.dark {
     background-image: url("../pngs/Services-back-black.webp");
   }
@@ -51,14 +57,17 @@
 
       &.dark {
         background-image: url("../pngs/services-gamepad-black.webp");
+
         .gameButton {
           position: relative;
+
           &.active {
             p {
               font-weight: 700;
               color: #00edff;
             }
           }
+
           p {
             font-family: "Montserrat", sans-serif;
             font-size: 18px;
@@ -92,6 +101,7 @@
             background-image: url("../pngs/eclipse-game0-black.webp");
             top: -52px;
             left: -110px;
+
             @media screen and (max-width: 1560px) {
               top: -20px;
               left: -100px;
@@ -99,6 +109,7 @@
               height: 100px;
             }
           }
+
           .eclipse1 {
             position: absolute;
             width: 200px;
@@ -110,6 +121,7 @@
             background-image: url("../pngs/eclipse-game1-black.webp");
             top: -130px;
             left: -73px;
+
             @media screen and (max-width: 1560px) {
               width: 160px;
               height: 206px;
@@ -129,6 +141,7 @@
             background-image: url("../pngs/eclipse-game2-black.webp");
             top: -170px;
             left: -67px;
+
             @media screen and (max-width: 1560px) {
               width: 150px;
               height: 224px;
@@ -148,6 +161,7 @@
             background-image: url("../pngs/eclipse-game3-black.webp");
             top: -78px;
             left: -210px;
+
             @media screen and (max-width: 1560px) {
               width: 520px;
               height: 100px;
@@ -167,6 +181,7 @@
             background-image: url("../pngs/eclipse-game4-black.webp");
             top: -160px;
             left: 0px;
+
             @media screen and (max-width: 1560px) {
               width: 150px;
               height: 224px;
@@ -186,6 +201,7 @@
             background-image: url("../pngs/eclipse-game5-black.webp");
             top: -128px;
             left: 24px;
+
             @media screen and (max-width: 1560px) {
               width: 170px;
               height: 206px;
@@ -201,6 +217,7 @@
 
         .gameButton {
           position: relative;
+
           &:nth-child(1) {
             @media screen and (max-width: 1560px) {
               top: 40px;
@@ -230,6 +247,7 @@
               font-weight: 700;
             }
           }
+
           p {
             cursor: pointer;
             font-family: "Montserrat", sans-serif;
@@ -259,6 +277,7 @@
             background-image: url("../pngs/eclipse-game0-light.webp");
             top: -30px;
             left: -140px;
+
             @media screen and (max-width: 1560px) {
               top: -26px;
               left: -173px;
@@ -266,6 +285,7 @@
               height: 147px;
             }
           }
+
           .eclipse1 {
             position: absolute;
             width: 235px;
@@ -277,6 +297,7 @@
             background-image: url("../pngs/eclipse-game1-light.webp");
             top: -150px;
             left: -90px;
+
             @media screen and (max-width: 1560px) {
               width: 203px;
               height: 225px;
@@ -371,6 +392,7 @@
         &:nth-child(1) {
           top: 52px;
           left: 440px;
+
           @media screen and (max-width: 1560px) {
             top: 36px;
             left: 340px;
@@ -381,6 +403,7 @@
           top: 160px;
           left: 1040px;
           width: 150px;
+
           @media screen and (max-width: 1560px) {
             top: 107px;
             left: 790px;
@@ -392,6 +415,7 @@
           top: 400px;
           left: 1030px;
           width: 150px;
+
           @media screen and (max-width: 1560px) {
             top: 260px;
             left: 792px;
@@ -402,6 +426,7 @@
           top: 470px;
           left: 540px;
           width: 180px;
+
           @media screen and (max-width: 1560px) {
             top: 328px;
             left: 414px;
@@ -412,6 +437,7 @@
           top: 300px;
           left: 140px;
           width: 140px;
+
           @media screen and (max-width: 1560px) {
             top: 170px;
             left: 88px;
@@ -423,6 +449,7 @@
           top: -26px;
           left: 120px;
           width: 140px;
+
           @media screen and (max-width: 1560px) {
             top: -76px;
             left: 82px;
@@ -471,10 +498,12 @@
           letter-spacing: 0em;
           text-align: center;
           margin: 20px 0;
+
           @media screen and (max-width: 1560px) {
             font-size: 20px;
           }
         }
+
         .wrapper {
           display: flex;
           justify-content: space-between;
@@ -506,6 +535,7 @@
                 width: 212px;
                 height: 117px;
               }
+
               .screen {
                 position: absolute;
                 width: 265px;
@@ -520,18 +550,23 @@
                 &.screen0 {
                   background-image: url("../pngs/present screen.webp");
                 }
+
                 &.screen1 {
                   background-image: url("../pngs/adv screen.webp");
                 }
+
                 &.screen2 {
                   background-image: url("../pngs/story1 screen.webp");
                 }
+
                 &.screen3 {
                   background-image: url("../pngs/video screen.webp");
                 }
+
                 &.screen4 {
                   background-image: url("../pngs/3d screen.webp");
                 }
+
                 &.screen5 {
                   background-image: url("../pngs/2d screen.webp");
                 }
@@ -560,6 +595,7 @@
 
           .descriptionWrapper {
             width: 418px;
+
             @media screen and (max-width: 1560px) {
               width: 400px;
             }
@@ -568,6 +604,7 @@
               text-align: left;
               margin-left: 70px;
             }
+
             .descrItem {
               font-family: "Montserrat", sans-serif;
               font-size: 15px;
@@ -582,8 +619,8 @@
                 font-size: 13px;
                 margin: 5px 0 5px 50px;
                 line-height: 18px;
-
               }
+
               p {
                 margin: 0 0 0 10px;
               }
@@ -595,11 +632,14 @@
             }
           }
         }
+
         .price {
           height: 115px;
+
           h3 {
             margin-left: 70px;
             text-align: left;
+
             @media screen and (max-width: 1560px) {
               margin: 16px 0 10px 70px;
             }
@@ -621,6 +661,380 @@
           }
         }
       }
+    }
+
+    .gamepadMobile {
+      width: 375px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &.dark {
+        .gamepadMobileMenu .gamepadMobileMenuBlock {
+          border-bottom: 0.6px solid white;
+          color: white;
+
+          .gamepadMobileMenuItem {
+            &:nth-child(2) {
+              border-left: 1px solid white;
+              border-right: 1px solid white;
+              border-bottom: 1px solid #001137;
+              border-top: 1px solid #001137;
+            }
+            &.activeMenuMobileItem {
+              border: 1px solid #00edff;
+              color: #00edff;
+              background-color: #00eeff3d;
+            }
+          }
+        }
+      }
+
+      &.light {
+        .gamepadMobileMenu .gamepadMobileMenuBlock {
+          border-bottom: 0.6px solid #383838;
+          color: #383838;
+
+          .gamepadMobileMenuItem {
+            &:nth-child(2) {
+              border-left: 1px solid #383838;
+              border-right: 1px solid #383838;
+              border-bottom: 1px solid white;
+              border-top: 1px solid white;
+            }
+            &.activeMenuMobileItem {
+              border: 1px solid #383838;
+              color: #00edff;
+              background-color: #00eeff25;
+            }
+          }
+        }
+      }
+
+      .gamepadMobileMenu {
+        width: 336px;
+        height: 70px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 6px;
+
+        .gamepadMobileMenuBlock {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+
+          .gamepadMobileMenuItem {
+            font-family: "Montserrat", sans-serif;
+            font-size: 8px;
+            font-weight: 400;
+            line-height: 10px;
+            letter-spacing: 0em;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+              width: min-content;
+            }
+          }
+        }
+      }
+
+      .mobileMenuItem {
+        width: 330px;
+        height: 220px;
+        margin-top: 54px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+
+        .contentMobileWrapper {
+          display: flex;
+          position: absolute;
+          width: 270px;
+          height: 156px;
+          top: 52px;
+          left: 30px;
+
+          .contentMobileBlock {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            h6 {
+              font-family: "Tektur", cursive;
+              font-size: 8px;
+              font-weight: 600;
+              line-height: 6px;
+              letter-spacing: 0em;
+              text-align: center;
+            }
+
+            &:first-child {
+              width: 150px;
+
+              h6 {
+                text-align: left;
+                margin-left: 14px;
+              }
+            }
+            &:last-child {
+              width: 120px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .descrItem {
+              display: flex;
+              align-items: center;
+              img {
+                width: 4px;
+                height: 4px;
+                margin-right: 8px;
+              }
+              p {
+                margin: 0;
+                font-family: "Montserrat", sans-serif;
+                font-size: 6px;
+                font-weight: 400;
+                line-height: 8px;
+                letter-spacing: 0em;
+                text-align: left;
+              }
+            }
+
+            .priceItem {
+              font-family: "Montserrat", sans-serif;
+              font-size: 6px;
+              font-weight: 400;
+              line-height: 8px;
+              letter-spacing: 0em;
+              text-align: left;
+            }
+          }
+        }
+        &.dark {
+          background-image: url("../pngs/service-mobile-item-frame.png");
+          h5 {
+            font-family: "Montserrat", sans-serif;
+            font-size: 8px;
+            font-weight: 600;
+            line-height: 10px;
+            letter-spacing: 0em;
+            text-align: center;
+            color: white;
+            margin: 18px 0 0 0;
+          }
+
+          h6 {
+            color: white;
+            margin: 0 0 10px 0;
+          }
+
+          .descrItem p,
+          .priceItem {
+            color: white;
+          }
+          .descrItem {
+            margin: 2px;
+          }
+          .priceItem {
+            margin: 2px 0 2px 14px;
+          }
+        }
+        &.light {
+          background-image: url("../pngs/service-mobile-item-frame-light.png");
+
+          h5 {
+            font-family: "Tektur", cursive;
+            font-size: 8px;
+            font-weight: 600;
+            line-height: 10px;
+            letter-spacing: 0em;
+            text-align: center;
+            color: black;
+            margin: 40px 0 0 0;
+            text-decoration: underline;
+          }
+
+          h6 {
+            color: #383838;
+            margin: 0 0 6px 0;
+          }
+
+          .descrItem p,
+          .priceItem {
+            color: black;
+          }
+          .descrItem {
+            margin: 1px;
+          }
+          .priceItem {
+            margin: 2px 0 0px 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.videoWrapperMobile {
+  width: 100px;
+  height: 55px;
+  position: relative;
+  margin-top: 10px;
+
+  .videoWrapperBack {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.37);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    iframe {
+      // width: 80%;
+      // height: 80%;
+      opacity: 1;
+      border: none;
+    }
+  }
+  .screen {
+    position: absolute;
+    width: 100px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &.screen0 {
+      background-image: url("../pngs/present screen.webp");
+    }
+    &.screen1 {
+      background-image: url("../pngs/adv screen.webp");
+    }
+    &.screen2 {
+      background-image: url("../pngs/story1 screen.webp");
+    }
+    &.screen3 {
+      background-image: url("../pngs/video screen.webp");
+    }
+    &.screen4 {
+      background-image: url("../pngs/3d screen.webp");
+    }
+    &.screen5 {
+      background-image: url("../pngs/2d screen.webp");
+    }
+
+    .playBtn {
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      background-color: #ffffff40;
+      position: relative;
+      cursor: pointer;
+
+      .triangle {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-left: 7px solid rgba(0, 237, 255, 1);
+        top: 8px;
+        left: 12px;
+      }
+    }
+  }
+}
+
+.slider {
+  width: 1400px;
+  height: 574px;
+
+  @media screen and (max-width: 1560px) {
+    width: 1000px;
+  }
+
+  @media screen and (max-width: 720px) {
+    width: 335px;
+  }
+
+  &.dark {
+    .controlls {
+      margin-top: -150px;
+
+      .arrow {
+        &.right {
+          left: 30px;
+        }
+        &.left {
+          left: -30px;
+        }
+      }
+    }
+  }
+  &.light {
+    .controlls {
+      margin-top: -140px;
+
+      .arrow {
+        &.right {
+          left: 15px;
+        }
+        &.left {
+          left: -15px;
+        }
+      }
+    }
+  }
+}
+
+.carousel {
+  display: flex;
+  overflow-x: hidden;
+  padding: 0;
+  scroll-snap-type: mandatory;
+
+  .carouselItem {
+    font-size: 50px;
+    width: 335px;
+    height: max-content;
+    flex-shrink: 0;
+    color: "#fff";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.controlls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  .arrow {
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    transition: 0.5s;
+
+    &.left:hover {
+      transform: scale(1.2) translate(-6px, 0);
+      transition: 0.5s;
+    }
+
+    &.right:hover {
+      transform: scale(1.2) translate(6px, 0);
+      transition: 0.5s;
     }
   }
 }
