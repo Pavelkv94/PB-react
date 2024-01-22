@@ -3,8 +3,8 @@ import styles from "../styles/WithUsItem.module.scss";
 import Lupa from "../svgs/lupa.svg";
 
 const WithUsItem = ({ isDarkTheme, title, description, jobTitle, jobContact, widthTime, widthMoney, widthDiff, ind, setOpen, setImgUrl, imgUrl, screenSize }) => {
-  const titleSize = screenSize > 1560 ? "36px" : "30px";
-  const titleAloneSize = screenSize > 1560 ? "30px" : "25px";
+  const titleSize = screenSize < 720 ? "10px" : screenSize > 1560 ? "36px" : "30px";
+  const titleAloneSize = screenSize < 720 ? "7px" : screenSize > 1560 ? "30px" : "25px";
 
   return (
     <div className={`${styles.withUssliderItem} ${isDarkTheme ? styles.dark : styles.light}`}>

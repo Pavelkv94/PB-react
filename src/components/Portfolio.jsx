@@ -150,8 +150,6 @@ const Slider = ({ array, isDarkTheme, lentLenght, activeMobileButton }) => {
     goTo(0);
   }, [activeMobileButton]);
 
-  console.log(activeMobileButton);
-  console.log(activePageIndex);
   return (
     <>
       <ul ref={scrollRef} className={styles.carousel}>

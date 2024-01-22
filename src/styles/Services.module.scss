@@ -975,9 +975,17 @@
       .arrow {
         &.right {
           left: 30px;
+
+          @media screen and (max-width: 385px) {
+            left: 20px
+          }
         }
         &.left {
           left: -30px;
+
+          @media screen and (max-width: 385px) {
+            left: -20px
+          }
         }
       }
     }
