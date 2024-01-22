@@ -3,7 +3,7 @@ import styles from "../styles/Services.module.scss";
 import Title from "./Title";
 import ArrowBlack from "../svgs/gamepad-arrow-black.svg";
 import ArrowLight from "../svgs/gamepad-arrow-light.svg";
-import { gameButtons, gameContents } from "./contants";
+import { gameButtons, gameContents, gameContentsmobile } from "./contants";
 import VideoPlayerSmall from "./VideoPlayerSmall";
 import LeftArrowBlackMobile from "../svgs/arrow-client-left-black-mobile.svg";
 import RightArrowBlackMobile from "../svgs/arrow-client-right-black-mobile.svg";
@@ -40,7 +40,7 @@ const Services = ({ isDarkTheme, screenSize }) => {
     setShowEllipse(null);
   };
 
-  const mobileItems = gameContents.map((el, i) => <ServiceItem key={i} data={el} isDarkTheme={isDarkTheme} />);
+  const mobileItems = gameContentsmobile.map((el, i) => <ServiceItem key={i} data={el} isDarkTheme={isDarkTheme} />);
 
   const goToPage = (index) => () => {
     // setActiveMobileButton(index);
