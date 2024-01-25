@@ -76,6 +76,9 @@
 
       @media screen and (max-width: 720px) {
         grid-template-columns: 82px 82px 82px;
+        column-gap: 7px;
+        row-gap: 7px;
+
       }
     }
 

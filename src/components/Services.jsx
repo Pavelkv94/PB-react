@@ -263,14 +263,14 @@ const Slider = ({ array, isDarkTheme, setActiveMobileButton, scrollRef, pages, a
           </li>
         ))}
       </ul>
-      <div className={styles.controlls}>
+      {/* <div className={styles.controlls}>
         <div onClick={() => prev()} className={`${styles.arrow} ${styles.left}`}>
           {activePageIndex !== 0 && (isDarkTheme ? <img src={LeftArrowBlackMobile} /> : <img src={LeftArrowLightMobile} />)}
         </div>
         <div onClick={() => next()} className={`${styles.arrow} ${styles.right}`}>
           {activePageIndex !== pages.length - 1 && (isDarkTheme ? <img src={RightArrowBlackMobile} /> : <img src={RightArrowLightMobile} />)}
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -31,29 +31,29 @@ const WorkStages = ({ isDarkTheme, screenSize }) => {
   const sixthItemTop = isDarkTheme && largeScreen ? "666px" : !isDarkTheme && largeScreen ? "666px" : isDarkTheme && !largeScreen ? "476px" : "466px";
 
   const mobileData = [
-    { image: [black01, light01], title: "БРИФИРОВАНИЕ. ОБСУЖДЕНИЕ", description: "1. Обсуждение проекта на встрече или по телефону", height: "30px" },
+    { image: [black01, light01], title: "БРИФИРОВАНИЕ. ОБСУЖДЕНИЕ", description: "1. Обсуждение проекта на встрече или по телефону", height: "10px" },
     {
       image: [black02, light02],
       title: "ПРОЕКТИРОВАНИЕ ПРОЕКТА. ПОДГОТОВКА КП",
       description: "2. Подготовка концепции и сметы. Согласование. Подписание договора.",
-      height: "30px",
+      height: "10px",
     },
     {
       image: [black03, light03],
       title: "КРЕАТИВНАЯ СТРАТЕГИЯ",
       description: "3.1  Анимационные видео: создание сценария и раскадровки. Согласовывание.",
       description2: "3.2 Видео на основе видеосъемки: создание сценария. Согласование. Подготовка к съемке.",
-      height: "50px",
+      height: "40px",
     },
     {
       image: [black04, light04],
       title: "ПРОДАКШН",
       description: "4.1 Создание моделей, анимация, текстурирование. озвучка. Согласование.",
       description2: "4.2 видео на основе видеосъемки: проведение постановчной видеосъемки. Монтаж. Оформление 2d/3d графикой. Согласование.",
-      height: "60px",
+      height: "50px",
     },
-    { image: [black05, light05], title: "КОРРЕКТИВЫ", description: "5. Внесение корректив и создание финальной версии видео.", height: "30px" },
-    { image: [black06, light06], title: "ИТОГ", description: "6. Сдача готового видеоролика. Подписание акта выполненных работ.", height: "30px" },
+    { image: [black05, light05], title: "КОРРЕКТИВЫ", description: "5. Внесение корректив и создание финальной версии видео.", height: "10px" },
+    { image: [black06, light06], title: "ИТОГ", description: "6. Сдача готового видеоролика. Подписание акта выполненных работ.", height: "10px" },
   ];
   return (
     <div className={`${styles.workStagesWrapper} ${isDarkTheme ? styles.dark : styles.light}`}>

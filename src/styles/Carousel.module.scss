@@ -27,6 +27,11 @@
   position: relative;
   // margin-top: 100px;
 
+  @media screen and (max-width: 720px) {
+    width: 100px;
+    height: 30px;
+    margin: 0 auto;
+  }
   .test1 {
     width: 177px;
     height: 177px;
@@ -68,6 +73,9 @@
     display: flex;
     margin: 0 30px;
     z-index: 3;
+    @media screen and (max-width: 720px) {
+      position: absolute;
+    }
   }
 
   .arrow {
@@ -75,15 +83,28 @@
     position: relative;
     z-index: 3;
     transition: 0.5s;
+    @media screen and (max-width: 720px) {
+      position: absolute;
+      top: -30px;
 
-    &.left:hover {
-      transform: scale(1.2) translate(-6px, 0);
-      transition: 0.5s;
+      &.left {
+        right: 60px
+      }
     }
-
+    &.left:hover {
+      @media screen and (min-width: 720px) {
+        transform: scale(1.2) translate(-6px, 0);
+        transition: 0.5s;
+      }
+    }
+    &.right {
+      left: 60px
+    }
     &.right:hover {
-      transform: scale(1.2) translate(6px, 0);
-      transition: 0.5s;
+      @media screen and (min-width: 720px) {
+        transform: scale(1.2) translate(6px, 0);
+        transition: 0.5s;
+      }
     }
   }
 }

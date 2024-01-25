@@ -1,9 +1,17 @@
 import { useSnapCarousel } from "react-snap-carousel";
 import CustomDot from "./CustomDot";
 import LeftArrow from "../svgs/arrow-client-left-black.svg";
+import LeftArrowMobile from "../svgs/arrow-client-left-black-clients-mobile.svg";
+
 import RightArrow from "../svgs/arrow-client-right-black.svg";
+import RightArrowMobile from "../svgs/arrow-client-right-black-clients-mobile.svg";
+
 import LeftArrowLight from "../svgs/arrow-client-left-light.svg";
+import LeftArrowLightMobile from "../svgs/arrow-client-left-light-mobile-clients.svg";
+
 import RightArrowLight from "../svgs/arrow-client-right-light.svg";
+import RightArrowLightMobile from "../svgs/arrow-client-right-light-mobile-clients.svg";
+
 import styles from "../styles/Carousel.module.scss";
 
 const Carousel = ({ array, isDarkTheme, portfolio, screenSize }) => {
@@ -38,9 +46,9 @@ const Carousel = ({ array, isDarkTheme, portfolio, screenSize }) => {
       </ul>
       <div className={styles.controlls}>
         <div onClick={() => prev()} className={`${styles.arrow} ${styles.left}`}>
-          {isDarkTheme ? <img src={LeftArrow} /> : <img src={LeftArrowLight} />}
+          {isDarkTheme ? <img src={screenSize > 720 ? LeftArrow : LeftArrowMobile} /> : <img src={screenSize > 720 ? LeftArrowLight : LeftArrowLightMobile} />}
         </div>
-        {isDarkTheme && <div className={styles.test1} style={portfolio ? {left: screenSize < 1560 ? "500px" : "790px"} : {}}></div>}
+        {isDarkTheme && screenSize > 720 && <div className={styles.test1} style={portfolio ? {left: screenSize < 1560 ? "500px" : "790px"} : {}}></div>}
 
         <div className={styles.dots}>
           {array.map((_, i) => (
@@ -48,9 +56,9 @@ const Carousel = ({ array, isDarkTheme, portfolio, screenSize }) => {
           ))}
         </div>
         <div onClick={() => next()} className={`${styles.arrow} ${styles.right}`}>
-          {isDarkTheme ? <img src={RightArrow} /> : <img src={RightArrowLight} />}
+          {isDarkTheme ? <img src={screenSize > 720 ? RightArrow : RightArrowMobile} /> : <img src={screenSize > 720 ? RightArrowLight : RightArrowLightMobile} />}
         </div>
-        {isDarkTheme && <div className={styles.test2} style={portfolio ? {left: screenSize < 1560 ? "316px" : "600px"} : {}}></div>}
+        {isDarkTheme && screenSize > 720 && <div className={styles.test2} style={portfolio ? {left: screenSize < 1560 ? "316px" : "600px"} : {}}></div>}
       </div>
     </>
   );

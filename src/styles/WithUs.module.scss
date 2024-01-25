@@ -167,15 +167,15 @@
           }
         }
 
-        &.left:hover {
-          transform: scale(1.2) translate(-6px, 0);
-          transition: 0.5s;
-        }
+        // &.left:hover {
+        //   transform: scale(1.2) translate(-6px, 0);
+        //   transition: 0.5s;
+        // }
 
-        &.right:hover {
-          transform: scale(1.2) translate(6px, 0);
-          transition: 0.5s;
-        }
+        // &.right:hover {
+        //   transform: scale(1.2) translate(6px, 0);
+        //   transition: 0.5s;
+        // }
       }
     }
   }
