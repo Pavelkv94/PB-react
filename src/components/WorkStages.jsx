@@ -59,7 +59,7 @@ const WorkStages = ({ isDarkTheme, screenSize }) => {
     <div className={`${styles.workStagesWrapper} ${isDarkTheme ? styles.dark : styles.light}`}>
       <div className={styles.workStagesContent}>
         <div className={styles.title}>
-          <Title isDarkTheme={isDarkTheme} text="ЭТАПЫ РАБОТЫ" mainTitle width={largeScreen ? "454px" : "264px"} left={largeScreen ? "26px" : "14px"} />
+          <Title isDarkTheme={isDarkTheme} text="ЭТАПЫ РАБОТЫ" mainTitle width={screenSize < 720 ? "200px" : largeScreen ? "454px" : "264px"} left={largeScreen ? "26px" : "14px"} />
         </div>
 
         {screenSize > 720 ? (

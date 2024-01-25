@@ -13,7 +13,7 @@
   }
 
   @media screen and (max-width: 720px) {
-    min-width: 375px;
+    min-width: 360px;
     min-height: 380px;
     max-height: 385px;
   }
@@ -43,7 +43,7 @@
         margin-bottom: 10px;
       }
       @media screen and (max-width: 720px) {
-        width: 290px;
+        width: 280px;
       }
     }
 
@@ -156,6 +156,19 @@
             left: 20px;
           }
         }
+        @media screen and (max-width: 370px) {
+          &.right {
+            &.dark {
+              left: 10px;
+
+            }
+
+            &.light {
+              left: 0px;
+
+            }
+          }
+        }
         @media screen and (max-width: 1560px) {
           &.left {
             left: -80px;
@@ -164,6 +177,20 @@
         @media screen and (max-width: 721px) {
           &.left {
             left: -20px;
+          }
+        }
+
+        @media screen and (max-width: 370px) {
+          &.left {
+            &.dark {
+              left: -10px;
+
+            }
+
+            &.light {
+              left: -0px;
+
+            }
           }
         }
 
@@ -192,5 +219,17 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+
+    .approvementContent {
+      position: relative;
+
+      .cross {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    }
   }
 }

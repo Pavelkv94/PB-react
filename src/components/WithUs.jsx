@@ -12,6 +12,7 @@ import LeftArrowBlackMobile from "../svgs/arrow-client-left-black-mobile.svg";
 import RightArrowBlackMobile from "../svgs/arrow-client-right-black-mobile.svg";
 import LeftArrowLightMobile from "../svgs/arrow-client-left-light-mobile.svg";
 import RightArrowLightMobile from "../svgs/arrow-client-right-light-mobile.svg";
+import Cross from "../svgs/cross.svg";
 
 const WithUs = ({ isDarkTheme, screenSize }) => {
   const [open, setOpen] = useState(false);
@@ -65,24 +66,6 @@ export default WithUs;
 const Slider = ({ array, isDarkTheme, screenSize }) => {
   const { scrollRef, pages, activePageIndex, next, prev, goTo } = useSnapCarousel();
 
-  // const handlePrev = () => {
-  //   if (activePageIndex === 0) {
-  //     // If at the beginning, go to the last item for infinite loop effect
-  //     goTo(array.length - 1);
-  //   } else {
-  //     prev();
-  //   }
-  // };
-
-  // const handleNext = () => {
-  //   if (activePageIndex === array.length - 1) {
-  //     // If at the end, go to the first item for infinite loop effect
-  //     goTo(0);
-  //   } else {
-  //     next();
-  //   }
-  // };
-
   return screenSize > 720 ? (
     <>
       <ul ref={scrollRef} className={styles.carousel}>
@@ -114,10 +97,10 @@ const Slider = ({ array, isDarkTheme, screenSize }) => {
         ))}
       </ul>
       <div className={styles.controlls}>
-        <div onClick={() => prev()} className={`${styles.arrow} ${styles.left}`}>
+        <div onClick={() => prev()} className={`${styles.arrow} ${styles.left} ${isDarkTheme ? styles.dark : styles.light}`}>
           {activePageIndex !== 0 && (isDarkTheme ? <img src={LeftArrowBlackMobile} /> : <img src={LeftArrowLightMobile} />)}
         </div>
-        <div onClick={() => next()} className={`${styles.arrow} ${styles.right}`}>
+        <div onClick={() => next()} className={`${styles.arrow} ${styles.right} ${isDarkTheme ? styles.dark : styles.light}`}>
           {activePageIndex !== pages.length - 1 && (isDarkTheme ? <img src={RightArrowBlackMobile} /> : <img src={RightArrowLightMobile} />)}
         </div>
       </div>
@@ -128,7 +111,12 @@ const Slider = ({ array, isDarkTheme, screenSize }) => {
 const Approvement = ({ imgUrl, setOpen, screenSize }) => {
   return (
     <div className={styles.approvement} onClick={() => setOpen(false)}>
-      <img src={imgUrl} width={screenSize > 1560 ? 500 : 460} onClick={(e) => e.stopPropagation()} />
+      <div className={styles.approvementContent}>
+      {screenSize < 720 &&       
+      <img src={Cross} className={styles.cross}/>
+      }
+      <img src={imgUrl} width={screenSize > 1560 ? 500 : 340} onClick={(e) => e.stopPropagation()} />
+      </div>
     </div>
   );
 };

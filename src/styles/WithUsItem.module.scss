@@ -266,6 +266,9 @@
       height: 300px;
       background-image: url("../pngs/WIthUsItemMobile.png");
     }
+    @media screen and (max-width: 370px) {
+      width: 290px;
+    }
 
     .photo {
       top: 98px;
@@ -288,6 +291,13 @@
         width: 70px;
         height: 70px;
       }
+
+      @media screen and (max-width: 370px) {
+        top: 58px;
+        left: 125px;
+        width: 62px;
+        height: 62px;
+      }
     }
 
     .approv {
@@ -302,6 +312,10 @@
       @media screen and (max-width: 720px) {
         top: 200px;
         left: 250px;
+      }
+      @media screen and (max-width: 370px) {
+        top: 190px;
+        left: 240px;
       }
     }
 
@@ -319,6 +333,10 @@
         left: 56px;
         top: 120px;
       }
+      @media screen and (max-width: 370px) {
+        left: 40px;
+        top: 122px;
+      }
     }
 
     .description {
@@ -335,6 +353,10 @@
         left: 46px;
         top: 145px;
       }
+      @media screen and (max-width: 370px) {
+        left: 40px;
+        top: 145px;
+      }
     }
     .job {
       left: 280px;
@@ -348,6 +370,10 @@
       @media screen and (max-width: 720px) {
         left: 240px;
         top: 130px;
+      }
+
+      @media screen and (max-width: 370px) {
+        left: 208px;
       }
 
       p {
@@ -388,6 +414,9 @@
       background-image: url("../pngs/WIthUsItemMobile-light.png");
     }
 
+    @media screen and (max-width: 370px) {
+      width: 290px;
+    }
     .photo {
       top: 79px;
       left: 220px;
@@ -409,6 +438,13 @@
         width: 75px;
         height: 75px;
       }
+
+      @media screen and (max-width: 370px) {
+        top: 45px;
+        left: 111px;
+        width: 66px;
+        height: 66px;
+      }
     }
 
     .approv {
@@ -422,6 +458,10 @@
       @media screen and (max-width: 720px) {
         top: 200px;
         left: 250px;
+      }
+      @media screen and (max-width: 370px) {
+        top: 194px;
+        left: 246px;
       }
     }
 
@@ -441,6 +481,12 @@
         top: 120px;
         font-size: 10px !important;
       }
+      @media screen and (max-width: 370px) {
+        left: 32px;
+        top: 120px;
+        font-size: 8px !important;
+
+      }
     }
 
     .description {
@@ -457,17 +503,25 @@
         left: 40px;
         top: 145px;
       }
+      @media screen and (max-width: 370px) {
+        left: 32px;
+        top: 145px;
+      }
     }
     .job {
       left: 280px;
       top: 380px;
-      
+
       @media screen and (max-width: 1560px) {
         left: 150px;
         top: 314px;
       }
 
       @media screen and (max-width: 720px) {
+        left: 220px;
+        top: 130px;
+      }
+      @media screen and (max-width: 370px) {
         left: 220px;
         top: 130px;
       }
@@ -524,7 +578,10 @@
         top: 200px;
         left: 56px;
       }
-
+      @media screen and (max-width: 370px) {
+        top: 190px;
+        left: 56px;
+      }
       .percents {
         color: white;
       }
@@ -555,6 +612,7 @@
         top: 200px;
         left: 40px;
       }
+
       .percents {
         color: rgba(56, 56, 56, 1);
       }

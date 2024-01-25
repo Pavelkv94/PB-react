@@ -76,7 +76,7 @@ const AppContainer = ({ isDarkTheme }) => {
       {!isDarkTheme && <div className="light-underline"></div>}
       <WorkStages isDarkTheme={isDarkTheme} screenSize={screenSize} />
       <Footer isDarkTheme={isDarkTheme} setTab={setTab} screenSize={screenSize}/>
-      {openModal && <Modal onCloseModal={onCloseModal} mailToken={mailToken}/>}
+      {openModal && <Modal onCloseModal={onCloseModal} mailToken={mailToken} screenSize={screenSize}/>}
       {openCaptcha && <Recaptcha handleCaptchaChange={handleCaptchaChange} setOpenCaptcha={setOpenCaptcha} />}
     </>
   );

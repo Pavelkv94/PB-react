@@ -4,8 +4,9 @@ import Checked from "../svgs/checked.svg";
 import UnChecked from "../svgs/checked-no.svg";
 import { sendMail } from "./sendMail";
 import compliance from "../docs/compliance plan-big.space.pdf";
+import Cross from "../svgs/cross.svg";
 
-const Modal = ({ onCloseModal, mailToken }) => {
+const Modal = ({ onCloseModal, mailToken, screenSize }) => {
   const initAnswers = {
     q1: "",
     q2: "",
@@ -202,7 +203,13 @@ const Modal = ({ onCloseModal, mailToken }) => {
       </div>
       {state === 4 ? (
         <div className={styles.agreement}>
-          <p> Нажимая на кнопку «Отправить» вы подтверждаете своё согласие на <a href={compliance} target="_blank" rel="noopener noreferrer">обработку пользовательских данных</a></p>
+          <p>
+            {" "}
+            Нажимая на кнопку «Отправить» вы подтверждаете своё согласие на{" "}
+            <a href={compliance} target="_blank" rel="noopener noreferrer">
+              обработку пользовательских данных
+            </a>
+          </p>
         </div>
       ) : (
         ""
@@ -214,6 +221,8 @@ const Modal = ({ onCloseModal, mailToken }) => {
     <div className={styles.modalWrapper} onClick={closeModal}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <h2>Мы детально погружаемся в каждый проект клиента. </h2>
+        {screenSize < 720 && <img src={Cross} className={styles.cross} onClick={closeModal} />}
+
         <h2>
           Пройдите тест за <b>1 минуту</b> и рассчитайте стоимость проекта.
         </h2>

@@ -117,7 +117,7 @@ const Main = ({ isDarkTheme, screenSize }) => {
         <div className={`${styles.showInfoMobile} ${isDarkTheme ? styles.dark : styles.light}`}>
           {isDarkTheme && <p className={styles.showreelPMobile}>SHOWREEL</p>}
           <VideoPlayer
-            width={screenSize < 721 ? "370px" : screenSize < 1560 ? "650px" : "745px"}
+            width={screenSize < 370 ? "360px" : screenSize < 721 ? "370px" : screenSize < 1560 ? "650px" : "745px"}
             height={screenSize < 721 ? "246px" : screenSize < 1560 ? "433px" : "475px"}
             style={{ position: "absolute", right: 6, bottom: 0 }}
             isDarkTheme={isDarkTheme}

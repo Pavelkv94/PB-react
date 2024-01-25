@@ -17,6 +17,15 @@
     background-repeat: no-repeat;
     background-position: center;
     padding: 40px;
+    position: relative;
+
+    .cross {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 30px;
+      right: 20px;
+    }
 
     @media screen and (max-width: 720px) {
       width: 356px;
@@ -191,6 +200,7 @@
         }
       }
     }
+
   }
 
   .agreement {
