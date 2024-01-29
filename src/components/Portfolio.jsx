@@ -26,7 +26,7 @@ import LeftArrowLightMobile from "../svgs/arrow-client-left-light-mobile.svg";
 import RightArrowLightMobile from "../svgs/arrow-client-right-light-mobile.svg";
 
 const Portfolio = ({ isDarkTheme, tab, setTab, screenSize, tnx }) => {
-  const [activeMobileButton, setActiveMobileButton] = useState(0);
+  const [activeMobileButton, setActiveMobileButton] = useState(6);
   const [lentLenght, setlentLenght] = useState(6);
 
   const tabs = [
