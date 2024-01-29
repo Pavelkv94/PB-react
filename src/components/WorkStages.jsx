@@ -4,6 +4,8 @@ import Title from "./Title";
 import WorkStage from "./WorkStage";
 import plusLight from "../pngs/plus-light.svg";
 import plusBlack from "../pngs/plus-black.svg";
+import minusBlack from "../pngs/minus-black.svg";
+import minusLight from "../pngs/minus-light.svg";
 import black01 from "../pngs/01-black.png";
 import black02 from "../pngs/02-black.png";
 import black03 from "../pngs/03-black.png";
@@ -142,7 +144,7 @@ const MobileItem = ({ title, description, image, isDarkTheme, description2, heig
       <div className={styles.mobileStageItemHeader}>
         <img src={isDarkTheme ? image[0] : image[1]} />
         <h4 className={isDarkTheme ? styles.dark : styles.light}>{title}</h4>
-        <img src={isDarkTheme ? plusBlack : plusLight} onClick={() => setOpen(!open)} />
+        <img src={isDarkTheme && open ? minusBlack : isDarkTheme && !open ? plusBlack : !isDarkTheme && open ? minusLight : plusLight} onClick={() => setOpen(!open)} />
       </div>
       {open && (
         <div className={styles.mobileStageItemContent} style={{ height: height }}>
