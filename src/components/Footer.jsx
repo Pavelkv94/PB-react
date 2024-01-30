@@ -133,7 +133,6 @@ const Footer = ({ isDarkTheme, setTab, screenSize }) => {
       ) : (
         <div className={styles.footerMobile}>
           <h4>КОНТАКТЫ</h4>
-          <div className={styles.footerContactMobile}><img src={point}/>Москва, Крутицкая набережная, 1</div>
           <div className={styles.footerContactMobile}>
             <img src={tel}/>
             <a href={`tel:${phone}`} style={{textDecoration: "none", color: "white"}}>{phone}</a>
@@ -178,6 +177,10 @@ const Footer = ({ isDarkTheme, setTab, screenSize }) => {
               <img src={CopyIcon} />
             </div>
           </div>
+          <div className={styles.footerContactMobile}><img src={point}/>Москва, Крутицкая набережная, 1</div>
+          <a href={policy} target="_blank" rel="noopener noreferrer" className={styles.footerContactMobile} style={{textDecoration: "none"}}>
+                Политика конфиденциальности
+              </a>
           <div className={`${styles.actions} ${isDarkTheme ? styles.dark : styles.light}`}>
             <div>
               <Link to="order" spy={true} smooth={true} offset={-100} duration={500}>

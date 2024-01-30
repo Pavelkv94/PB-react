@@ -189,8 +189,8 @@
 
       @media screen and (max-width: 720px) {
         width: 330px !important;
-        height: 140px !important;
-        margin-top: 50px;
+        height: 220px !important;
+        margin-top: 30px;
       }
 
       &.dark {
@@ -554,8 +554,8 @@
         }
 
         @media screen and (max-width: 720px) {
-          width: 80px;
-          height: 80px;
+          width: 100px;
+          height: 100px;
         }
 
         &.dark {
@@ -579,8 +579,8 @@
             left: 150px;
           }
           @media screen and (max-width: 720px) {
-            left: 10px;
-            bottom: 100px
+            left: 0px;
+            bottom: 80px
 
           }
         }
@@ -590,9 +590,11 @@
             left: 900px;
           }
           @media screen and (max-width: 720px) {
-            left: 270px;
-            bottom: 100px
-
+            left: 260px;
+            bottom: 80px
+          }
+          @media screen and (max-width: 370px) {
+            left: 240px;
           }
         }
       }
@@ -609,8 +611,8 @@
         }
 
         @media screen and (max-width: 720px) {
-          width: 80px;
-          height: 80px;
+          width: 100px;
+          height: 100px;
         }
         &.dark {
           background-image: url("../pngs/videomaking-part-full-black.png");
@@ -626,7 +628,7 @@
           }
           @media screen and (max-width: 720px) {
             top: 40px;
-            left: 60px;
+            left: 40px;
           }
         }
         &.second {
@@ -638,7 +640,7 @@
           @media screen and (max-width: 720px) {
 
             top: 40px;
-            left: 220px;
+            left: 200px;
           }
         }
       }
@@ -660,6 +662,9 @@
             left: 140px;
             top: 130px;
           }
+          @media screen and (max-width: 370px) {
+            left: 130px;
+          }
         }
 
         &.light {
@@ -671,6 +676,9 @@
           @media screen and (max-width: 720px) {
             left: 104px;
             top: 100px;
+          }
+          @media screen and (max-width: 370px) {
+            left: 90px;
           }
         }
       }
@@ -725,7 +733,7 @@
           }
           @media screen and (max-width: 720px) {
             top: 10px;
-            left: 43px;
+            left: 34px;
           }
         }
         &.three {
@@ -737,8 +745,11 @@
           }
           @media screen and (max-width: 720px) {
             top: 214px;
-            left: 256px;
+            left: 260px;
             width: 100px;
+          }
+          @media screen and (max-width: 370px) {
+            left: 240px;
 
           }
         }
@@ -751,7 +762,7 @@
           }
           @media screen and (max-width: 720px) {
             top: 10px;
-            left: 204px;
+            left: 194px;
           }
         }
         &.dark {
