@@ -172,7 +172,7 @@ const HeaderNavMenu = ({ isDarkTheme, setOpenModal, screenSize }) => {
               </Link>
             </nav>
             <section>
-              <p>{phone}</p>
+              <a href={`tel:${phone}`} style={{textDecoration: "none"}}><p>{phone}</p></a>
               <div className={styles.mobileMenuEmail}>
                 <p>{email}</p>
                 <div

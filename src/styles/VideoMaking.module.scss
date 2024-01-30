@@ -20,6 +20,7 @@
 
   &.dark {
     background-image: url("../pngs/videomaking-backg-dark2.webp");
+
   }
 
   .videoMakingContent {
@@ -527,6 +528,12 @@
 
         &.dark {
           background-image: url("../pngs/videomaking-center-black.webp");
+
+          @media screen and (max-width: 720px) {
+            background-image: url("../pngs/videomaking-center-black.png");
+
+          }
+
         }
         &.light {
           background-image: url("../pngs/videomaking-center-light.webp");
@@ -555,7 +562,7 @@
           background-image: url("../pngs/videomaking-part-part-black.webp");
 
           @media screen and (max-width: 720px) {
-            background-image: url("../pngs/videomaking-part-full-black.webp");
+            background-image: url("../pngs/videomaking-part-full-black.png");
           }
         }
         &.light {
@@ -606,7 +613,7 @@
           height: 80px;
         }
         &.dark {
-          background-image: url("../pngs/videomaking-part-full-black.webp");
+          background-image: url("../pngs/videomaking-part-full-black.png");
         }
         &.light {
           background-image: url("../pngs/videomaking-part-full-light.webp");

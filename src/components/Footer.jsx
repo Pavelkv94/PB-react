@@ -136,7 +136,7 @@ const Footer = ({ isDarkTheme, setTab, screenSize }) => {
           <div className={styles.footerContactMobile}><img src={point}/>Москва, Крутицкая набережная, 1</div>
           <div className={styles.footerContactMobile}>
             <img src={tel}/>
-            <span>{phone}</span>
+            <a href={`tel:${phone}`} style={{textDecoration: "none", color: "white"}}>{phone}</a>
             <div
               className={styles.copy}
               onClick={() => {
