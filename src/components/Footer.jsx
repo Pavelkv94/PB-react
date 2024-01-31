@@ -139,12 +139,8 @@ const Footer = ({ isDarkTheme, setTab, screenSize }) => {
             <div
               className={styles.copy}
               onClick={() => {
-                if (!isCopied) {
-                  navigator.clipboard?.writeText(phone);
-                  setIsPopoverOpen(true);
-                  setIsPopoverHover(false);
-                  setIsCopied(true);
-                }
+                navigator.clipboard?.writeText(phone);
+
               }}
               // onMouseEnter={() => setIsPopoverHover(true)}
               // onMouseLeave={() => setIsPopoverHover(false)}
@@ -157,16 +153,12 @@ const Footer = ({ isDarkTheme, setTab, screenSize }) => {
           </div>
           <div className={styles.footerContactMobile}>
             <img src={letter}/>
-            <span>{email}</span>
+            <a style={{textDecoration: "none", color: "white", userSelect: "none"}} href={`mailto:${email}`}>{email}</a>
             <div
               className={styles.copy}
               onClick={() => {
-                if (!isCopied) {
-                  navigator.clipboard?.writeText(email);
-                  setIsPopoverOpen(true);
-                  setIsPopoverHover(false);
-                  setIsCopied(true);
-                }
+                navigator.clipboard?.writeText(email);
+
               }}
               // onMouseEnter={() => setIsPopoverHover(true)}
               // onMouseLeave={() => setIsPopoverHover(false)}

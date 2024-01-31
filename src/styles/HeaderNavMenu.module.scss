@@ -268,6 +268,8 @@
       letter-spacing: 0.07em;
 
       &.dark {
+        color: white;
+
         background-image: url("../pngs/calculate-dark-mobile.png");
       }
 
@@ -285,7 +287,6 @@
         line-height: 12px;
         letter-spacing: 0em;
         text-align: center;
-        color: white;
       }
     }
 
@@ -356,7 +357,8 @@
     &.dark {
       background-color: #26467d;
 
-      section p, a {
+      section p,
+      a {
         color: white;
       }
     }
@@ -364,7 +366,8 @@
     &.light {
       background-color: white;
 
-      section p, a {
+      section p,
+      a {
         color: #383838;
       }
     }
@@ -412,7 +415,7 @@
           font-size: 28px;
           font-weight: 400;
           font-family: "Montserrat", sans-serif;
-          font-family: 'Tektur', cursive;
+          font-family: "Tektur", cursive;
 
           @media screen and (max-width: 370px) {
             font-size: 26px;
