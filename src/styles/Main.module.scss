@@ -591,6 +591,12 @@
 
         &.dark {
           background: url("../pngs//main-info-item-back.png");
+
+                  @media screen and (max-width: 720px) {
+                    background: url("../pngs//main-info-item-back-mobile.png");
+                    background-size: cover;
+
+        }
           p {
             color: rgba(0, 237, 255, 1);
           }
@@ -598,6 +604,9 @@
 
         &.light {
           background: url("../pngs//main-info-item-back-light.png");
+
+                  @media screen and (max-width: 720px) {
+        }
 
           p {
             color: rgba(0, 138, 238, 1);
