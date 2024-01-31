@@ -606,6 +606,8 @@
           background: url("../pngs//main-info-item-back-light.png");
 
                   @media screen and (max-width: 720px) {
+                    background: url("../pngs//main-info-item-back-light-mobile.png");
+                    background-size: cover;
         }
 
           p {
