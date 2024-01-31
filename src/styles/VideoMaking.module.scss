@@ -20,7 +20,6 @@
 
   &.dark {
     background-image: url("../pngs/videomaking-backg-dark2.webp");
-
   }
 
   .videoMakingContent {
@@ -191,6 +190,10 @@
         width: 330px !important;
         height: 220px !important;
         margin-top: 30px;
+      }
+
+      @media screen and (max-width: 370px) {
+        margin-top: 36px;
       }
 
       &.dark {
@@ -531,12 +534,14 @@
 
           @media screen and (max-width: 720px) {
             background-image: url("../pngs/videomaking-center-black.png");
-
           }
-
         }
         &.light {
           background-image: url("../pngs/videomaking-center-light.webp");
+
+          @media screen and (max-width: 720px) {
+            background-image: url("../pngs/videomaking-center-light.png");
+          }
         }
       }
 
@@ -580,8 +585,7 @@
           }
           @media screen and (max-width: 720px) {
             left: 0px;
-            bottom: 80px
-
+            bottom: 80px;
           }
         }
         &.second {
@@ -591,7 +595,7 @@
           }
           @media screen and (max-width: 720px) {
             left: 260px;
-            bottom: 80px
+            bottom: 80px;
           }
           @media screen and (max-width: 370px) {
             left: 240px;
@@ -635,10 +639,8 @@
           left: 880px;
           @media screen and (max-width: 1560px) {
             left: 700px;
-
           }
           @media screen and (max-width: 720px) {
-
             top: 40px;
             left: 200px;
           }
@@ -704,13 +706,15 @@
         }
 
         &:hover {
-          font-size: 28px;
-          @media screen and (max-width: 1560px) {
+          @media screen and (min-width: 720px) {
             font-size: 18px;
+
           }
-          @media screen and (max-width: 720px) {
-            font-size: 14px;
+          @media screen and (min-width: 1560px) {
+            font-size: 28px;
+
           }
+
         }
         &.one {
           bottom: 120px;
@@ -750,7 +754,6 @@
           }
           @media screen and (max-width: 370px) {
             left: 240px;
-
           }
         }
         &.four {
@@ -774,7 +777,9 @@
           text-shadow: none;
 
           &:hover {
-            color: #49a7ff;
+            @media screen and (min-width: 720px) {
+              color: #49a7ff;
+            }
           }
         }
       }

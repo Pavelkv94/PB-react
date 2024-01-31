@@ -18,6 +18,7 @@ const Main = ({ isDarkTheme, screenSize }) => {
 
   const isMobileSize = screenSize < 721;
 
+  const mobileHeight = isDarkTheme ? "232px" : "224px";
   return !isMobileSize ? (
     <div className={`${styles.mainWrapper} ${isDarkTheme ? styles.dark : styles.light}`} id="main">
       <div className={styles.mainContent}>
@@ -117,8 +118,8 @@ const Main = ({ isDarkTheme, screenSize }) => {
         <div className={`${styles.showInfoMobile} ${isDarkTheme ? styles.dark : styles.light}`}>
           {isDarkTheme && <p className={styles.showreelPMobile}>SHOWREEL</p>}
           <VideoPlayer
-            width={screenSize < 370 ? "360px" : screenSize < 721 ? "370px" : screenSize < 1560 ? "650px" : "745px"}
-            height={screenSize < 721 ? "246px" : screenSize < 1560 ? "433px" : "475px"}
+            width={screenSize < 370 ? "340px" : screenSize < 721 ? "370px" : screenSize < 1560 ? "650px" : "745px"}
+            height={screenSize < 370 ? mobileHeight : screenSize < 721 ? "246px" : screenSize < 1560 ? "433px" : "475px"}
             style={{ position: "absolute", right: 6, bottom: 0 }}
             isDarkTheme={isDarkTheme}
             big

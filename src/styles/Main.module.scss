@@ -402,12 +402,20 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    .preTitleMobile, h2 {
+      color: white;
+    }
   }
 
   &.light {
     background-image: url("../pngs/main-back-light-mobile.png");
     background-size: cover;
     background-repeat: no-repeat;
+
+    .preTitleMobile, h2 {
+      color: #383838;
+    }
 
   }
 
@@ -540,7 +548,6 @@
 
     .preTitleMobile,
     h2 {
-      color: white;
       text-align: center;
     }
     .preTitleMobile {
@@ -605,6 +612,10 @@
           position: absolute;
           font-size: 11px;
           font-family: "Rubik", sans-serif;
+
+          @media screen and (max-width: 370px) {
+            right: 20px;
+          }
         }
 
         &:nth-child(2) p,
@@ -632,6 +643,10 @@
         top: -12px;
         left: 170px;
         z-index: 2;
+
+        @media screen and (max-width: 370px) {
+          top: 0px;
+        }
       
     }
     }

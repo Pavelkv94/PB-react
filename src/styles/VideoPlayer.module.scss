@@ -88,6 +88,13 @@
           top: 47px;
           left: 24px;
         }
+
+        @media screen and (max-width: 370px) {
+          top: 44px;
+          left: 18px;
+          width: 307px;
+          height: 161px;
+        }
       }
     }
     &.light {
@@ -121,6 +128,12 @@
           height: 170px;
           top: 39px;
           left: 24px;
+        }
+        @media screen and (max-width: 370px) {
+          top: 35px;
+          left: 24px;
+          width: 295px;
+          height: 156px;
         }
       }
     }
