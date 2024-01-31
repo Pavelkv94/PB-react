@@ -748,9 +748,15 @@
             left: 680px;
           }
           @media screen and (max-width: 720px) {
-            top: 214px;
             left: 260px;
             width: 100px;
+
+            &.dark {
+              top: 204px;
+            }
+            &.light {
+              top: 198px;
+            }
           }
           @media screen and (max-width: 370px) {
             left: 240px;
