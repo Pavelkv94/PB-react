@@ -606,6 +606,8 @@
         width: 254px;
         height: 228px;
         position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
 
         @media screen and (max-width: 1560px) {
           width: 160px;
@@ -619,7 +621,7 @@
           height: 100px;
         }
         &.dark {
-          background-image: url("../pngs/videomaking-part-full-black.png");
+          background-image: url("../pngs/videomaking-part-full-black.webp");
         }
         &.light {
           background-image: url("../pngs/videomaking-part-full-light.webp");

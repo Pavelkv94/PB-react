@@ -133,7 +133,7 @@ const Clients = ({ isDarkTheme, screenSize }) => {
           <Title isDarkTheme={isDarkTheme} text="НАМ ДОВЕРЯЮТ" mainTitle width={screenSize > 1560 ? "464px" : "272px"} left={screenSize > 1560 ? "30px" : "15px"} />
         </div>
         <div className={styles.carousel}>
-          <Carousel array={[firstSlide, secondSlide, thirdSlide]} isDarkTheme={isDarkTheme} />
+          <Carousel array={[firstSlide, secondSlide, thirdSlide]} isDarkTheme={isDarkTheme} screenSize={screenSize}/>
         </div>
       </div>
     </div>

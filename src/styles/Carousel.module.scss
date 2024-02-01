@@ -98,7 +98,14 @@
       }
     }
     &.right {
-      left: 60px
+
+      @media screen and (max-width: 720px) {
+        left: 60px
+      }
+      @media screen and (min-width: 720px) {
+        left: 0px
+      }
+      
     }
     &.right:hover {
       @media screen and (min-width: 720px) {
